@@ -1,0 +1,84 @@
+import Link from "next/link";
+
+export function Footer() {
+  return (
+    <footer className="border-t border-line bg-surface">
+      <div className="mx-auto max-w-7xl px-6 py-12">
+        <div className="grid gap-12 md:grid-cols-4">
+          {/* Brand */}
+          <div>
+            <div className="font-display text-xl font-bold text-brand uppercase">Repz Gym</div>
+            <p className="mt-2 text-sm text-ink-muted">No glamour. Just a great workout.</p>
+            <p className="mt-1 text-xs text-ink-subtle">Plainwell, Michigan • Since 1998</p>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="font-display text-sm font-bold uppercase text-ink">Quick Links</h4>
+            <ul className="mt-4 space-y-2">
+              <li>
+                <Link href="/" className="text-sm text-ink-muted transition hover:text-brand">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link href="/classes" className="text-sm text-ink-muted transition hover:text-brand">
+                  Classes
+                </Link>
+              </li>
+              <li>
+                <Link href="/pricing" className="text-sm text-ink-muted transition hover:text-brand">
+                  Pricing
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="text-sm text-ink-muted transition hover:text-brand">
+                  About
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="font-display text-sm font-bold uppercase text-ink">Contact</h4>
+            <ul className="mt-4 space-y-2">
+              <li className="text-sm text-ink-muted">(269) 685-1493</li>
+              <li className="text-sm text-ink-muted">585 10th St A</li>
+              <li className="text-sm text-ink-muted">Plainwell, MI 49080</li>
+              <li>
+                <a href="mailto:jerry@repz-gym.com" className="text-sm text-brand transition hover:text-brand-hot">
+                  jerry@repz-gym.com
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Hours */}
+          <div>
+            <h4 className="font-display text-sm font-bold uppercase text-ink">Hours</h4>
+            <ul className="mt-4 space-y-2">
+              <li className="text-sm text-ink-muted">Mon–Fri: 6am–8:30pm</li>
+              <li className="text-sm text-ink-muted">Sat: 7am–7pm</li>
+              <li className="text-sm text-ink-muted">Sun: 8am–6pm</li>
+              <li className="text-xs text-ink-subtle mt-4">24/7 key-fob access for members</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="mt-12 border-t border-line pt-8 flex items-center justify-between text-xs text-ink-subtle">
+          <p>&copy; 2024 Repz Gym. All rights reserved.</p>
+          <div className="flex gap-6">
+            <a href="https://facebook.com/repzgym" target="_blank" rel="noopener noreferrer" className="transition hover:text-brand">
+              Facebook
+            </a>
+            <a href="https://yelp.com" target="_blank" rel="noopener noreferrer" className="transition hover:text-brand">
+              Yelp
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
