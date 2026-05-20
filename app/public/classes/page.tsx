@@ -22,8 +22,8 @@ export default async function ClassesPage() {
     .slice()
     .sort((a, b) => {
       const dayDiff =
-        (dayOrder[a.day_of_week as keyof typeof dayOrder] || 0) -
-        (dayOrder[b.day_of_week as keyof typeof dayOrder] || 0);
+        (dayOrder[a.day_of_week as any] || 0) -
+        (dayOrder[b.day_of_week as any] || 0);
       if (dayDiff !== 0) return dayDiff;
       return a.start_time.localeCompare(b.start_time);
     });
