@@ -127,3 +127,30 @@ export async function getDayPassesSoldLastNDays(days: number) {
     (p) => p.kind === "day_pass" && p.status === "succeeded" && new Date(p.paid_at) > since
   );
 }
+
+export async function getPaymentsByMemberId(memberId: string) {
+  const payments = await getPayments();
+  return payments.filter((p) => p.member_id === memberId).sort((a, b) => {
+    if (!a.paid_at || !b.paid_at) return 0;
+    return new Date(b.paid_at).getTime() - new Date(a.paid_at).getTime();
+  });
+}
+
+export async function getMemberWithPaymentHistory(id: string) {
+  const member = await getMemberById(id);
+  if (!member) return null;
+  const payments = await getPaymentsByMemberId(id);
+  return { ...member, payments };
+}
+
+export async function searchMembers(query: string) {
+  if (!query.trim()) return MEMBERS.filter((m) => !m.is_admin);
+  const q = query.toLowerCase();
+  return MEMBERS.filter(
+    (m) =>
+      !m.is_admin &&
+      (m.first_name.toLowerCase().includes(q) ||
+        m.last_name.toLowerCase().includes(q) ||
+        m.email.toLowerCase().includes(q))
+  );
+}
