@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 type ButtonVariant = "primary" | "secondary" | "ghost" | "danger";
 type ButtonSize = "sm" | "md" | "lg";
@@ -6,6 +7,7 @@ type ButtonSize = "sm" | "md" | "lg";
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
   size?: ButtonSize;
+  href?: string;
 }
 
 const variantStyles: Record<ButtonVariant, string> = {
@@ -21,16 +23,26 @@ const sizeStyles: Record<ButtonSize, string> = {
   lg: "px-6 py-4 text-base font-display uppercase tracking-button",
 };
 
+const baseStyles = "inline-flex items-center justify-center rounded-sm transition-colors duration-150";
+
 export function Button({
   variant = "primary",
   size = "md",
   className = "",
+  href,
   ...props
 }: ButtonProps) {
+  const classes = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`;
+
+  if (href) {
+    return (
+      <Link href={href} className={classes}>
+        {props.children}
+      </Link>
+    );
+  }
+
   return (
-    <button
-      className={`inline-flex items-center justify-center rounded-sm transition-colors duration-150 ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}
-      {...props}
-    />
+    <button className={classes} {...props} />
   );
 }

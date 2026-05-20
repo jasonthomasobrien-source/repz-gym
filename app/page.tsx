@@ -19,10 +19,10 @@ export default async function Home() {
             Plainwell's gym since 1998. No glamour. Just a great workout.
           </p>
           <div className="mt-12 flex flex-col justify-center gap-4 md:flex-row">
-            <Button size="lg" variant="primary" onClick={() => window.location.href = '/signup'}>
+            <Button size="lg" variant="primary" href="/signup">
               JOIN NOW
             </Button>
-            <Button size="lg" variant="secondary" onClick={() => window.location.href = '/classes'}>
+            <Button size="lg" variant="secondary" href="/classes">
               SEE THE SCHEDULE
             </Button>
           </div>
