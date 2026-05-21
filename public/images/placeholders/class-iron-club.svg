@@ -1,0 +1,26 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ironBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#141414;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#ironBg)"/>
+  <!-- Barbell -->
+  <g transform="translate(200, 150)">
+    <!-- Bar -->
+    <rect x="-100" y="-4" width="200" height="8" fill="#FF6B35" rx="4"/>
+    <!-- Left weight plates -->
+    <rect x="-110" y="-30" width="14" height="60" fill="#00BCD4" opacity="0.9"/>
+    <rect x="-125" y="-35" width="14" height="70" fill="#00BCD4" opacity="0.8"/>
+    <rect x="-140" y="-40" width="14" height="80" fill="#00BCD4" opacity="0.7"/>
+    <!-- Right weight plates -->
+    <rect x="96" y="-30" width="14" height="60" fill="#FF6B35" opacity="0.9"/>
+    <rect x="111" y="-35" width="14" height="70" fill="#FF6B35" opacity="0.8"/>
+    <rect x="126" y="-40" width="14" height="80" fill="#FF6B35" opacity="0.7"/>
+  </g>
+  <!-- Text -->
+  <text x="200" y="260" font-size="24" font-weight="bold" fill="#FF6B35" text-anchor="middle" font-family="Oswald">
+    IRON STRENGTH
+  </text>
+</svg>

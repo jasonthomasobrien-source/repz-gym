@@ -85,7 +85,7 @@ export const CLASSES: Class[] = [
     name: "The Iron Club",
     description: "Barbell focus. Squat, bench, deadlift. Progressive strength.",
     instructor_id: "trainer-3",
-    image_url: "https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?w=500&h=600&fit=crop",
+    image_url: "/images/placeholders/class-iron-club.svg",
     is_active: true,
   },
   {
@@ -94,7 +94,7 @@ export const CLASSES: Class[] = [
     name: "Functional Fit",
     description: "Real-world movement patterns. Strength and conditioning.",
     instructor_id: "trainer-4",
-    image_url: "https://images.unsplash.com/photo-1523821741446-edb429443ee0?w=500&h=600&fit=crop",
+    image_url: "/images/placeholders/class-functional-fit.svg",
     is_active: true,
   },
   {
