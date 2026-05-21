@@ -24,3 +24,20 @@ body {
   background-color: rgb(var(--bg));
   color: rgb(var(--ink));
 }
+
+/* Utility: Section title underline in teal */
+@layer components {
+  .eyebrow {
+    @apply text-xs font-display uppercase tracking-eyebrow text-brand-alt;
+  }
+
+  /* Teal underline for section titles */
+  .section-title-underline {
+    @apply border-b-3 border-brand-alt w-full sm:w-3/5 my-4;
+  }
+
+  /* Focus ring in brand color */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-brand-alt focus:ring-offset-2 focus:ring-offset-bg;
+  }
+}
