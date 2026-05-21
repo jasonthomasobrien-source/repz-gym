@@ -45,29 +45,26 @@ export default async function Home() {
 
         {/* Classes Preview */}
         <section data-bg="light" className="px-6 py-24">
-          <div className="mx-auto max-w-5xl">
+          <div className="mx-auto max-w-6xl">
             <AnimationWrapper animationType="fade-in">
               <SectionTitle eyebrow="OUR CLASSES" title="WHAT WE OFFER" subtitle="Walk in, sign in, get to work." />
             </AnimationWrapper>
-            <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {classes.filter(c => c.is_active).map((cls, idx) => (
                 <AnimationWrapper key={cls.id} animationType="slide-up" index={idx}>
-                  <div className="group cursor-pointer overflow-hidden rounded-md bg-surface border-t-2 border-brand-alt">
-                    <div className="relative h-48 bg-gradient-to-b from-brand-alt/20 to-bg overflow-hidden flex items-center justify-center">
+                  <div className="group cursor-pointer">
+                    <div className="relative h-72 overflow-hidden rounded-md bg-surface">
                       {cls.image_url && (
                         <img
                           src={cls.image_url}
                           alt={cls.name}
-                          className="h-full w-full object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+                          className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
                         />
                       )}
-                      <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent" />
-                      <div className="absolute inset-0 flex items-end p-4">
-                        <div>
-                          <div className="eyebrow">CLASS</div>
-                          <h3 className="text-xl font-display font-bold uppercase text-ink">{cls.name}</h3>
-                        </div>
-                      </div>
+                    </div>
+                    <div className="mt-6">
+                      <h3 className="font-display text-lg font-bold uppercase text-ink">{cls.name}</h3>
+                      <p className="mt-2 text-sm text-ink-muted">{cls.description}</p>
                     </div>
                   </div>
                 </AnimationWrapper>
