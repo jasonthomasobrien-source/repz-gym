@@ -3,7 +3,9 @@ export function Header() {
     <header className="fixed top-0 z-50 w-full bg-bg/95 backdrop-blur transition-all duration-200">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <div className="flex items-center gap-2">
-          <h1 className="text-2xl font-display font-bold uppercase text-ink">REPZ</h1>
+          <h1 className="text-2xl font-display font-bold uppercase">
+            <span style={{ color: 'rgb(var(--brand))' }}>REPZ</span><span style={{ color: 'rgb(var(--brand-alt))' }}>GYM</span>
+          </h1>
         </div>
         <nav className="hidden items-center gap-8 md:flex">
           <a href="/" className="text-xs uppercase text-ink-muted hover:text-brand">Home</a>
