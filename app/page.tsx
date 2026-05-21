@@ -58,11 +58,7 @@ export default async function Home() {
                         <img
                           src={cls.image_url}
                           alt={cls.name}
-                          className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
-                          onError={(e) => {
-                            (e.target as HTMLImageElement).style.objectFit = 'contain';
-                            (e.target as HTMLImageElement).style.padding = '2rem';
-                          }}
+                          className="h-full w-full object-contain p-4 group-hover:scale-105 transition-transform duration-300"
                         />
                       )}
                       <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent" />
