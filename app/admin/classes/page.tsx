@@ -34,22 +34,22 @@ export default function ClassesPage() {
     return <div className="text-ink-muted">Loading classes...</div>;
   }
 
-  const dayOrder = {
-    Monday: 1,
-    Tuesday: 2,
-    Wednesday: 3,
-    Thursday: 4,
-    Friday: 5,
-    Saturday: 6,
-    Sunday: 0,
+  const dayOrder: Record<number, number> = {
+    1: 1, // Monday
+    2: 2, // Tuesday
+    3: 3, // Wednesday
+    4: 4, // Thursday
+    5: 5, // Friday
+    6: 6, // Saturday
+    0: 7, // Sunday
   };
 
   const sortedSessions = sessions
     .slice()
     .sort((a, b) => {
-      const dayDiff =
-        (dayOrder[a.day_of_week as any] || 0) -
-        (dayOrder[b.day_of_week as any] || 0);
+      const aDay = dayOrder[a.day_of_week] ?? 0;
+      const bDay = dayOrder[b.day_of_week] ?? 0;
+      const dayDiff = aDay - bDay;
       if (dayDiff !== 0) return dayDiff;
       return a.start_time.localeCompare(b.start_time);
     });
@@ -108,7 +108,7 @@ export default function ClassesPage() {
           <div className="space-y-4">
             {sortedSessions.map((session) => {
               const cls = classes.find((c) => c.id === session.class_id);
-              const trainer = trainers.find((t) => t.id === session.trainer_id);
+              const trainer = cls?.instructor_id ? trainers.find((t) => t.id === cls.instructor_id) : undefined;
               return (
                 <div
                   key={session.id}
@@ -117,7 +117,7 @@ export default function ClassesPage() {
                   <div>
                     <p className="font-semibold text-ink">{cls?.name}</p>
                     <p className="mt-1 text-xs text-ink-muted">
-                      {session.day_of_week} {session.start_time} – {session.end_time}
+                      {session.day_of_week} {session.start_time}
                     </p>
                     {trainer && (
                       <p className="text-xs text-ink-muted">with {trainer.name}</p>

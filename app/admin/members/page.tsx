@@ -161,8 +161,8 @@ export default function MembersPage() {
                                     Phone
                                   </p>
                                   <p className="text-sm text-ink">
-                                    {member.phone_number
-                                      ? member.phone_number.replace(/(\+\d{1,2})(\d{3})(\d{3})(\d{4})/, "$1 ($2) $3-$4")
+                                    {member.phone
+                                      ? member.phone.replace(/(\+\d{1,2})(\d{3})(\d{3})(\d{4})/, "$1 ($2) $3-$4")
                                       : "—"}
                                   </p>
                                 </div>

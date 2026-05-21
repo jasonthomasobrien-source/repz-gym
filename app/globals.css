@@ -26,18 +26,28 @@ body {
 }
 
 /* Utility: Section title underline in teal */
-@layer components {
-  .eyebrow {
-    @apply text-xs font-display uppercase tracking-eyebrow text-brand-alt;
-  }
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgb(var(--brand-alt));
+  font-family: var(--font-display);
+}
 
-  /* Teal underline for section titles */
+.section-title-underline {
+  border-bottom: 2px solid rgb(var(--brand-alt));
+  width: 100%;
+  margin: 1rem 0;
+}
+
+@media (min-width: 640px) {
   .section-title-underline {
-    @apply border-b-2 border-brand-alt w-full sm:w-3/5 my-4;
+    width: 60%;
   }
+}
 
-  /* Focus ring in brand color */
-  .focus-ring {
-    @apply focus:outline-none focus:ring-2 focus:ring-brand-alt focus:ring-offset-2 focus:ring-offset-bg;
-  }
+.focus-ring:focus {
+  outline: 2px solid rgb(var(--brand-alt));
+  outline-offset: 2px;
 }

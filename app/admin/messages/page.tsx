@@ -10,7 +10,7 @@ type Message = Awaited<ReturnType<typeof getContactMessages>>[0];
 export default function MessagesPage() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [statusFilter, setStatusFilter] = useState<"all" | "unread" | "read">("unread");
-  const [expandedMessageId, setExpandedMessageId] = useState<string | null>(null);
+  const [expandedMessageId, setExpandedMessageId] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -25,9 +25,9 @@ export default function MessagesPage() {
   const filtered = useMemo(() => {
     let result = messages;
     if (statusFilter === "unread") {
-      result = result.filter((m) => !m.read_at);
+      result = result.filter((m) => m.status === "new");
     } else if (statusFilter === "read") {
-      result = result.filter((m) => m.read_at);
+      result = result.filter((m) => m.status !== "new");
     }
     return result.sort((a, b) => {
       return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
@@ -85,9 +85,9 @@ export default function MessagesPage() {
                     <div className="flex-1">
                       <div className="flex items-center gap-2">
                         <h4 className="font-semibold text-ink">
-                          {message.first_name} {message.last_name}
+                          {message.name}
                         </h4>
-                        {!message.read_at && (
+                        {message.status === "new" && (
                           <span className="h-2 w-2 rounded-full bg-brand flex-shrink-0" />
                         )}
                       </div>
@@ -98,8 +98,8 @@ export default function MessagesPage() {
                     </div>
                     <div className="ml-4 flex-shrink-0 text-right">
                       <p className="text-xs text-ink-muted">{message.email}</p>
-                      {message.phone_number && (
-                        <p className="text-xs text-ink-muted">{message.phone_number}</p>
+                      {message.phone && (
+                        <p className="text-xs text-ink-muted">{message.phone}</p>
                       )}
                     </div>
                   </div>
@@ -114,7 +114,7 @@ export default function MessagesPage() {
                             Name
                           </p>
                           <p className="text-sm text-ink">
-                            {message.first_name} {message.last_name}
+                            {message.name}
                           </p>
                         </div>
                         <div>
@@ -123,12 +123,12 @@ export default function MessagesPage() {
                           </p>
                           <p className="text-sm text-ink">{message.email}</p>
                         </div>
-                        {message.phone_number && (
+                        {message.phone && (
                           <div>
                             <p className="text-xs font-display uppercase tracking-eyebrow text-brand mb-1">
                               Phone
                             </p>
-                            <p className="text-sm text-ink">{message.phone_number}</p>
+                            <p className="text-sm text-ink">{message.phone}</p>
                           </div>
                         )}
                         <div>
@@ -154,7 +154,7 @@ export default function MessagesPage() {
                         <Button variant="secondary" size="sm">
                           Reply via Email
                         </Button>
-                        {!message.read_at && (
+                        {message.status === "new" && (
                           <Button variant="ghost" size="sm">
                             Mark as Read
                           </Button>
