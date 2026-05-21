@@ -1,0 +1,19 @@
+{"type":"server-started","port":56503,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:56503","screen_dir":"/Users/jasonobrien/Documents/repz-gym/.superpowers/brainstorm/2631-1779331329/content","state_dir":"/Users/jasonobrien/Documents/repz-gym/.superpowers/brainstorm/2631-1779331329/state"}
+{"type":"screen-added","file":"/Users/jasonobrien/Documents/repz-gym/.superpowers/brainstorm/2631-1779331329/content/video-placement.html"}
+{"type":"screen-updated","file":"/Users/jasonobrien/Documents/repz-gym/.superpowers/brainstorm/2631-1779331329/content/video-placement.html"}
+{"type":"screen-updated","file":"/Users/jasonobrien/Documents/repz-gym/.superpowers/brainstorm/2631-1779331329/content/video-placement.html"}
+{"type":"screen-updated","file":"/Users/jasonobrien/Documents/repz-gym/.superpowers/brainstorm/2631-1779331329/content/video-placement.html"}
+{"source":"user-event","type":"click","text":"Weightlifting video background\n      \n      \n        BE STRONG\n        Train Hard\n      \n    \n    \n      Option A: Video Hero\n      Video replaces the slider. Full-bleed weightlifting footage with 25% opacity overlay, dark gradient on right side for text legibility. Headline overlaid. Auto-play on load (muted), play/pause controls.\n      \n        ProsImmediate energyReplaces 3 carousel slidesShows real gym action\n        ConsLess editorial control (video is continuous)Heavier load time","choice":"option-a","id":null,"timestamp":1779331839663}
+{"type":"screen-added","file":"/Users/jasonobrien/Documents/repz-gym/.superpowers/brainstorm/2631-1779331329/content/waiting-1.html"}
+{"type":"screen-updated","file":"/Users/jasonobrien/Documents/repz-gym/.superpowers/brainstorm/2631-1779331329/content/waiting-1.html"}
+{"type":"screen-updated","file":"/Users/jasonobrien/Documents/repz-gym/.superpowers/brainstorm/2631-1779331329/content/waiting-1.html"}
+{"type":"screen-updated","file":"/Users/jasonobrien/Documents/repz-gym/.superpowers/brainstorm/2631-1779331329/content/waiting-1.html"}
+{"type":"screen-added","file":"/Users/jasonobrien/Documents/repz-gym/.superpowers/brainstorm/2631-1779331329/content/animation-intensity.html"}
+{"type":"screen-updated","file":"/Users/jasonobrien/Documents/repz-gym/.superpowers/brainstorm/2631-1779331329/content/animation-intensity.html"}
+{"type":"screen-updated","file":"/Users/jasonobrien/Documents/repz-gym/.superpowers/brainstorm/2631-1779331329/content/animation-intensity.html"}
+{"type":"screen-updated","file":"/Users/jasonobrien/Documents/repz-gym/.superpowers/brainstorm/2631-1779331329/content/animation-intensity.html"}
+{"type":"screen-added","file":"/Users/jasonobrien/Documents/repz-gym/.superpowers/brainstorm/2631-1779331329/content/waiting-2.html"}
+{"type":"screen-updated","file":"/Users/jasonobrien/Documents/repz-gym/.superpowers/brainstorm/2631-1779331329/content/waiting-2.html"}
+{"type":"screen-updated","file":"/Users/jasonobrien/Documents/repz-gym/.superpowers/brainstorm/2631-1779331329/content/waiting-2.html"}
+{"type":"screen-updated","file":"/Users/jasonobrien/Documents/repz-gym/.superpowers/brainstorm/2631-1779331329/content/waiting-2.html"}
+{"type":"server-stopped","reason":"idle timeout"}

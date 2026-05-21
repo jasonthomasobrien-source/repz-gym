@@ -53,7 +53,15 @@ export default async function Home() {
               {classes.filter(c => c.is_active).map((cls, idx) => (
                 <AnimationWrapper key={cls.id} animationType="slide-up" index={idx}>
                   <div className="group cursor-pointer overflow-hidden rounded-md bg-surface border-t-2 border-brand-alt">
-                    <div className="relative h-48 bg-gradient-to-b from-brand-alt/20 to-bg">
+                    <div className="relative h-48 bg-gradient-to-b from-brand-alt/20 to-bg overflow-hidden">
+                      {cls.image_url && (
+                        <img
+                          src={cls.image_url}
+                          alt={cls.name}
+                          className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent" />
                       <div className="absolute inset-0 flex items-end p-4">
                         <div>
                           <div className="eyebrow">CLASS</div>
@@ -117,7 +125,13 @@ export default async function Home() {
               {trainers.map((trainer, idx) => (
                 <AnimationWrapper key={trainer.id} animationType="slide-up" index={idx}>
                   <div className="text-center">
-                    <div className={`mx-auto h-40 w-32 rounded-md bg-gradient-to-b ${idx % 2 === 0 ? "from-brand/10" : "from-brand-alt/10"} to-surface`} />
+                    <div className="mx-auto h-40 w-32 rounded-md overflow-hidden bg-surface">
+                      <img
+                        src={`/images/placeholders/trainer-${(idx % 4) + 1}.svg`}
+                        alt={trainer.name}
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
                     <h3 className="mt-4 font-display font-bold uppercase text-ink">{trainer.name}</h3>
                     <p className="text-xs text-brand-alt">{trainer.tagline}</p>
                   </div>

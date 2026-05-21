@@ -1,0 +1,78 @@
+<h2>Where should the weightlifting video go?</h2>
+<p class="subtitle">And how should we alternate section backgrounds?</p>
+
+<div class="section" style="margin-bottom: 2rem;">
+  <h3 style="margin-bottom: 1rem;">Key consideration:</h3>
+  <p>The video is dynamic and powerful. We need to decide: should it be a static background layer (parallax effect) or a full hero replacement? And how do alternating dark/light sections interact with it?</p>
+</div>
+
+<div class="cards">
+  <div class="card" data-choice="option-a" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: #0a0a0a; color: white; padding: 1.5rem; font-family: Oswald, sans-serif; display: flex; flex-direction: column; gap: 1rem; min-height: 280px; border-bottom: 3px solid #F26522;">
+      <div style="flex-grow: 1; display: flex; align-items: center; justify-content: center; background: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%2260%22%3E%3Crect fill=%22%23333%22 width=%22100%22 height=%2260%22/%3E%3Ctext x=%2250%22 y=%2230%22 text-anchor=%22middle%22 fill=%22%23666%22 font-size=%2212%22%3EVIDEO%3C/text%3E%3C/svg%3E') center/cover; border-radius: 4px; margin-bottom: 1rem;">
+        <span style="font-size: 14px; color: #999;">Weightlifting video background</span>
+      </div>
+      <div style="text-align: left;">
+        <div style="font-size: 12px; color: #F26522; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem;">BE STRONG</div>
+        <div style="font-size: 28px; font-weight: 700; line-height: 1.2; text-transform: uppercase;">Train Hard</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Option A: Video Hero</h3>
+      <p><strong>Video replaces the slider.</strong> Full-bleed weightlifting footage with 25% opacity overlay, dark gradient on right side for text legibility. Headline overlaid. Auto-play on load (muted), play/pause controls.</p>
+      <div class="pros-cons" style="margin-top: 1rem;">
+        <div class="pros"><h4>Pros</h4><ul><li>Immediate energy</li><li>Replaces 3 carousel slides</li><li>Shows real gym action</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Less editorial control (video is continuous)</li><li>Heavier load time</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-choice="option-b" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: #0a0a0a; color: white; padding: 1.5rem; font-family: Oswald, sans-serif; display: flex; flex-direction: column;">
+      <div style="margin-bottom: 1rem; padding: 1rem; background: #141414; border-radius: 4px; text-align: center; font-size: 12px; color: #666;">Hero slider (unchanged)</div>
+      <div style="margin-bottom: 1rem; padding: 1rem; background: #1F1F1F; border-radius: 4px; text-align: center; font-size: 12px; color: #888;">Light surface background</div>
+      <div style="flex-grow: 1; display: flex; align-items: center; justify-content: center; background: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%2280%22%3E%3Crect fill=%22%23333%22 width=%22100%22 height=%2280%22/%3E%3Ctext x=%2250%22 y=%2240%22 text-anchor=%22middle%22 fill=%22%23666%22 font-size=%2212%22%3EVIDEO%3C/text%3E%3C/svg%3E') center/cover; border-radius: 4px; margin: 1rem 0; border: 2px dashed #666;">
+        <span style="font-size: 14px; color: #999;">Video parallax behind classes/schedule</span>
+      </div>
+      <div style="padding: 1rem; background: #141414; border-radius: 4px; text-align: center; font-size: 12px; color: #666;">Dark background again</div>
+    </div>
+    <div class="card-body">
+      <h3>Option B: Parallax in a Section</h3>
+      <p><strong>Video sits behind a light-background section</strong> (e.g., "Our Classes" or "Why Choose Us"). Slower parallax scroll creates depth. Cards/content float on top with semi-transparent backgrounds.</p>
+      <div class="pros-cons" style="margin-top: 1rem;">
+        <div class="pros"><h4>Pros</h4><ul><li>Keeps hero slider</li><li>Adds depth with parallax</li><li>Alternating sections naturally frame it</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Content must contrast well over video</li><li>More complex CSS</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-choice="option-c" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: #0a0a0a; color: white; padding: 1.5rem; font-family: Oswald, sans-serif; display: flex; flex-direction: column;">
+      <div style="margin-bottom: 1rem; padding: 1rem; background: #141414; border-radius: 4px; text-align: center; font-size: 12px; color: #666;">Home hero + pricing preview</div>
+      <div style="margin-bottom: 1rem; padding: 1rem; background: #1F1F1F; border-radius: 4px; text-align: center; font-size: 12px; color: #888;">Photo mosaic (unchanged)</div>
+      <div style="flex-grow: 1; display: flex; align-items: center; justify-content: center; background: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%2280%22%3E%3Crect fill=%22%23333%22 width=%22100%22 height=%2280%22/%3E%3Ctext x=%2250%22 y=%2240%22 text-anchor=%22middle%22 fill=%22%23666%22 font-size=%2212%22%3EVIDEO%3C/text%3E%3C/svg%3E') center/cover; border-radius: 4px; margin: 1rem 0; border: 2px dashed #666;">
+        <span style="font-size: 14px; color: #999;">Video in registration CTA</span>
+      </div>
+      <div style="padding: 1rem; background: #141414; border-radius: 4px; text-align: center; font-size: 12px; color: #666;">Contact strip + footer</div>
+    </div>
+    <div class="card-body">
+      <h3>Option C: Video in Registration CTA</h3>
+      <p><strong>Video replaces the faded photo in the "Registration Open" banner.</strong> Full-bleed dark section with video at 30% opacity, gradient overlay, centered CTA. More subtle than hero placement.</p>
+      <div class="pros-cons" style="margin-top: 1rem;">
+        <div class="pros"><h4>Pros</h4><ul><li>Keeps hero slider + classes</li><li>Placement drives conversions</li><li>Lower visual weight</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Video buried below fold</li><li>Less immediate impact</li></ul></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #333;">
+  <h3 style="margin-bottom: 1rem;">Alternating Section Backgrounds</h3>
+  <p>All three options work better with alternating dark/light sections. Current site uses all dark (`--bg`). We could alternate:</p>
+  <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+    <li><strong>Dark sections:</strong> `--bg` (#0a0a0a) — Hero, Classes, Team, etc.</li>
+    <li><strong>Light sections:</strong> `--surface` (#141414 slightly lighter, or a true light gray for admin-style cards)</li>
+    <li><strong>Effect:</strong> Visual separation + makes alternating content layers stand out</li>
+  </ul>
+  <p style="margin-top: 1rem; color: #888;">This naturally supports parallax video in the middle — video can sit in a light-background section while cards float over it.</p>
+</div>
