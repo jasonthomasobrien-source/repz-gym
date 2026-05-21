@@ -91,7 +91,7 @@ export default async function ClassesPage() {
                   <tbody>
                     {sortedSessions.map((session) => {
                       const cls = classes.find((c) => c.id === session.class_id);
-                      const trainer = trainers.find((t) => t.id === session.trainer_id);
+                      const trainer = cls?.instructor_id ? trainers.find((t) => t.id === cls.instructor_id) : undefined;
                       return (
                         <tr key={session.id} className="border-b border-line hover:bg-surface-2">
                           <td className="px-4 py-3 font-semibold text-ink">
