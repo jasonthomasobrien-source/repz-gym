@@ -1,21 +1,29 @@
-import { Eyebrow } from "./Eyebrow";
-
 interface SectionTitleProps {
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
-  align?: "center" | "left";
   subtitle?: string;
+  align?: "center" | "left";
 }
 
-export function SectionTitle({ eyebrow, title, align = "center", subtitle }: SectionTitleProps) {
+export function SectionTitle({ eyebrow, title, subtitle, align = "center" }: SectionTitleProps) {
   const alignClass = align === "center" ? "text-center" : "text-left";
   return (
     <div className={alignClass}>
-      <Eyebrow>{eyebrow}</Eyebrow>
-      <h2 className="mt-3 text-4xl font-display font-bold uppercase leading-tight tracking-display text-ink">
+      {eyebrow && (
+        <div className="eyebrow mb-4">
+          {eyebrow}
+        </div>
+      )}
+      <h2 className="text-4xl md:text-5xl font-display font-bold uppercase text-ink">
         {title}
       </h2>
-      {subtitle && <p className="mt-4 text-lg text-ink-muted">{subtitle}</p>}
+      {/* Teal underline accent */}
+      <div className="section-title-underline" />
+      {subtitle && (
+        <p className="mt-4 text-lg text-ink-muted max-w-2xl">
+          {subtitle}
+        </p>
+      )}
     </div>
   );
 }

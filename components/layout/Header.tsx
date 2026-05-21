@@ -13,19 +13,19 @@ export function Header() {
 
           {/* Navigation */}
           <nav className="hidden gap-8 md:flex">
-            <Link href="/" className="text-sm font-display uppercase text-ink-muted transition hover:text-brand">
+            <Link href="/" className="text-sm font-display uppercase text-ink-muted transition hover:text-brand-alt">
               Home
             </Link>
-            <Link href="/classes" className="text-sm font-display uppercase text-ink-muted transition hover:text-brand">
+            <Link href="/classes" className="text-sm font-display uppercase text-ink-muted transition hover:text-brand-alt">
               Classes
             </Link>
-            <Link href="/pricing" className="text-sm font-display uppercase text-ink-muted transition hover:text-brand">
+            <Link href="/pricing" className="text-sm font-display uppercase text-ink-muted transition hover:text-brand-alt">
               Pricing
             </Link>
-            <Link href="/about" className="text-sm font-display uppercase text-ink-muted transition hover:text-brand">
+            <Link href="/about" className="text-sm font-display uppercase text-ink-muted transition hover:text-brand-alt">
               About
             </Link>
-            <Link href="/contact" className="text-sm font-display uppercase text-ink-muted transition hover:text-brand">
+            <Link href="/contact" className="text-sm font-display uppercase text-ink-muted transition hover:text-brand-alt">
               Contact
             </Link>
           </nav>

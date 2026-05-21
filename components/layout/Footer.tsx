@@ -2,55 +2,35 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="border-t border-line bg-surface">
+    <footer className="border-t border-brand-alt bg-surface">
       <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="grid gap-12 md:grid-cols-4">
           {/* Brand */}
-          <div>
+          <div className="border-b md:border-b-0 md:border-r border-brand-alt pb-8 md:pb-0 md:pr-8">
             <div className="font-display text-xl font-bold text-brand uppercase">Repz Gym</div>
             <p className="mt-2 text-sm text-ink-muted">No glamour. Just a great workout.</p>
             <p className="mt-1 text-xs text-ink-subtle">Plainwell, Michigan • Since 1998</p>
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="border-b md:border-b-0 md:border-r border-brand-alt pb-8 md:pb-0 md:pr-8">
             <h4 className="font-display text-sm font-bold uppercase text-ink">Quick Links</h4>
             <ul className="mt-4 space-y-2">
-              <li>
-                <Link href="/" className="text-sm text-ink-muted transition hover:text-brand">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/classes" className="text-sm text-ink-muted transition hover:text-brand">
-                  Classes
-                </Link>
-              </li>
-              <li>
-                <Link href="/pricing" className="text-sm text-ink-muted transition hover:text-brand">
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-sm text-ink-muted transition hover:text-brand">
-                  About
-                </Link>
-              </li>
+              <li><Link href="/" className="text-sm text-ink-muted transition hover:text-brand-alt">Home</Link></li>
+              <li><Link href="/classes" className="text-sm text-ink-muted transition hover:text-brand-alt">Classes</Link></li>
+              <li><Link href="/pricing" className="text-sm text-ink-muted transition hover:text-brand-alt">Pricing</Link></li>
+              <li><Link href="/about" className="text-sm text-ink-muted transition hover:text-brand-alt">About</Link></li>
             </ul>
           </div>
 
           {/* Contact */}
-          <div>
+          <div className="border-b md:border-b-0 md:border-r border-brand-alt pb-8 md:pb-0 md:pr-8">
             <h4 className="font-display text-sm font-bold uppercase text-ink">Contact</h4>
             <ul className="mt-4 space-y-2">
               <li className="text-sm text-ink-muted">(269) 685-1493</li>
               <li className="text-sm text-ink-muted">585 10th St A</li>
               <li className="text-sm text-ink-muted">Plainwell, MI 49080</li>
-              <li>
-                <a href="mailto:jerry@repz-gym.com" className="text-sm text-brand transition hover:text-brand-hot">
-                  jerry@repz-gym.com
-                </a>
-              </li>
+              <li><a href="mailto:jerry@repz-gym.com" className="text-sm text-brand transition hover:text-brand-dark">jerry@repz-gym.com</a></li>
             </ul>
           </div>
 
@@ -67,15 +47,11 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 border-t border-line pt-8 flex items-center justify-between text-xs text-ink-subtle">
+        <div className="mt-12 border-t border-brand-alt pt-8 flex items-center justify-between text-xs text-ink-subtle">
           <p>&copy; 2024 Repz Gym. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="https://facebook.com/repzgym" target="_blank" rel="noopener noreferrer" className="transition hover:text-brand">
-              Facebook
-            </a>
-            <a href="https://yelp.com" target="_blank" rel="noopener noreferrer" className="transition hover:text-brand">
-              Yelp
-            </a>
+            <a href="https://facebook.com/repzgym" target="_blank" rel="noopener noreferrer" className="transition hover:text-brand-alt">Facebook</a>
+            <a href="https://yelp.com" target="_blank" rel="noopener noreferrer" className="transition hover:text-brand-alt">Yelp</a>
           </div>
         </div>
       </div>

@@ -1,6 +1,10 @@
-export function Eyebrow({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+interface EyebrowProps {
+  children: string;
+}
+
+export function Eyebrow({ children }: EyebrowProps) {
   return (
-    <div className={`text-xs font-display uppercase tracking-eyebrow text-brand ${className}`}>
+    <div className="eyebrow">
       {children}
     </div>
   );

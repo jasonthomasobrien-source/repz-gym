@@ -11,9 +11,9 @@ export default async function Home() {
       {/* Hero */}
       <section className="relative min-h-screen bg-gradient-to-br from-bg via-surface to-bg px-6 py-32 pt-32">
         <div className="mx-auto max-w-5xl text-center">
-          <div className="mb-6 text-xs font-display uppercase tracking-eyebrow text-brand">SHAPE YOUR BODY</div>
+          <div className="eyebrow mb-6">SHAPE YOUR BODY</div>
           <h1 className="text-5xl md:text-7xl font-display font-bold uppercase leading-tight text-ink">
-            BE <span className="text-brand">STRONG</span>. TRAIN HARD.
+            BE <span className="text-brand-alt">STRONG</span>. TRAIN HARD.
           </h1>
           <p className="mx-auto mt-8 max-w-2xl text-lg text-ink-muted">
             Plainwell's gym since 1998. No glamour. Just a great workout.
@@ -60,11 +60,11 @@ export default async function Home() {
           <SectionTitle eyebrow="OUR CLASSES" title="WHAT WE OFFER" subtitle="Walk in, sign in, get to work." />
           <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {classes.filter(c => c.is_active).map((cls) => (
-              <div key={cls.id} className="group cursor-pointer overflow-hidden rounded-md bg-surface">
-                <div className="relative h-48 bg-gradient-to-b from-brand/20 to-bg">
+              <div key={cls.id} className="group cursor-pointer overflow-hidden rounded-md bg-surface border-t-2 border-brand-alt">
+                <div className="relative h-48 bg-gradient-to-b from-brand-alt/20 to-bg">
                   <div className="absolute inset-0 flex items-end p-4">
                     <div>
-                      <div className="text-xs font-display uppercase tracking-eyebrow text-brand">CLASS</div>
+                      <div className="eyebrow">CLASS</div>
                       <h3 className="text-xl font-display font-bold uppercase text-ink">{cls.name}</h3>
                     </div>
                   </div>
@@ -92,7 +92,7 @@ export default async function Home() {
               </ul>
               <Button size="lg" variant="primary" className="mt-8 w-full">JOIN NOW</Button>
             </div>
-            <div className="rounded-md border border-line bg-surface p-8">
+            <div className="rounded-md border-2 border-brand-alt bg-surface p-8">
               <div className="text-xs font-display uppercase tracking-eyebrow text-ink-muted">ONE-TIME</div>
               <h3 className="mt-4 text-3xl font-display font-bold uppercase text-ink">$10</h3>
               <p className="text-xs uppercase text-ink-muted">/ DAY</p>
@@ -113,11 +113,11 @@ export default async function Home() {
         <div className="mx-auto max-w-5xl">
           <SectionTitle eyebrow="OUR TEAM" title="TRAIN WITH EXPERTS" />
           <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {trainers.map((trainer) => (
+            {trainers.map((trainer, idx) => (
               <div key={trainer.id} className="text-center">
-                <div className="mx-auto h-40 w-32 rounded-md bg-gradient-to-b from-brand/10 to-surface" />
+                <div className={`mx-auto h-40 w-32 rounded-md bg-gradient-to-b ${idx % 2 === 0 ? "from-brand/10" : "from-brand-alt/10"} to-surface`} />
                 <h3 className="mt-4 font-display font-bold uppercase text-ink">{trainer.name}</h3>
-                <p className="text-xs text-brand">{trainer.tagline}</p>
+                <p className="text-xs text-brand-alt">{trainer.tagline}</p>
               </div>
             ))}
           </div>
