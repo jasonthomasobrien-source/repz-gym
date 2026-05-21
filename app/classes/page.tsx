@@ -98,7 +98,7 @@ export default async function ClassesPage() {
                             {session.day_of_week}
                           </td>
                           <td className="px-4 py-3 text-ink-muted">
-                            {session.start_time} – {session.end_time}
+                            {session.start_time} ({session.duration_min} min)
                           </td>
                           <td className="px-4 py-3 font-semibold text-ink">{cls?.name}</td>
                           <td className="px-4 py-3 text-ink-muted">
