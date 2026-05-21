@@ -13,7 +13,7 @@ interface ButtonProps {
 }
 
 const variantStyles = {
-  primary: "bg-brand text-black border border-brand hover:bg-brand-dark transition-colors",
+  primary: "text-black border transition-colors",
   secondary: "bg-transparent text-brand-alt border border-brand-alt hover:bg-brand-alt/10 transition-colors",
   ghost: "bg-transparent text-brand-alt hover:text-brand hover:underline",
   danger: "bg-red-600 text-white border border-red-600 hover:bg-red-700 transition-colors",
@@ -40,9 +40,14 @@ export function Button({
   const sizeStyle = sizeStyles[size];
   const combinedClassName = `${baseStyles} ${variantStyle} ${sizeStyle} ${className}`;
 
+  const primaryStyle = variant === "primary" ? {
+    backgroundColor: "rgb(var(--brand))",
+    borderColor: "rgb(var(--brand))",
+  } : undefined;
+
   if (href) {
     return (
-      <Link href={href} className={combinedClassName}>
+      <Link href={href} className={combinedClassName} style={primaryStyle}>
         {children}
       </Link>
     );
@@ -52,6 +57,7 @@ export function Button({
     <button
       type={type}
       className={combinedClassName}
+      style={primaryStyle}
       onClick={onClick}
       disabled={disabled}
     >
