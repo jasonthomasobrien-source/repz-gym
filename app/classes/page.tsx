@@ -8,22 +8,22 @@ export default async function ClassesPage() {
   const trainers = await getTrainers();
 
   const activeClasses = classes.filter((c) => c.is_active);
-  const dayOrder = {
-    Monday: 1,
-    Tuesday: 2,
-    Wednesday: 3,
-    Thursday: 4,
-    Friday: 5,
-    Saturday: 6,
-    Sunday: 0,
+  const dayOrder: Record<number, number> = {
+    1: 1, // Monday
+    2: 2, // Tuesday
+    3: 3, // Wednesday
+    4: 4, // Thursday
+    5: 5, // Friday
+    6: 6, // Saturday
+    0: 7, // Sunday
   };
 
   const sortedSessions = sessions
     .slice()
     .sort((a, b) => {
-      const dayDiff =
-        (dayOrder[a.day_of_week as any] || 0) -
-        (dayOrder[b.day_of_week as any] || 0);
+      const aDay = dayOrder[a.day_of_week] ?? 0;
+      const bDay = dayOrder[b.day_of_week] ?? 0;
+      const dayDiff = aDay - bDay;
       if (dayDiff !== 0) return dayDiff;
       return a.start_time.localeCompare(b.start_time);
     });
