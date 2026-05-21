@@ -1,48 +1,61 @@
-import React from "react";
 import Link from "next/link";
+import { ReactNode } from "react";
 
-type ButtonVariant = "primary" | "secondary" | "ghost" | "danger";
-type ButtonSize = "sm" | "md" | "lg";
-
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: ButtonVariant;
-  size?: ButtonSize;
+interface ButtonProps {
+  children: ReactNode;
+  variant?: "primary" | "secondary" | "ghost" | "danger";
+  size?: "sm" | "md" | "lg";
   href?: string;
+  className?: string;
+  onClick?: () => void;
+  type?: "button" | "submit" | "reset";
+  disabled?: boolean;
 }
 
-const variantStyles: Record<ButtonVariant, string> = {
-  primary: "bg-brand hover:bg-brand-hot text-white",
-  secondary: "border border-ink text-white hover:bg-surface-2",
-  ghost: "text-ink-muted hover:text-ink",
-  danger: "bg-danger hover:opacity-90 text-white",
+const variantStyles = {
+  primary: "bg-brand text-black border border-brand hover:bg-brand-dark transition-colors",
+  secondary: "bg-transparent text-brand-alt border border-brand-alt hover:bg-brand-alt/10 transition-colors",
+  ghost: "bg-transparent text-brand-alt hover:text-brand hover:underline",
+  danger: "bg-red-600 text-white border border-red-600 hover:bg-red-700 transition-colors",
 };
 
-const sizeStyles: Record<ButtonSize, string> = {
-  sm: "px-3 py-2 text-xs font-display uppercase tracking-button",
-  md: "px-4 py-3 text-sm font-display uppercase tracking-button",
-  lg: "px-6 py-4 text-base font-display uppercase tracking-button",
+const sizeStyles = {
+  sm: "px-3 py-1 text-sm",
+  md: "px-4 py-2 text-base",
+  lg: "px-6 py-3 text-lg",
 };
-
-const baseStyles = "inline-flex items-center justify-center rounded-sm transition-colors duration-150";
 
 export function Button({
+  children,
   variant = "primary",
   size = "md",
-  className = "",
   href,
-  ...props
+  className = "",
+  onClick,
+  type = "button",
+  disabled = false,
 }: ButtonProps) {
-  const classes = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`;
+  const baseStyles = "inline-flex items-center justify-center rounded-sm font-display font-bold uppercase tracking-wide transition-colors duration-150";
+  const variantStyle = variantStyles[variant];
+  const sizeStyle = sizeStyles[size];
+  const combinedClassName = `${baseStyles} ${variantStyle} ${sizeStyle} ${className}`;
 
   if (href) {
     return (
-      <Link href={href} className={classes}>
-        {props.children}
+      <Link href={href} className={combinedClassName}>
+        {children}
       </Link>
     );
   }
 
   return (
-    <button className={classes} {...props} />
+    <button
+      type={type}
+      className={combinedClassName}
+      onClick={onClick}
+      disabled={disabled}
+    >
+      {children}
+    </button>
   );
 }
