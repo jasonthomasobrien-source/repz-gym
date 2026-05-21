@@ -20,7 +20,7 @@ export function HeroVideo() {
         </video>
       </ParallaxScroll>
 
-      <div className="absolute inset-0 bg-black opacity-25" />
+      <div className="absolute inset-0 bg-black opacity-45" />
 
       <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-r from-transparent to-black opacity-40" />
 
