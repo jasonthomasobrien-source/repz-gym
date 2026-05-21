@@ -1,9 +1,26 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+
 export function Header() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 z-50 w-full backdrop-blur transition-all duration-200" style={{ backgroundColor: 'rgba(0, 0, 0, 0.45)' }}>
+    <header
+      className="fixed top-0 z-50 w-full backdrop-blur transition-all duration-200"
+      style={{ backgroundColor: scrolled ? 'rgba(0, 0, 0, 0.95)' : 'rgba(0, 0, 0, 0.2)' }}
+    >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <a href="/" className="flex items-center gap-2">
-          <h1 className="text-2xl font-display font-bold uppercase tracking-tight">
+        <a href="/" className="flex items-center">
+          <h1 className="text-2xl font-display font-bold uppercase tracking-tight whitespace-nowrap">
             <span style={{ color: '#FF6B35' }}>REPZ</span><span style={{ color: '#00BCD4' }}>GYM</span>
           </h1>
         </a>

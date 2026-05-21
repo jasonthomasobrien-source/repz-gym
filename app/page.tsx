@@ -53,12 +53,16 @@ export default async function Home() {
               {classes.filter(c => c.is_active).map((cls, idx) => (
                 <AnimationWrapper key={cls.id} animationType="slide-up" index={idx}>
                   <div className="group cursor-pointer overflow-hidden rounded-md bg-surface border-t-2 border-brand-alt">
-                    <div className="relative h-48 bg-gradient-to-b from-brand-alt/20 to-bg overflow-hidden">
+                    <div className="relative h-48 bg-gradient-to-b from-brand-alt/20 to-bg overflow-hidden flex items-center justify-center">
                       {cls.image_url && (
                         <img
                           src={cls.image_url}
                           alt={cls.name}
                           className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          onError={(e) => {
+                            (e.target as HTMLImageElement).style.objectFit = 'contain';
+                            (e.target as HTMLImageElement).style.padding = '2rem';
+                          }}
                         />
                       )}
                       <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent" />
