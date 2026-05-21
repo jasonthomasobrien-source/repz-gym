@@ -1,0 +1,179 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "REPZGYM" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - heading "REPZGYM" [level=1] [ref=e5]
+      - navigation [ref=e6]:
+        - link "Home" [ref=e7] [cursor=pointer]:
+          - /url: /
+        - link "Classes" [ref=e8] [cursor=pointer]:
+          - /url: /classes
+        - link "Pricing" [ref=e9] [cursor=pointer]:
+          - /url: /pricing
+        - link "About" [ref=e10] [cursor=pointer]:
+          - /url: /about
+        - link "Contact" [ref=e11] [cursor=pointer]:
+          - /url: /contact
+      - link "JOIN" [ref=e12] [cursor=pointer]:
+        - /url: /signup
+  - generic [ref=e13]:
+    - generic [ref=e14]:
+      - generic [ref=e16]: Your browser does not support the video tag.
+      - generic [ref=e20]:
+        - generic [ref=e21]: Shape Your Body
+        - heading "Be Strong. Train Hard." [level=1] [ref=e22]
+        - generic [ref=e23]:
+          - link "Get Info" [ref=e24] [cursor=pointer]:
+            - /url: /pricing
+          - link "See the Schedule" [ref=e25] [cursor=pointer]:
+            - /url: /classes
+      - paragraph [ref=e27]: ★ 4.8 · 107+ Google reviews · Locally Owned · Open 24/7 for Members
+    - generic [ref=e28]:
+      - generic [ref=e30]:
+        - generic [ref=e32]:
+          - generic [ref=e33]: WHY CHOOSE US
+          - heading "PUSH YOUR LIMITS FORWARD" [level=2] [ref=e34]
+          - paragraph [ref=e36]: Full floor. Full community. Full commitment.
+        - generic [ref=e37]:
+          - generic [ref=e39]:
+            - generic [ref=e40]: 🏋️
+            - heading "MODERN EQUIPMENT" [level=3] [ref=e41]
+            - paragraph [ref=e42]: Full free-weight floor, top-shelf machines.
+          - generic [ref=e44]:
+            - generic [ref=e45]: 🧠
+            - heading "PROVEN PROGRAMS" [level=3] [ref=e46]
+            - paragraph [ref=e47]: MAD FITNEZ, Taekwondo, trainers who know you.
+          - generic [ref=e49]:
+            - generic [ref=e50]: 🔓
+            - heading "24/7 KEY-FOB" [level=3] [ref=e51]
+            - paragraph [ref=e52]: Lift at 5am. Lift at midnight. Always open.
+          - generic [ref=e54]:
+            - generic [ref=e55]: 🎯
+            - heading "MADE FOR YOU" [level=3] [ref=e56]
+            - paragraph [ref=e57]: Beginner to lifer. Everyone trains here.
+      - generic [ref=e59]:
+        - generic [ref=e61]:
+          - generic [ref=e62]: OUR CLASSES
+          - heading "WHAT WE OFFER" [level=2] [ref=e63]
+          - paragraph [ref=e65]: Walk in, sign in, get to work.
+        - generic [ref=e66]:
+          - generic [ref=e69] [cursor=pointer]:
+            - img "MAD FITNEZ" [ref=e70]
+            - generic [ref=e73]:
+              - generic [ref=e74]: CLASS
+              - heading "MAD FITNEZ" [level=3] [ref=e75]
+          - generic [ref=e78] [cursor=pointer]:
+            - img "Taekwondo — Kids" [ref=e79]
+            - generic [ref=e82]:
+              - generic [ref=e83]: CLASS
+              - heading "Taekwondo — Kids" [level=3] [ref=e84]
+          - generic [ref=e87] [cursor=pointer]:
+            - img "Taekwondo — Adults" [ref=e88]
+            - generic [ref=e91]:
+              - generic [ref=e92]: CLASS
+              - heading "Taekwondo — Adults" [level=3] [ref=e93]
+          - generic [ref=e96] [cursor=pointer]:
+            - img "The Iron Club" [ref=e97]
+            - generic [ref=e100]:
+              - generic [ref=e101]: CLASS
+              - heading "The Iron Club" [level=3] [ref=e102]
+          - generic [ref=e105] [cursor=pointer]:
+            - img "Functional Fit" [ref=e106]
+            - generic [ref=e109]:
+              - generic [ref=e110]: CLASS
+              - heading "Functional Fit" [level=3] [ref=e111]
+      - generic [ref=e113]:
+        - generic [ref=e115]:
+          - generic [ref=e116]: OUR PLAN
+          - heading "CHOOSE YOUR ENTRY POINT" [level=2] [ref=e117]
+        - generic [ref=e119]:
+          - generic [ref=e121]:
+            - generic [ref=e122]: MOST POPULAR
+            - heading "$30" [level=3] [ref=e123]
+            - paragraph [ref=e124]: / MONTH
+            - list [ref=e125]:
+              - listitem [ref=e126]: ✓ Full gym floor
+              - listitem [ref=e127]: ✓ All group classes
+              - listitem [ref=e128]: ✓ 24/7 key-fob access
+              - listitem [ref=e129]: ✓ No contract
+            - button "JOIN NOW" [ref=e130]
+          - generic [ref=e132]:
+            - generic [ref=e133]: ONE-TIME
+            - heading "$10" [level=3] [ref=e134]
+            - paragraph [ref=e135]: / DAY
+            - list [ref=e136]:
+              - listitem [ref=e137]: ✓ Full gym floor
+              - listitem [ref=e138]: ✓ Drop in on classes
+              - listitem [ref=e139]: ✓ No commitment
+              - listitem [ref=e140]: ✓ Apply to membership
+            - button "BUY A DAY PASS" [ref=e141]
+      - generic [ref=e143]:
+        - generic [ref=e145]:
+          - generic [ref=e146]: OUR TEAM
+          - heading "TRAIN WITH EXPERTS" [level=2] [ref=e147]
+        - generic [ref=e149]:
+          - generic [ref=e151]:
+            - img "Katherine Perez" [ref=e153]
+            - heading "Katherine Perez" [level=3] [ref=e154]
+            - paragraph [ref=e155]: MAD FITNEZ instructor
+          - generic [ref=e157]:
+            - img "Master Daniel Cho" [ref=e159]
+            - heading "Master Daniel Cho" [level=3] [ref=e160]
+            - paragraph [ref=e161]: Taekwondo head instructor
+          - generic [ref=e163]:
+            - img "Mike Reynolds" [ref=e165]
+            - heading "Mike Reynolds" [level=3] [ref=e166]
+            - paragraph [ref=e167]: Strength coach
+          - generic [ref=e169]:
+            - img "Sara Brennan" [ref=e171]
+            - heading "Sara Brennan" [level=3] [ref=e172]
+            - paragraph [ref=e173]: Functional fitness coach
+  - contentinfo [ref=e174]:
+    - generic [ref=e175]:
+      - generic [ref=e176]:
+        - generic [ref=e177]:
+          - generic [ref=e178]: Repz Gym
+          - paragraph [ref=e179]: No glamour. Just a great workout.
+          - paragraph [ref=e180]: Plainwell, Michigan • Since 1998
+        - generic [ref=e181]:
+          - heading "Quick Links" [level=4] [ref=e182]
+          - list [ref=e183]:
+            - listitem [ref=e184]:
+              - link "Home" [ref=e185] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e186]:
+              - link "Classes" [ref=e187] [cursor=pointer]:
+                - /url: /classes
+            - listitem [ref=e188]:
+              - link "Pricing" [ref=e189] [cursor=pointer]:
+                - /url: /pricing
+            - listitem [ref=e190]:
+              - link "About" [ref=e191] [cursor=pointer]:
+                - /url: /about
+        - generic [ref=e192]:
+          - heading "Contact" [level=4] [ref=e193]
+          - list [ref=e194]:
+            - listitem [ref=e195]: (269) 685-1493
+            - listitem [ref=e196]: 585 10th St A
+            - listitem [ref=e197]: Plainwell, MI 49080
+            - listitem [ref=e198]:
+              - link "jerry@repz-gym.com" [ref=e199] [cursor=pointer]:
+                - /url: mailto:jerry@repz-gym.com
+        - generic [ref=e200]:
+          - heading "Hours" [level=4] [ref=e201]
+          - list [ref=e202]:
+            - listitem [ref=e203]: "Mon–Fri: 6am–8:30pm"
+            - listitem [ref=e204]: "Sat: 7am–7pm"
+            - listitem [ref=e205]: "Sun: 8am–6pm"
+            - listitem [ref=e206]: 24/7 key-fob access for members
+      - generic [ref=e207]:
+        - paragraph [ref=e208]: © 2024 Repz Gym. All rights reserved.
+        - generic [ref=e209]:
+          - link "Facebook" [ref=e210] [cursor=pointer]:
+            - /url: https://facebook.com/repzgym
+          - link "Yelp" [ref=e211] [cursor=pointer]:
+            - /url: https://yelp.com
+  - button "Open Next.js Dev Tools" [ref=e217] [cursor=pointer]:
+    - img [ref=e218]
+  - alert [ref=e221]
