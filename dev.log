@@ -12,3 +12,16 @@
  GET /images/hero-poster.jpg 404 in 112ms (next.js: 16ms, application-code: 96ms)
  GET / 200 in 331ms (next.js: 20ms, application-code: 310ms)
  GET /images/hero-poster.jpg 404 in 84ms (next.js: 7ms, application-code: 77ms)
+ GET /pricing 200 in 317ms (next.js: 222ms, application-code: 95ms)
+○ Compiling /classes ...
+ GET /classes 200 in 3.6s (next.js: 3.4s, application-code: 165ms)
+ GET /classes 200 in 138ms (next.js: 9ms, application-code: 129ms)
+ GET /classes 200 in 95ms (next.js: 9ms, application-code: 86ms)
+ GET /classes 200 in 44ms (next.js: 2ms, application-code: 42ms)
+ GET /pricing 200 in 19ms (next.js: 2ms, application-code: 17ms)
+ GET /about 200 in 328ms (next.js: 307ms, application-code: 20ms)
+✓ Compiled in 403ms
+ GET / 200 in 283ms (next.js: 48ms, application-code: 235ms)
+ GET / 200 in 60ms (next.js: 1484µs, application-code: 59ms)
+ GET / 200 in 26ms (next.js: 1224µs, application-code: 25ms)
+ GET / 200 in 40ms (next.js: 6ms, application-code: 34ms)

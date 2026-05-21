@@ -125,9 +125,9 @@ export default async function Home() {
               {trainers.map((trainer, idx) => (
                 <AnimationWrapper key={trainer.id} animationType="slide-up" index={idx}>
                   <div className="text-center">
-                    <div className="mx-auto h-40 w-32 rounded-md overflow-hidden bg-surface">
+                    <div className="mx-auto h-48 w-full rounded-md overflow-hidden bg-surface">
                       <img
-                        src={`/images/placeholders/trainer-${(idx % 4) + 1}.svg`}
+                        src={trainer.photo_url}
                         alt={trainer.name}
                         className="h-full w-full object-cover"
                       />
