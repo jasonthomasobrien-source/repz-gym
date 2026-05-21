@@ -33,7 +33,7 @@ body {
 
   /* Teal underline for section titles */
   .section-title-underline {
-    @apply border-b-3 border-brand-alt w-full sm:w-3/5 my-4;
+    @apply border-b-2 border-brand-alt w-full sm:w-3/5 my-4;
   }
 
   /* Focus ring in brand color */

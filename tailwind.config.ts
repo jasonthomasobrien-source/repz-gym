@@ -24,8 +24,8 @@ export default {
         paper: "rgb(var(--paper) / <alpha-value>)",
       },
       fontFamily: {
-        display: "var(--font-display)",
-        sans: "var(--font-sans)",
+        display: ["var(--font-display)"],
+        sans: ["var(--font-sans)"],
       },
       letterSpacing: {
         display: "0.02em",
