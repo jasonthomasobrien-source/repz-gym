@@ -51,3 +51,58 @@ body {
   outline: 2px solid rgb(var(--brand-alt));
   outline-offset: 2px;
 }
+
+/* ====================================
+   ANIMATIONS & SCROLL EFFECTS
+   ==================================== */
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[data-bg="dark"] { background-color: rgb(var(--bg) / 1); }
+[data-bg="light"] { background-color: rgb(var(--surface) / 1); }
+
+[data-animate="fade-in"] {
+  opacity: 0;
+  animation: fade-in 400ms ease-out forwards;
+}
+
+[data-animate="slide-up"] {
+  opacity: 0;
+  animation: slide-up 400ms ease-out forwards;
+}
+
+[data-index="0"] { animation-delay: 0ms; }
+[data-index="1"] { animation-delay: 80ms; }
+[data-index="2"] { animation-delay: 160ms; }
+[data-index="3"] { animation-delay: 240ms; }
+[data-index="4"] { animation-delay: 320ms; }
+[data-index="5"] { animation-delay: 400ms; }
+
+[data-parallax] { will-change: transform; }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-parallax] {
+    transform: none !important;
+    will-change: auto !important;
+  }
+
+  [data-animate="fade-in"],
+  [data-animate="slide-up"] {
+    animation: fade-in 400ms ease-out forwards !important;
+    animation-delay: 0 !important;
+  }
+}
