@@ -54,11 +54,11 @@ export const TRAINERS: Trainer[] = [
 export const CLASSES: Class[] = [
   {
     id: "class-1",
-    slug: "mad-fitnez",
-    name: "MAD FITNEZ",
+    slug: "madz-fitness",
+    name: "MADZ FITNESS",
     description: "High-intensity cardio and strength. Mixed modality. Always moving.",
     instructor_id: "trainer-1",
-    image_url: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&h=600&fit=crop",
+    image_url: "/classes/Madz Fitness.png",
     is_active: true,
   },
   {
@@ -67,7 +67,7 @@ export const CLASSES: Class[] = [
     name: "Taekwondo — Kids",
     description: "Martial arts for kids ages 6–12. Discipline, focus, and fun.",
     instructor_id: "trainer-2",
-    image_url: "https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=500&h=600&fit=crop",
+    image_url: "/classes/Thai Kids.png",
     is_active: true,
   },
   {
@@ -76,35 +76,8 @@ export const CLASSES: Class[] = [
     name: "Taekwondo — Adults",
     description: "Martial arts for adults. Conditioning and technique.",
     instructor_id: "trainer-2",
-    image_url: "https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=500&h=600&fit=crop",
+    image_url: "/classes/Adult Thai.png",
     is_active: true,
-  },
-  {
-    id: "class-4",
-    slug: "iron-club",
-    name: "The Iron Club",
-    description: "Barbell focus. Squat, bench, deadlift. Progressive strength.",
-    instructor_id: "trainer-3",
-    image_url: "/images/placeholders/class-iron-club.svg",
-    is_active: true,
-  },
-  {
-    id: "class-5",
-    slug: "functional-fit",
-    name: "Functional Fit",
-    description: "Real-world movement patterns. Strength and conditioning.",
-    instructor_id: "trainer-4",
-    image_url: "/images/placeholders/class-functional-fit.svg",
-    is_active: true,
-  },
-  {
-    id: "class-6",
-    slug: "open-floor",
-    name: "Open Floor",
-    description: "No class. Just you and the equipment.",
-    instructor_id: undefined,
-    image_url: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&h=600&fit=crop",
-    is_active: false,
   },
 ];
 
@@ -118,9 +91,6 @@ export const CLASS_SESSIONS: ClassSession[] = [
   { id: uuidv4(), class_id: "class-3", day_of_week: 1, start_time: "18:30", duration_min: 60 },
   { id: uuidv4(), class_id: "class-3", day_of_week: 3, start_time: "18:30", duration_min: 60 },
   { id: uuidv4(), class_id: "class-3", day_of_week: 5, start_time: "18:30", duration_min: 60 },
-  { id: uuidv4(), class_id: "class-4", day_of_week: 2, start_time: "18:00", duration_min: 75 },
-  { id: uuidv4(), class_id: "class-4", day_of_week: 4, start_time: "18:00", duration_min: 75 },
-  { id: uuidv4(), class_id: "class-5", day_of_week: 6, start_time: "09:00", duration_min: 60 },
 ];
 
 // Members and subscriptions
