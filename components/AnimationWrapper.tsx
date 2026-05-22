@@ -4,7 +4,7 @@ import { useEffect, useRef, ReactNode } from 'react';
 
 interface AnimationWrapperProps {
   children: ReactNode;
-  animationType: 'fade-in' | 'slide-up';
+  animationType: 'fade-in' | 'slide-up' | 'slide-left' | 'slide-right' | 'zoom-in';
   threshold?: number;
   className?: string;
   index?: number;

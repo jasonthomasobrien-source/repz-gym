@@ -24,8 +24,8 @@ export function Header() {
         {/* Logo */}
         <Link href="/" className="shrink-0 flex items-center">
           <h1 className="font-display text-2xl font-bold uppercase tracking-tight whitespace-nowrap">
-            <span className="text-brand">REPZ</span>
-            <span className="text-brand-alt">GYM</span>
+            <span style={{ color: 'rgb(242, 101, 34)' }}>REPZ</span>
+            <span style={{ color: 'rgb(32, 178, 170)' }}>GYM</span>
           </h1>
         </Link>
 
@@ -50,7 +50,7 @@ export function Header() {
 
         {/* CTA Button */}
         <Link
-          href="/signup"
+          href="/join"
           className="bg-brand px-4 py-2 text-sm font-display uppercase text-white transition hover:bg-brand-hot rounded-sm"
         >
           JOIN

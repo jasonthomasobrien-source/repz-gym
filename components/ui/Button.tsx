@@ -35,7 +35,7 @@ export function Button({
   type = "button",
   disabled = false,
 }: ButtonProps) {
-  const baseStyles = "inline-flex items-center justify-center rounded-sm font-display font-bold uppercase tracking-wide transition-colors duration-150";
+  const baseStyles = "inline-flex items-center justify-center rounded-sm font-display font-bold uppercase tracking-wide transition-all duration-150 hover:scale-[1.02] active:scale-[0.98]";
   const variantStyle = variantStyles[variant];
   const sizeStyle = sizeStyles[size];
   const combinedClassName = `${baseStyles} ${variantStyle} ${sizeStyle} ${className}`;

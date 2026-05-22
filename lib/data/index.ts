@@ -12,6 +12,7 @@ import {
   generateCheckIns,
   CONTACT_MESSAGES,
 } from "@/lib/mock/data";
+import { nameToSlug } from "@/lib/utils/slug";
 
 // Cache for generated data
 let cachedPayments: any[] | null = null;
@@ -19,6 +20,11 @@ let cachedCheckIns: any[] | null = null;
 
 export async function getTrainers() {
   return TRAINERS;
+}
+
+export async function getTrainerBySlug(slug: string) {
+  const trainers = await getTrainers();
+  return trainers.find((t) => nameToSlug(t.name) === slug) ?? null;
 }
 
 export async function getClasses() {

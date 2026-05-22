@@ -20,7 +20,7 @@ export function SectionTitle({ eyebrow, title, subtitle, align = "center" }: Sec
       {/* Teal underline accent */}
       <div className="section-title-underline" />
       {subtitle && (
-        <p className="mt-4 text-lg text-ink-muted max-w-2xl">
+        <p className="mt-4 text-lg text-ink-muted max-w-2xl mx-auto">
           {subtitle}
         </p>
       )}

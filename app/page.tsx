@@ -1,8 +1,11 @@
-import { HeroVideo } from '@/components/public/HeroVideo';
+import Link from 'next/link';
+import { HeroCarousel } from '@/components/public/HeroCarousel';
 import { Button } from "@/components/ui/Button";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { getClasses, getTrainers } from "@/lib/data";
 import { AnimationWrapper } from "@/components/AnimationWrapper";
+import { ClassCard } from "@/components/public/ClassCard";
+import { nameToSlug } from "@/lib/utils/slug";
 
 export default async function Home() {
   const classes = await getClasses();
@@ -11,7 +14,7 @@ export default async function Home() {
   return (
     <div className="bg-bg">
       {/* Hero */}
-      <HeroVideo />
+      <HeroCarousel />
 
       <div className="space-y-24">
         {/* Why Choose Us */}
@@ -52,21 +55,11 @@ export default async function Home() {
             <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {classes.filter(c => c.is_active).map((cls, idx) => (
                 <AnimationWrapper key={cls.id} animationType="slide-up" index={idx}>
-                  <div className="group cursor-pointer">
-                    <div className="relative h-72 overflow-hidden rounded-md bg-surface">
-                      {cls.image_url && (
-                        <img
-                          src={cls.image_url}
-                          alt={cls.name}
-                          className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        />
-                      )}
-                    </div>
-                    <div className="mt-6">
-                      <h3 className="font-display text-lg font-bold uppercase text-ink">{cls.name}</h3>
-                      <p className="mt-2 text-sm text-ink-muted">{cls.description}</p>
-                    </div>
-                  </div>
+                  <ClassCard
+                    cls={cls}
+                    trainer={trainers.find(t => t.id === cls.instructor_id)}
+                    variant="home"
+                  />
                 </AnimationWrapper>
               ))}
             </div>
@@ -121,17 +114,23 @@ export default async function Home() {
             <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
               {trainers.map((trainer, idx) => (
                 <AnimationWrapper key={trainer.id} animationType="slide-up" index={idx}>
-                  <div className="text-center">
-                    <div className="mx-auto h-48 w-full rounded-md overflow-hidden bg-surface">
+                  <Link
+                    href={`/trainers/${nameToSlug(trainer.name)}`}
+                    className="group block text-center"
+                  >
+                    <div className="mx-auto h-48 w-full rounded-md overflow-hidden bg-surface ring-0 group-hover:ring-2 group-hover:ring-brand-alt transition-all duration-200">
                       <img
                         src={trainer.photo_url}
                         alt={trainer.name}
-                        className="h-full w-full object-cover"
+                        className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
-                    <h3 className="mt-4 font-display font-bold uppercase text-ink">{trainer.name}</h3>
+                    <h3 className="mt-4 font-display font-bold uppercase text-ink group-hover:text-brand-alt transition-colors">{trainer.name}</h3>
                     <p className="text-xs text-brand-alt">{trainer.tagline}</p>
-                  </div>
+                    <p className="mt-2 text-xs font-display uppercase tracking-eyebrow text-ink-subtle group-hover:text-brand-alt transition-colors">
+                      VIEW PROFILE →
+                    </p>
+                  </Link>
                 </AnimationWrapper>
               ))}
             </div>
