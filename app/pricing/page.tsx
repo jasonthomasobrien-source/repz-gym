@@ -68,7 +68,7 @@ export default function PricingPage() {
                     <span>Member directory</span>
                   </li>
                 </ul>
-                <Button size="lg" variant="primary" className="mt-8 w-full">
+                <Button size="lg" variant="primary" className="mt-8 w-full" href="/join">
                   JOIN NOW
                 </Button>
               </div>
@@ -105,7 +105,7 @@ export default function PricingPage() {
                     <span className="text-ink-subtle">Member directory</span>
                   </li>
                 </ul>
-                <Button size="lg" variant="secondary" className="mt-8 w-full">
+                <Button size="lg" variant="secondary" className="mt-8 w-full" href="/join">
                   BUY A DAY PASS
                 </Button>
               </div>
@@ -175,21 +175,15 @@ export default function PricingPage() {
           </p>
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
             <div>
-              <p className="text-3xl font-bold text-brand">
-                <CountUpStat value={107} suffix="+" />
-              </p>
+              <CountUpStat value={107} suffix="+" />
               <p className="text-xs text-ink-muted uppercase">Google reviews</p>
             </div>
             <div>
-              <p className="text-3xl font-bold text-brand">
-                <CountUpStat value={4.8} suffix="★" />
-              </p>
+              <CountUpStat value={4.8} suffix="★" />
               <p className="text-xs text-ink-muted uppercase">Average rating</p>
             </div>
             <div>
-              <p className="text-3xl font-bold text-brand">
-                <CountUpStat value={28} suffix=" yrs" />
-              </p>
+              <CountUpStat value={28} suffix=" yrs" />
               <p className="text-xs text-ink-muted uppercase">In business</p>
             </div>
           </div>
@@ -207,10 +201,10 @@ export default function PricingPage() {
           </p>
           <AnimationWrapper animationType="slide-up">
             <div className="flex flex-col gap-4 md:flex-row justify-center">
-              <Button size="lg" variant="primary">
+              <Button size="lg" variant="primary" href="/join">
                 JOIN NOW
               </Button>
-              <Button size="lg" variant="secondary">
+              <Button size="lg" variant="secondary" href="/contact">
                 CONTACT US
               </Button>
             </div>

@@ -1,0 +1,183 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "REPZGYM" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - heading "REPZGYM" [level=1] [ref=e5]
+      - navigation [ref=e6]:
+        - link "Home" [ref=e7] [cursor=pointer]:
+          - /url: /
+        - link "Classes" [ref=e8] [cursor=pointer]:
+          - /url: /classes
+        - link "Pricing" [ref=e9] [cursor=pointer]:
+          - /url: /pricing
+        - link "About" [ref=e10] [cursor=pointer]:
+          - /url: /about
+        - link "Contact" [ref=e11] [cursor=pointer]:
+          - /url: /contact
+      - link "JOIN" [ref=e12] [cursor=pointer]:
+        - /url: /join
+  - generic [ref=e13]:
+    - generic [ref=e14]:
+      - img "Classes" [ref=e15]
+      - generic [ref=e18]:
+        - generic [ref=e19]: GROUP TRAINING
+        - heading "PUSH HARDER TOGETHER" [level=1] [ref=e20]
+        - paragraph [ref=e21]: From high-intensity bootcamp to martial arts. Find your crew.
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - generic [ref=e25]: OUR CLASSES
+        - heading "WHAT WE OFFER" [level=2] [ref=e26]
+      - generic [ref=e28]:
+        - generic [ref=e30] [cursor=pointer]:
+          - img "MADZ FITNESS" [ref=e32]
+          - generic [ref=e33]:
+            - heading "MADZ FITNESS" [level=3] [ref=e34]
+            - paragraph [ref=e35]: High-intensity cardio and strength. Mixed modality. Always moving.
+            - generic [ref=e36]:
+              - img "Ethan Johnson" [ref=e37]
+              - generic [ref=e38]: Ethan Johnson
+        - generic [ref=e40] [cursor=pointer]:
+          - img "Taekwondo — Kids" [ref=e42]
+          - generic [ref=e43]:
+            - heading "Taekwondo — Kids" [level=3] [ref=e44]
+            - paragraph [ref=e45]: Martial arts for kids ages 6–12. Discipline, focus, and fun.
+            - generic [ref=e46]:
+              - img "Marcus Reed" [ref=e47]
+              - generic [ref=e48]: Marcus Reed
+        - generic [ref=e50] [cursor=pointer]:
+          - img "Taekwondo — Adults" [ref=e52]
+          - generic [ref=e53]:
+            - heading "Taekwondo — Adults" [level=3] [ref=e54]
+            - paragraph [ref=e55]: Martial arts for adults. Conditioning and technique.
+            - generic [ref=e56]:
+              - img "Marcus Reed" [ref=e57]
+              - generic [ref=e58]: Marcus Reed
+    - generic [ref=e60]:
+      - generic [ref=e61]:
+        - generic [ref=e62]: SCHEDULE
+        - heading "WHEN WE MEET" [level=2] [ref=e63]
+        - paragraph [ref=e65]: All times displayed in America/Detroit timezone.
+      - generic [ref=e68]:
+        - table [ref=e70]:
+          - rowgroup [ref=e71]:
+            - row "DAY TIME CLASS TRAINER" [ref=e72]:
+              - columnheader "DAY" [ref=e73]
+              - columnheader "TIME" [ref=e74]
+              - columnheader "CLASS" [ref=e75]
+              - columnheader "TRAINER" [ref=e76]
+          - rowgroup [ref=e77]:
+            - row "1 17:30 (45 min) Taekwondo — Kids Marcus Reed" [ref=e78]:
+              - cell "1" [ref=e79]
+              - cell "17:30 (45 min)" [ref=e80]
+              - cell "Taekwondo — Kids" [ref=e81]
+              - cell "Marcus Reed" [ref=e82]
+            - row "1 18:30 (60 min) Taekwondo — Adults Marcus Reed" [ref=e83]:
+              - cell "1" [ref=e84]
+              - cell "18:30 (60 min)" [ref=e85]
+              - cell "Taekwondo — Adults" [ref=e86]
+              - cell "Marcus Reed" [ref=e87]
+            - row "2 09:30 (60 min) MADZ FITNESS Ethan Johnson" [ref=e88]:
+              - cell "2" [ref=e89]
+              - cell "09:30 (60 min)" [ref=e90]
+              - cell "MADZ FITNESS" [ref=e91]
+              - cell "Ethan Johnson" [ref=e92]
+            - row "3 17:30 (45 min) Taekwondo — Kids Marcus Reed" [ref=e93]:
+              - cell "3" [ref=e94]
+              - cell "17:30 (45 min)" [ref=e95]
+              - cell "Taekwondo — Kids" [ref=e96]
+              - cell "Marcus Reed" [ref=e97]
+            - row "3 18:30 (60 min) Taekwondo — Adults Marcus Reed" [ref=e98]:
+              - cell "3" [ref=e99]
+              - cell "18:30 (60 min)" [ref=e100]
+              - cell "Taekwondo — Adults" [ref=e101]
+              - cell "Marcus Reed" [ref=e102]
+            - row "4 09:30 (60 min) MADZ FITNESS Ethan Johnson" [ref=e103]:
+              - cell "4" [ref=e104]
+              - cell "09:30 (60 min)" [ref=e105]
+              - cell "MADZ FITNESS" [ref=e106]
+              - cell "Ethan Johnson" [ref=e107]
+            - row "5 17:30 (45 min) Taekwondo — Kids Marcus Reed" [ref=e108]:
+              - cell "5" [ref=e109]
+              - cell "17:30 (45 min)" [ref=e110]
+              - cell "Taekwondo — Kids" [ref=e111]
+              - cell "Marcus Reed" [ref=e112]
+            - row "5 18:30 (60 min) Taekwondo — Adults Marcus Reed" [ref=e113]:
+              - cell "5" [ref=e114]
+              - cell "18:30 (60 min)" [ref=e115]
+              - cell "Taekwondo — Adults" [ref=e116]
+              - cell "Marcus Reed" [ref=e117]
+        - paragraph [ref=e119]:
+          - generic [ref=e120]: "2 09:30:"
+          - text: Starting next week!
+    - generic [ref=e122]:
+      - generic [ref=e123]:
+        - generic [ref=e124]: OUR TEAM
+        - heading "MEET THE TRAINERS" [level=2] [ref=e125]
+      - generic [ref=e127]:
+        - generic [ref=e129]:
+          - heading "Ethan Johnson" [level=3] [ref=e131]
+          - paragraph [ref=e132]: Strength & conditioning coach
+          - paragraph [ref=e133]: Ethan specializes in powerlifting and functional training. He's dedicated to helping you reach your goals.
+        - generic [ref=e135]:
+          - heading "Marcus Reed" [level=3] [ref=e137]
+          - paragraph [ref=e138]: High-intensity training specialist
+          - paragraph [ref=e139]: Marcus brings energy and intensity to every session. His classes blend cardio and strength for maximum results.
+        - generic [ref=e141]:
+          - heading "Sofia Ramirez" [level=3] [ref=e143]
+          - paragraph [ref=e144]: Functional fitness coach
+          - paragraph [ref=e145]: Sofia specializes in movement patterns and conditioning. She focuses on real-world strength and performance.
+        - generic [ref=e147]:
+          - heading "Tyler Brooks" [level=3] [ref=e149]
+          - paragraph [ref=e150]: Martial arts & conditioning trainer
+          - paragraph [ref=e151]: Tyler brings discipline and technique to every class. He's passionate about helping members reach their potential.
+    - generic [ref=e154]:
+      - heading "TRY YOUR FIRST CLASS FREE" [level=2] [ref=e155]
+      - paragraph [ref=e156]: No sign-up, no credit card. Just show up and lift with us.
+  - contentinfo [ref=e157]:
+    - generic [ref=e158]:
+      - generic [ref=e159]:
+        - generic [ref=e160]:
+          - generic [ref=e161]: Repz Gym
+          - paragraph [ref=e162]: No glamour. Just a great workout.
+          - paragraph [ref=e163]: Plainwell, Michigan • Since 1998
+        - generic [ref=e164]:
+          - heading "Quick Links" [level=4] [ref=e165]
+          - list [ref=e166]:
+            - listitem [ref=e167]:
+              - link "Home" [ref=e168] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e169]:
+              - link "Classes" [ref=e170] [cursor=pointer]:
+                - /url: /classes
+            - listitem [ref=e171]:
+              - link "Pricing" [ref=e172] [cursor=pointer]:
+                - /url: /pricing
+            - listitem [ref=e173]:
+              - link "About" [ref=e174] [cursor=pointer]:
+                - /url: /about
+        - generic [ref=e175]:
+          - heading "Contact" [level=4] [ref=e176]
+          - list [ref=e177]:
+            - listitem [ref=e178]: (269) 685-1493
+            - listitem [ref=e179]: 585 10th St A
+            - listitem [ref=e180]: Plainwell, MI 49080
+            - listitem [ref=e181]:
+              - link "jerry@repz-gym.com" [ref=e182] [cursor=pointer]:
+                - /url: mailto:jerry@repz-gym.com
+        - generic [ref=e183]:
+          - heading "Hours" [level=4] [ref=e184]
+          - list [ref=e185]:
+            - listitem [ref=e186]: "Mon–Fri: 6am–8:30pm"
+            - listitem [ref=e187]: "Sat: 7am–7pm"
+            - listitem [ref=e188]: "Sun: 8am–6pm"
+            - listitem [ref=e189]: 24/7 key-fob access for members
+      - generic [ref=e190]:
+        - paragraph [ref=e191]: © 2024 Repz Gym. All rights reserved.
+        - generic [ref=e192]:
+          - link "Facebook" [ref=e193] [cursor=pointer]:
+            - /url: https://facebook.com/repzgym
+          - link "Yelp" [ref=e194] [cursor=pointer]:
+            - /url: https://yelp.com
+  - button "Open Next.js Dev Tools" [ref=e200] [cursor=pointer]:
+    - img [ref=e201]

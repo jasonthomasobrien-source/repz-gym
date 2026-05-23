@@ -1,0 +1,171 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "REPZGYM" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - heading "REPZGYM" [level=1] [ref=e5]
+      - navigation [ref=e6]:
+        - link "Home" [ref=e7] [cursor=pointer]:
+          - /url: /
+        - link "Classes" [ref=e8] [cursor=pointer]:
+          - /url: /classes
+        - link "Pricing" [ref=e9] [cursor=pointer]:
+          - /url: /pricing
+        - link "About" [ref=e10] [cursor=pointer]:
+          - /url: /about
+        - link "Contact" [ref=e11] [cursor=pointer]:
+          - /url: /contact
+      - link "JOIN" [ref=e12] [cursor=pointer]:
+        - /url: /join
+  - generic [ref=e13]:
+    - generic [ref=e14]:
+      - img "Pricing" [ref=e15]
+      - generic [ref=e18]:
+        - generic [ref=e19]: MEMBERSHIP
+        - heading "SIMPLE PRICING. NO TRICKS." [level=1] [ref=e20]
+        - paragraph [ref=e21]: Pay for what you use. Cancel anytime. No contracts, no hidden fees.
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - generic [ref=e26]:
+          - generic [ref=e27]: MOST POPULAR
+          - heading "$30" [level=3] [ref=e28]
+          - paragraph [ref=e29]: /MONTH
+          - list [ref=e30]:
+            - listitem [ref=e31]:
+              - generic [ref=e32]: ✓
+              - generic [ref=e33]: Full gym floor
+            - listitem [ref=e34]:
+              - generic [ref=e35]: ✓
+              - generic [ref=e36]: All group classes
+            - listitem [ref=e37]:
+              - generic [ref=e38]: ✓
+              - generic [ref=e39]: 24/7 key-fob access
+            - listitem [ref=e40]:
+              - generic [ref=e41]: ✓
+              - generic [ref=e42]: Cancel anytime
+            - listitem [ref=e43]:
+              - generic [ref=e44]: ✓
+              - generic [ref=e45]: Pause up to 3 months
+            - listitem [ref=e46]:
+              - generic [ref=e47]: ✓
+              - generic [ref=e48]: Member directory
+          - button "JOIN NOW" [ref=e49]
+        - generic [ref=e51]:
+          - heading "$10" [level=3] [ref=e52]
+          - paragraph [ref=e53]: /DAY
+          - list [ref=e54]:
+            - listitem [ref=e55]:
+              - generic [ref=e56]: ✓
+              - generic [ref=e57]: Full gym floor
+            - listitem [ref=e58]:
+              - generic [ref=e59]: ✓
+              - generic [ref=e60]: Drop in on classes
+            - listitem [ref=e61]:
+              - generic [ref=e62]: ✓
+              - generic [ref=e63]: No commitment
+            - listitem [ref=e64]:
+              - generic [ref=e65]: ✓
+              - generic [ref=e66]: Apply toward membership
+            - listitem [ref=e67]:
+              - generic [ref=e68]: ✓
+              - generic [ref=e69]: Valid for 24 hours
+            - listitem [ref=e70]:
+              - generic [ref=e71]: —
+              - generic [ref=e72]: Member directory
+          - button "BUY A DAY PASS" [ref=e73]
+      - paragraph [ref=e74]: 🏷️ Bring a friend and both get your first month 50% off.
+    - generic [ref=e76]:
+      - generic [ref=e77]:
+        - generic [ref=e78]: QUESTIONS?
+        - heading "FREQUENTLY ASKED" [level=2] [ref=e79]
+      - generic [ref=e81]:
+        - group [ref=e83] [cursor=pointer]:
+          - generic "Can I pause my membership? ▼" [ref=e84]:
+            - generic [ref=e85]: Can I pause my membership?
+            - generic [ref=e86]: ▼
+        - group [ref=e88] [cursor=pointer]:
+          - generic "What if I want to cancel? ▼" [ref=e89]:
+            - generic [ref=e90]: What if I want to cancel?
+            - generic [ref=e91]: ▼
+        - group [ref=e93] [cursor=pointer]:
+          - generic "Do you offer student discounts? ▼" [ref=e94]:
+            - generic [ref=e95]: Do you offer student discounts?
+            - generic [ref=e96]: ▼
+        - group [ref=e98] [cursor=pointer]:
+          - generic "Is there a contract? ▼" [ref=e99]:
+            - generic [ref=e100]: Is there a contract?
+            - generic [ref=e101]: ▼
+        - group [ref=e103] [cursor=pointer]:
+          - generic "Do day passes apply toward membership? ▼" [ref=e104]:
+            - generic [ref=e105]: Do day passes apply toward membership?
+            - generic [ref=e106]: ▼
+        - group [ref=e108] [cursor=pointer]:
+          - generic "What are the hours? ▼" [ref=e109]:
+            - generic [ref=e110]: What are the hours?
+            - generic [ref=e111]: ▼
+    - generic [ref=e113]:
+      - paragraph [ref=e114]: TRUSTED BY THE COMMUNITY
+      - generic [ref=e115]:
+        - generic [ref=e116]:
+          - generic [ref=e117]: 0+
+          - paragraph [ref=e118]: Google reviews
+        - generic [ref=e119]:
+          - generic [ref=e120]: 0★
+          - paragraph [ref=e121]: Average rating
+        - generic [ref=e122]:
+          - generic [ref=e123]: 0 yrs
+          - paragraph [ref=e124]: In business
+    - generic [ref=e126]:
+      - heading "READY TO TRAIN?" [level=2] [ref=e127]
+      - paragraph [ref=e128]: First visit is always free. No credit card, no commitment. Just come in and lift.
+      - generic [ref=e130]:
+        - button "JOIN NOW" [ref=e131]
+        - button "CONTACT US" [ref=e132]
+  - contentinfo [ref=e133]:
+    - generic [ref=e134]:
+      - generic [ref=e135]:
+        - generic [ref=e136]:
+          - generic [ref=e137]: Repz Gym
+          - paragraph [ref=e138]: No glamour. Just a great workout.
+          - paragraph [ref=e139]: Plainwell, Michigan • Since 1998
+        - generic [ref=e140]:
+          - heading "Quick Links" [level=4] [ref=e141]
+          - list [ref=e142]:
+            - listitem [ref=e143]:
+              - link "Home" [ref=e144] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e145]:
+              - link "Classes" [ref=e146] [cursor=pointer]:
+                - /url: /classes
+            - listitem [ref=e147]:
+              - link "Pricing" [ref=e148] [cursor=pointer]:
+                - /url: /pricing
+            - listitem [ref=e149]:
+              - link "About" [ref=e150] [cursor=pointer]:
+                - /url: /about
+        - generic [ref=e151]:
+          - heading "Contact" [level=4] [ref=e152]
+          - list [ref=e153]:
+            - listitem [ref=e154]: (269) 685-1493
+            - listitem [ref=e155]: 585 10th St A
+            - listitem [ref=e156]: Plainwell, MI 49080
+            - listitem [ref=e157]:
+              - link "jerry@repz-gym.com" [ref=e158] [cursor=pointer]:
+                - /url: mailto:jerry@repz-gym.com
+        - generic [ref=e159]:
+          - heading "Hours" [level=4] [ref=e160]
+          - list [ref=e161]:
+            - listitem [ref=e162]: "Mon–Fri: 6am–8:30pm"
+            - listitem [ref=e163]: "Sat: 7am–7pm"
+            - listitem [ref=e164]: "Sun: 8am–6pm"
+            - listitem [ref=e165]: 24/7 key-fob access for members
+      - generic [ref=e166]:
+        - paragraph [ref=e167]: © 2024 Repz Gym. All rights reserved.
+        - generic [ref=e168]:
+          - link "Facebook" [ref=e169] [cursor=pointer]:
+            - /url: https://facebook.com/repzgym
+          - link "Yelp" [ref=e170] [cursor=pointer]:
+            - /url: https://yelp.com
+  - button "Open Next.js Dev Tools" [ref=e176] [cursor=pointer]:
+    - img [ref=e177]
+  - alert [ref=e180]

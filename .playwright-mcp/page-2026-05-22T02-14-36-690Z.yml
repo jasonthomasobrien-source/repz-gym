@@ -1,0 +1,142 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "REPZGYM" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - heading "REPZGYM" [level=1] [ref=e5]
+      - navigation [ref=e6]:
+        - link "Home" [ref=e7] [cursor=pointer]:
+          - /url: /
+        - link "Classes" [ref=e8] [cursor=pointer]:
+          - /url: /classes
+        - link "Pricing" [ref=e9] [cursor=pointer]:
+          - /url: /pricing
+        - link "About" [ref=e10] [cursor=pointer]:
+          - /url: /about
+        - link "Contact" [ref=e11] [cursor=pointer]:
+          - /url: /contact
+      - link "JOIN" [ref=e12] [cursor=pointer]:
+        - /url: /join
+  - generic [ref=e13]:
+    - generic [ref=e16]:
+      - generic [ref=e17]: GET IN TOUCH
+      - heading "LET'S TALK" [level=1] [ref=e18]
+      - paragraph [ref=e19]: Questions? Ready to join? Have feedback? We're here to listen.
+    - generic [ref=e22]:
+      - generic [ref=e23]:
+        - generic [ref=e24]:
+          - generic [ref=e25]: CONTACT
+          - heading "SEND US A MESSAGE" [level=2] [ref=e26]
+          - paragraph [ref=e28]: We'll get back to you within 24 hours.
+        - generic [ref=e30]:
+          - generic [ref=e31]:
+            - generic [ref=e32]: Name
+            - textbox "Your name" [ref=e33]
+          - generic [ref=e34]:
+            - generic [ref=e35]:
+              - generic [ref=e36]: Email
+              - textbox "your@email.com" [ref=e37]
+            - generic [ref=e38]:
+              - generic [ref=e39]: Phone (optional)
+              - textbox "(269) 555-0000" [ref=e40]
+          - generic [ref=e41]:
+            - generic [ref=e42]: What's this about?
+            - combobox [ref=e43]:
+              - option "Pricing & membership" [selected]
+              - option "Classes & schedule"
+              - option "Personal training"
+              - option "Feedback"
+              - option "Other"
+          - generic [ref=e44]:
+            - generic [ref=e45]: Message
+            - textbox "Tell us what's on your mind..." [ref=e46]
+          - button "SEND MESSAGE" [ref=e47]
+      - generic [ref=e48]:
+        - generic [ref=e49]:
+          - paragraph [ref=e50]: DIRECT CONTACT
+          - generic [ref=e53]:
+            - generic [ref=e54]:
+              - paragraph [ref=e55]: Phone
+              - paragraph [ref=e56]: (269) 685-1493
+            - generic [ref=e57]:
+              - paragraph [ref=e58]: Address
+              - paragraph [ref=e59]: 585 10th St A
+              - paragraph [ref=e60]: Plainwell, MI 49080
+        - generic [ref=e61]:
+          - paragraph [ref=e62]: HOURS
+          - generic [ref=e65]:
+            - paragraph [ref=e66]: Monday–Friday:Open – 8:30 PM
+            - paragraph [ref=e67]: Saturday:Open – 8:30 PM
+            - paragraph [ref=e68]: Sunday:Open – 8:30 PM
+            - paragraph [ref=e69]: "Members: 24/7 key-fob access anytime"
+        - generic [ref=e70]:
+          - paragraph [ref=e71]: SOCIALS
+          - generic [ref=e74]:
+            - link "Facebook" [ref=e75] [cursor=pointer]:
+              - /url: "#"
+            - link "Yelp" [ref=e76] [cursor=pointer]:
+              - /url: "#"
+    - generic [ref=e78]:
+      - heading "QUICK ANSWERS" [level=2] [ref=e79]
+      - generic [ref=e80]:
+        - generic [ref=e82]:
+          - heading "First Time?" [level=4] [ref=e83]
+          - paragraph [ref=e84]: First visit is completely free. No credit card, no commitment. Just come in, say hi, and we'll show you around.
+        - generic [ref=e86]:
+          - heading "When Can I Start?" [level=4] [ref=e87]
+          - paragraph [ref=e88]: Now! Sign up anytime. Your membership starts immediately. Come in that same day if you want.
+        - generic [ref=e90]:
+          - heading "Can I Pause?" [level=4] [ref=e91]
+          - paragraph [ref=e92]: Yes. Pause up to 3 months per year at no charge. Life happens — we've got your back.
+    - generic [ref=e94]:
+      - heading "NO QUESTION TOO SMALL" [level=2] [ref=e95]
+      - paragraph [ref=e96]: We're real people. We answer real questions. Get in touch.
+      - button "SEND A MESSAGE" [ref=e98]
+  - contentinfo [ref=e99]:
+    - generic [ref=e100]:
+      - generic [ref=e101]:
+        - generic [ref=e102]:
+          - generic [ref=e103]: Repz Gym
+          - paragraph [ref=e104]: No glamour. Just a great workout.
+          - paragraph [ref=e105]: Plainwell, Michigan • Since 1998
+        - generic [ref=e106]:
+          - heading "Quick Links" [level=4] [ref=e107]
+          - list [ref=e108]:
+            - listitem [ref=e109]:
+              - link "Home" [ref=e110] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e111]:
+              - link "Classes" [ref=e112] [cursor=pointer]:
+                - /url: /classes
+            - listitem [ref=e113]:
+              - link "Pricing" [ref=e114] [cursor=pointer]:
+                - /url: /pricing
+            - listitem [ref=e115]:
+              - link "About" [ref=e116] [cursor=pointer]:
+                - /url: /about
+        - generic [ref=e117]:
+          - heading "Contact" [level=4] [ref=e118]
+          - list [ref=e119]:
+            - listitem [ref=e120]: (269) 685-1493
+            - listitem [ref=e121]: 585 10th St A
+            - listitem [ref=e122]: Plainwell, MI 49080
+            - listitem [ref=e123]:
+              - link "jerry@repz-gym.com" [ref=e124] [cursor=pointer]:
+                - /url: mailto:jerry@repz-gym.com
+        - generic [ref=e125]:
+          - heading "Hours" [level=4] [ref=e126]
+          - list [ref=e127]:
+            - listitem [ref=e128]: "Mon–Fri: 6am–8:30pm"
+            - listitem [ref=e129]: "Sat: 7am–7pm"
+            - listitem [ref=e130]: "Sun: 8am–6pm"
+            - listitem [ref=e131]: 24/7 key-fob access for members
+      - generic [ref=e132]:
+        - paragraph [ref=e133]: © 2024 Repz Gym. All rights reserved.
+        - generic [ref=e134]:
+          - link "Facebook" [ref=e135] [cursor=pointer]:
+            - /url: https://facebook.com/repzgym
+          - link "Yelp" [ref=e136] [cursor=pointer]:
+            - /url: https://yelp.com
+  - button "Open Next.js Dev Tools" [ref=e142] [cursor=pointer]:
+    - img [ref=e143]
+  - alert [ref=e146]

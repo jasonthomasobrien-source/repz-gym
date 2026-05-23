@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { generateBookingRef, getVisitorEmailTemplate, getOwnerEmailTemplate } from '@/lib/schedule';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 interface ScheduleRequest {
   firstName: string;
@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
     const bookingRef = generateBookingRef();
 
     // Send visitor confirmation email
-    if (process.env.RESEND_API_KEY) {
+    if (resend) {
       const visitorTemplate = getVisitorEmailTemplate(firstName, plan, day, time);
       await resend.emails.send({
         from: 'Repz Gym <onboarding@resend.dev>',

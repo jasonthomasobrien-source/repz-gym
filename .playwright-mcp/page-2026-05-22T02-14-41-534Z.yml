@@ -1,0 +1,95 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "REPZGYM" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - heading "REPZGYM" [level=1] [ref=e5]
+      - navigation [ref=e6]:
+        - link "Home" [ref=e7] [cursor=pointer]:
+          - /url: /
+        - link "Classes" [ref=e8] [cursor=pointer]:
+          - /url: /classes
+        - link "Pricing" [ref=e9] [cursor=pointer]:
+          - /url: /pricing
+        - link "About" [ref=e10] [cursor=pointer]:
+          - /url: /about
+        - link "Contact" [ref=e11] [cursor=pointer]:
+          - /url: /contact
+      - link "JOIN" [ref=e12] [cursor=pointer]:
+        - /url: /join
+  - generic [ref=e13]:
+    - generic [ref=e15]:
+      - generic [ref=e17]:
+        - generic [ref=e18]: OUR TEAM
+        - heading "Ethan Johnson" [level=1] [ref=e19]
+        - paragraph [ref=e20]: Strength & conditioning coach
+        - paragraph [ref=e21]: Ethan specializes in powerlifting and functional training. He's dedicated to helping you reach your goals.
+      - img "Ethan Johnson" [ref=e24]
+    - generic [ref=e26]:
+      - generic [ref=e28]:
+        - generic [ref=e29]: WORK WITH US
+        - heading "START WITH ETHAN" [level=2] [ref=e30]
+        - paragraph [ref=e32]: Fill out the form below and we'll be in touch about training sessions and programs tailored to your goals.
+      - generic [ref=e35]:
+        - generic [ref=e36]:
+          - generic [ref=e37]: Name
+          - textbox "Your name" [ref=e38]
+        - generic [ref=e39]:
+          - generic [ref=e40]: Email
+          - textbox "your@email.com" [ref=e41]
+        - generic [ref=e42]:
+          - generic [ref=e43]: Phone (Optional)
+          - textbox "(269) 555-1234" [ref=e44]
+        - generic [ref=e45]:
+          - generic [ref=e46]: Message
+          - textbox "Tell us about your goals and what you'd like to discuss..." [ref=e47]
+        - button "Send Inquiry" [ref=e48]
+    - link "← BACK TO ALL TRAINERS" [ref=e51] [cursor=pointer]:
+      - /url: /#trainers
+  - contentinfo [ref=e52]:
+    - generic [ref=e53]:
+      - generic [ref=e54]:
+        - generic [ref=e55]:
+          - generic [ref=e56]: Repz Gym
+          - paragraph [ref=e57]: No glamour. Just a great workout.
+          - paragraph [ref=e58]: Plainwell, Michigan • Since 1998
+        - generic [ref=e59]:
+          - heading "Quick Links" [level=4] [ref=e60]
+          - list [ref=e61]:
+            - listitem [ref=e62]:
+              - link "Home" [ref=e63] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e64]:
+              - link "Classes" [ref=e65] [cursor=pointer]:
+                - /url: /classes
+            - listitem [ref=e66]:
+              - link "Pricing" [ref=e67] [cursor=pointer]:
+                - /url: /pricing
+            - listitem [ref=e68]:
+              - link "About" [ref=e69] [cursor=pointer]:
+                - /url: /about
+        - generic [ref=e70]:
+          - heading "Contact" [level=4] [ref=e71]
+          - list [ref=e72]:
+            - listitem [ref=e73]: (269) 685-1493
+            - listitem [ref=e74]: 585 10th St A
+            - listitem [ref=e75]: Plainwell, MI 49080
+            - listitem [ref=e76]:
+              - link "jerry@repz-gym.com" [ref=e77] [cursor=pointer]:
+                - /url: mailto:jerry@repz-gym.com
+        - generic [ref=e78]:
+          - heading "Hours" [level=4] [ref=e79]
+          - list [ref=e80]:
+            - listitem [ref=e81]: "Mon–Fri: 6am–8:30pm"
+            - listitem [ref=e82]: "Sat: 7am–7pm"
+            - listitem [ref=e83]: "Sun: 8am–6pm"
+            - listitem [ref=e84]: 24/7 key-fob access for members
+      - generic [ref=e85]:
+        - paragraph [ref=e86]: © 2024 Repz Gym. All rights reserved.
+        - generic [ref=e87]:
+          - link "Facebook" [ref=e88] [cursor=pointer]:
+            - /url: https://facebook.com/repzgym
+          - link "Yelp" [ref=e89] [cursor=pointer]:
+            - /url: https://yelp.com
+  - button "Open Next.js Dev Tools" [ref=e95] [cursor=pointer]:
+    - img [ref=e96]

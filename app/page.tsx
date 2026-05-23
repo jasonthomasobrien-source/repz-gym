@@ -84,7 +84,7 @@ export default async function Home() {
                     <li>✓ 24/7 key-fob access</li>
                     <li>✓ No contract</li>
                   </ul>
-                  <Button size="lg" variant="primary" className="mt-8 w-full">JOIN NOW</Button>
+                  <Button size="lg" variant="primary" className="mt-8 w-full" href="/join">JOIN NOW</Button>
                 </div>
               </AnimationWrapper>
               <AnimationWrapper animationType="slide-up" index={1}>
@@ -98,7 +98,7 @@ export default async function Home() {
                     <li>✓ No commitment</li>
                     <li>✓ Apply to membership</li>
                   </ul>
-                  <Button size="lg" variant="secondary" className="mt-8 w-full">BUY A DAY PASS</Button>
+                  <Button size="lg" variant="secondary" className="mt-8 w-full" href="/join">BUY A DAY PASS</Button>
                 </div>
               </AnimationWrapper>
             </div>

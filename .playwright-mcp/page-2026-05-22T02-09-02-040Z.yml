@@ -1,0 +1,103 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "REPZGYM" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - heading "REPZGYM" [level=1] [ref=e5]
+      - navigation [ref=e6]:
+        - link "Home" [ref=e7] [cursor=pointer]:
+          - /url: /
+        - link "Classes" [ref=e8] [cursor=pointer]:
+          - /url: /classes
+        - link "Pricing" [ref=e9] [cursor=pointer]:
+          - /url: /pricing
+        - link "About" [ref=e10] [cursor=pointer]:
+          - /url: /about
+        - link "Contact" [ref=e11] [cursor=pointer]:
+          - /url: /contact
+      - link "JOIN" [ref=e12] [cursor=pointer]:
+        - /url: /join
+  - generic [ref=e214]:
+    - generic [ref=e215]:
+      - paragraph [ref=e216]: MEMBERSHIP
+      - heading "Join Repz Gym" [level=1] [ref=e217]
+      - paragraph [ref=e218]: Complete your info online, then come in and get your key-fob access. No hassle, just results.
+    - generic [ref=e219]:
+      - generic [ref=e223]:
+        - generic [ref=e224]: 1. About You
+        - generic [ref=e225]: 2. Plan
+        - generic [ref=e226]: 3. Schedule
+        - generic [ref=e227]: 4. Confirm
+      - generic [ref=e295]: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+      - generic [ref=e271]:
+        - heading "Pick Your Time" [level=2] [ref=e272]
+        - generic [ref=e273]:
+          - paragraph [ref=e274]: Select a Day
+          - generic [ref=e275]:
+            - button "Monday" [ref=e276]
+            - button "Tuesday" [ref=e277]
+            - button "Wednesday" [ref=e278]
+            - button "Thursday" [ref=e279]
+            - button "Friday" [ref=e280]
+            - button "Saturday" [ref=e281]
+        - generic [ref=e285]:
+          - paragraph [ref=e286]: Available Times on Monday
+          - generic [ref=e287]:
+            - button "10:00 AM" [ref=e288]
+            - button "1:00 PM" [ref=e289]
+            - button "4:00 PM" [ref=e290]
+            - button "6:00 PM" [ref=e291]
+        - generic [ref=e292]:
+          - paragraph [ref=e293]: "Your appointment:"
+          - paragraph [ref=e294]: Monday at 10:00 AM
+        - generic [ref=e282]:
+          - button "BACK" [ref=e283]
+          - button "CONFIRM" [ref=e284]
+  - contentinfo [ref=e165]:
+    - generic [ref=e166]:
+      - generic [ref=e167]:
+        - generic [ref=e168]:
+          - generic [ref=e169]: Repz Gym
+          - paragraph [ref=e170]: No glamour. Just a great workout.
+          - paragraph [ref=e171]: Plainwell, Michigan • Since 1998
+        - generic [ref=e172]:
+          - heading "Quick Links" [level=4] [ref=e173]
+          - list [ref=e174]:
+            - listitem [ref=e175]:
+              - link "Home" [ref=e176] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e177]:
+              - link "Classes" [ref=e178] [cursor=pointer]:
+                - /url: /classes
+            - listitem [ref=e179]:
+              - link "Pricing" [ref=e180] [cursor=pointer]:
+                - /url: /pricing
+            - listitem [ref=e181]:
+              - link "About" [ref=e182] [cursor=pointer]:
+                - /url: /about
+        - generic [ref=e183]:
+          - heading "Contact" [level=4] [ref=e184]
+          - list [ref=e185]:
+            - listitem [ref=e186]: (269) 685-1493
+            - listitem [ref=e187]: 585 10th St A
+            - listitem [ref=e188]: Plainwell, MI 49080
+            - listitem [ref=e189]:
+              - link "jerry@repz-gym.com" [ref=e190] [cursor=pointer]:
+                - /url: mailto:jerry@repz-gym.com
+        - generic [ref=e191]:
+          - heading "Hours" [level=4] [ref=e192]
+          - list [ref=e193]:
+            - listitem [ref=e194]: "Mon–Fri: 6am–8:30pm"
+            - listitem [ref=e195]: "Sat: 7am–7pm"
+            - listitem [ref=e196]: "Sun: 8am–6pm"
+            - listitem [ref=e197]: 24/7 key-fob access for members
+      - generic [ref=e198]:
+        - paragraph [ref=e199]: © 2024 Repz Gym. All rights reserved.
+        - generic [ref=e200]:
+          - link "Facebook" [ref=e201] [cursor=pointer]:
+            - /url: https://facebook.com/repzgym
+          - link "Yelp" [ref=e202] [cursor=pointer]:
+            - /url: https://yelp.com
+  - button "Open Next.js Dev Tools" [ref=e208] [cursor=pointer]:
+    - img [ref=e209]
+  - alert [ref=e212]: Join Repz Gym

@@ -1,0 +1,186 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "REPZGYM" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - heading "REPZGYM" [level=1] [ref=e5]
+      - navigation [ref=e6]:
+        - link "Home" [ref=e7] [cursor=pointer]:
+          - /url: /
+        - link "Classes" [ref=e8] [cursor=pointer]:
+          - /url: /classes
+        - link "Pricing" [ref=e9] [cursor=pointer]:
+          - /url: /pricing
+        - link "About" [ref=e10] [cursor=pointer]:
+          - /url: /about
+        - link "Contact" [ref=e11] [cursor=pointer]:
+          - /url: /contact
+      - link "JOIN" [ref=e12] [cursor=pointer]:
+        - /url: /join
+  - generic [ref=e13]:
+    - generic [ref=e14]:
+      - img "OPEN 24/7 FOR MEMBERS" [ref=e16]
+      - img "SHAPE YOUR BODY" [ref=e19]
+      - img "PLAINWELL'S GYM" [ref=e22]
+      - heading "OPEN 24/7 FOR MEMBERS" [level=2] [ref=e25]
+      - generic [ref=e26]:
+        - button "Go to slide 1" [ref=e27]
+        - button "Go to slide 2" [ref=e28]
+        - button "Go to slide 3" [ref=e29]
+    - generic [ref=e30]:
+      - generic [ref=e32]:
+        - generic [ref=e34]:
+          - generic [ref=e35]: WHY CHOOSE US
+          - heading "PUSH YOUR LIMITS FORWARD" [level=2] [ref=e36]
+          - paragraph [ref=e38]: Full floor. Full community. Full commitment.
+        - generic [ref=e39]:
+          - generic [ref=e41]:
+            - generic [ref=e42]: 🏋️
+            - heading "MODERN EQUIPMENT" [level=3] [ref=e43]
+            - paragraph [ref=e44]: Full free-weight floor, top-shelf machines.
+          - generic [ref=e46]:
+            - generic [ref=e47]: 🧠
+            - heading "PROVEN PROGRAMS" [level=3] [ref=e48]
+            - paragraph [ref=e49]: MAD FITNEZ, Taekwondo, trainers who know you.
+          - generic [ref=e51]:
+            - generic [ref=e52]: 🔓
+            - heading "24/7 KEY-FOB" [level=3] [ref=e53]
+            - paragraph [ref=e54]: Lift at 5am. Lift at midnight. Always open.
+          - generic [ref=e56]:
+            - generic [ref=e57]: 🎯
+            - heading "MADE FOR YOU" [level=3] [ref=e58]
+            - paragraph [ref=e59]: Beginner to lifer. Everyone trains here.
+      - generic [ref=e61]:
+        - generic [ref=e63]:
+          - generic [ref=e64]: OUR CLASSES
+          - heading "WHAT WE OFFER" [level=2] [ref=e65]
+          - paragraph [ref=e67]: Walk in, sign in, get to work.
+        - generic [ref=e68]:
+          - generic [ref=e70] [cursor=pointer]:
+            - img "MADZ FITNESS" [ref=e72]
+            - generic [ref=e73]:
+              - heading "MADZ FITNESS" [level=3] [ref=e74]
+              - paragraph [ref=e75]: High-intensity cardio and strength. Mixed modality. Always moving.
+              - generic [ref=e76]:
+                - img "Ethan Johnson" [ref=e77]
+                - generic [ref=e78]: Ethan Johnson
+          - generic [ref=e80] [cursor=pointer]:
+            - img "Taekwondo — Kids" [ref=e82]
+            - generic [ref=e83]:
+              - heading "Taekwondo — Kids" [level=3] [ref=e84]
+              - paragraph [ref=e85]: Martial arts for kids ages 6–12. Discipline, focus, and fun.
+              - generic [ref=e86]:
+                - img "Marcus Reed" [ref=e87]
+                - generic [ref=e88]: Marcus Reed
+          - generic [ref=e90] [cursor=pointer]:
+            - img "Taekwondo — Adults" [ref=e92]
+            - generic [ref=e93]:
+              - heading "Taekwondo — Adults" [level=3] [ref=e94]
+              - paragraph [ref=e95]: Martial arts for adults. Conditioning and technique.
+              - generic [ref=e96]:
+                - img "Marcus Reed" [ref=e97]
+                - generic [ref=e98]: Marcus Reed
+      - generic [ref=e100]:
+        - generic [ref=e102]:
+          - generic [ref=e103]: OUR PLAN
+          - heading "CHOOSE YOUR ENTRY POINT" [level=2] [ref=e104]
+        - generic [ref=e106]:
+          - generic [ref=e108]:
+            - generic [ref=e109]: MOST POPULAR
+            - heading "$30" [level=3] [ref=e110]
+            - paragraph [ref=e111]: / MONTH
+            - list [ref=e112]:
+              - listitem [ref=e113]: ✓ Full gym floor
+              - listitem [ref=e114]: ✓ All group classes
+              - listitem [ref=e115]: ✓ 24/7 key-fob access
+              - listitem [ref=e116]: ✓ No contract
+            - link "JOIN NOW" [ref=e117] [cursor=pointer]:
+              - /url: /join
+          - generic [ref=e119]:
+            - generic [ref=e120]: ONE-TIME
+            - heading "$10" [level=3] [ref=e121]
+            - paragraph [ref=e122]: / DAY
+            - list [ref=e123]:
+              - listitem [ref=e124]: ✓ Full gym floor
+              - listitem [ref=e125]: ✓ Drop in on classes
+              - listitem [ref=e126]: ✓ No commitment
+              - listitem [ref=e127]: ✓ Apply to membership
+            - link "BUY A DAY PASS" [ref=e128] [cursor=pointer]:
+              - /url: /join
+      - generic [ref=e130]:
+        - generic [ref=e132]:
+          - generic [ref=e133]: OUR TEAM
+          - heading "TRAIN WITH EXPERTS" [level=2] [ref=e134]
+        - generic [ref=e136]:
+          - link "Ethan Johnson Ethan Johnson Strength & conditioning coach VIEW PROFILE →" [ref=e138] [cursor=pointer]:
+            - /url: /trainers/ethan-johnson
+            - img "Ethan Johnson" [ref=e140]
+            - heading "Ethan Johnson" [level=3] [ref=e141]
+            - paragraph [ref=e142]: Strength & conditioning coach
+            - paragraph [ref=e143]: VIEW PROFILE →
+          - link "Marcus Reed Marcus Reed High-intensity training specialist VIEW PROFILE →" [ref=e145] [cursor=pointer]:
+            - /url: /trainers/marcus-reed
+            - img "Marcus Reed" [ref=e147]
+            - heading "Marcus Reed" [level=3] [ref=e148]
+            - paragraph [ref=e149]: High-intensity training specialist
+            - paragraph [ref=e150]: VIEW PROFILE →
+          - link "Sofia Ramirez Sofia Ramirez Functional fitness coach VIEW PROFILE →" [ref=e152] [cursor=pointer]:
+            - /url: /trainers/sofia-ramirez
+            - img "Sofia Ramirez" [ref=e154]
+            - heading "Sofia Ramirez" [level=3] [ref=e155]
+            - paragraph [ref=e156]: Functional fitness coach
+            - paragraph [ref=e157]: VIEW PROFILE →
+          - link "Tyler Brooks Tyler Brooks Martial arts & conditioning trainer VIEW PROFILE →" [ref=e159] [cursor=pointer]:
+            - /url: /trainers/tyler-brooks
+            - img "Tyler Brooks" [ref=e161]
+            - heading "Tyler Brooks" [level=3] [ref=e162]
+            - paragraph [ref=e163]: Martial arts & conditioning trainer
+            - paragraph [ref=e164]: VIEW PROFILE →
+  - contentinfo [ref=e165]:
+    - generic [ref=e166]:
+      - generic [ref=e167]:
+        - generic [ref=e168]:
+          - generic [ref=e169]: Repz Gym
+          - paragraph [ref=e170]: No glamour. Just a great workout.
+          - paragraph [ref=e171]: Plainwell, Michigan • Since 1998
+        - generic [ref=e172]:
+          - heading "Quick Links" [level=4] [ref=e173]
+          - list [ref=e174]:
+            - listitem [ref=e175]:
+              - link "Home" [ref=e176] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e177]:
+              - link "Classes" [ref=e178] [cursor=pointer]:
+                - /url: /classes
+            - listitem [ref=e179]:
+              - link "Pricing" [ref=e180] [cursor=pointer]:
+                - /url: /pricing
+            - listitem [ref=e181]:
+              - link "About" [ref=e182] [cursor=pointer]:
+                - /url: /about
+        - generic [ref=e183]:
+          - heading "Contact" [level=4] [ref=e184]
+          - list [ref=e185]:
+            - listitem [ref=e186]: (269) 685-1493
+            - listitem [ref=e187]: 585 10th St A
+            - listitem [ref=e188]: Plainwell, MI 49080
+            - listitem [ref=e189]:
+              - link "jerry@repz-gym.com" [ref=e190] [cursor=pointer]:
+                - /url: mailto:jerry@repz-gym.com
+        - generic [ref=e191]:
+          - heading "Hours" [level=4] [ref=e192]
+          - list [ref=e193]:
+            - listitem [ref=e194]: "Mon–Fri: 6am–8:30pm"
+            - listitem [ref=e195]: "Sat: 7am–7pm"
+            - listitem [ref=e196]: "Sun: 8am–6pm"
+            - listitem [ref=e197]: 24/7 key-fob access for members
+      - generic [ref=e198]:
+        - paragraph [ref=e199]: © 2024 Repz Gym. All rights reserved.
+        - generic [ref=e200]:
+          - link "Facebook" [ref=e201] [cursor=pointer]:
+            - /url: https://facebook.com/repzgym
+          - link "Yelp" [ref=e202] [cursor=pointer]:
+            - /url: https://yelp.com
+  - button "Open Next.js Dev Tools" [ref=e208] [cursor=pointer]:
+    - img [ref=e209]
+  - alert [ref=e212]

@@ -228,12 +228,17 @@ export function JoinWizard() {
             {/* Monthly */}
             <button
               onClick={() => handleSelectPlan('monthly')}
-              className={`p-6 rounded-lg border-2 transition-all text-left ${
+              className={`p-6 rounded-lg transition-all text-left relative ${
                 formData.plan === 'monthly'
-                  ? 'border-brand bg-brand/5'
-                  : 'border-line hover:border-brand/50'
+                  ? 'border-3 border-brand bg-brand/10 shadow-lg shadow-brand/20'
+                  : 'border-2 border-line opacity-75 hover:opacity-100 hover:border-brand/50'
               }`}
             >
+              {formData.plan === 'monthly' && (
+                <div className="absolute top-3 right-3 w-6 h-6 rounded-full bg-brand flex items-center justify-center">
+                  <span className="text-white font-bold text-sm">✓</span>
+                </div>
+              )}
               <h3 className="text-xl font-display font-bold uppercase text-ink mb-2">
                 Monthly Membership
               </h3>
@@ -249,12 +254,17 @@ export function JoinWizard() {
             {/* Day Pass */}
             <button
               onClick={() => handleSelectPlan('daypass')}
-              className={`p-6 rounded-lg border-2 transition-all text-left ${
+              className={`p-6 rounded-lg transition-all text-left relative ${
                 formData.plan === 'daypass'
-                  ? 'border-brand-alt bg-brand-alt/5'
-                  : 'border-line hover:border-brand-alt/50'
+                  ? 'border-3 border-brand-alt bg-brand-alt/10 shadow-lg shadow-brand-alt/20'
+                  : 'border-2 border-line opacity-75 hover:opacity-100 hover:border-brand-alt/50'
               }`}
             >
+              {formData.plan === 'daypass' && (
+                <div className="absolute top-3 right-3 w-6 h-6 rounded-full bg-brand-alt flex items-center justify-center">
+                  <span className="text-white font-bold text-sm">✓</span>
+                </div>
+              )}
               <h3 className="text-xl font-display font-bold uppercase text-ink mb-2">
                 Day Pass
               </h3>
