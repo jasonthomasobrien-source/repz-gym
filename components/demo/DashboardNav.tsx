@@ -18,7 +18,7 @@ export function DashboardNav() {
   return (
     <>
       {/* Desktop Sidebar */}
-      <nav className="hidden lg:flex flex-col w-64 bg-bg border-r border-line min-h-screen p-6 gap-1 sticky top-0">
+      <nav aria-label="Admin sidebar" className="hidden lg:flex flex-col w-64 bg-bg border-r border-line min-h-screen p-6 gap-1 sticky top-0">
         <div className="mb-8">
           <h2 className="text-h3 font-display uppercase text-brand tracking-display font-semibold">Admin</h2>
           <p className="text-body-sm text-ink-muted uppercase font-display tracking-button font-semibold">Dashboard</p>
@@ -41,7 +41,7 @@ export function DashboardNav() {
       </nav>
 
       {/* Mobile Bottom Tab Bar */}
-      <nav className="lg:hidden fixed bottom-0 left-0 right-0 bg-bg border-t border-line z-40">
+      <nav aria-label="Admin mobile tabs" className="lg:hidden fixed bottom-0 left-0 right-0 bg-bg border-t border-line z-40">
         <div className="flex justify-around">
           {navItems.map((item) => (
             <Link
