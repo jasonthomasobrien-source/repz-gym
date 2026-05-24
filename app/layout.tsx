@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Oswald, Inter } from "next/font/google";
 import Script from "next/script";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
+import { PublicChrome } from "@/components/layout/PublicChrome";
 import "./globals.css";
 
 const oswald = Oswald({
@@ -40,9 +39,7 @@ export default function RootLayout({
       className={`${oswald.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-bg text-ink">
-        <Header />
-        {children}
-        <Footer />
+        <PublicChrome>{children}</PublicChrome>
         <Script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

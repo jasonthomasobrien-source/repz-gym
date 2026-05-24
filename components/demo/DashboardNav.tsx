@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { ArrowLeft } from 'lucide-react';
 
 const navItems = [
   { label: 'Overview', href: '/admin-demo/overview' },
@@ -38,7 +39,28 @@ export function DashboardNav() {
             </Link>
           ))}
         </div>
+        <div className="mt-auto pt-6 border-t border-line">
+          <Link
+            href="/"
+            className="flex items-center gap-2 px-4 py-3 rounded-sm text-body-sm uppercase font-display font-semibold tracking-button text-ink-muted hover:text-brand-alt hover:bg-surface transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back to Website
+          </Link>
+        </div>
       </nav>
+
+      {/* Mobile Top Bar with Back Link */}
+      <div className="lg:hidden sticky top-0 z-30 bg-bg border-b border-line px-4 py-3 flex items-center justify-between">
+        <Link
+          href="/"
+          className="flex items-center gap-2 text-body-sm uppercase font-display font-semibold tracking-button text-ink-muted hover:text-brand-alt transition-colors"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          Website
+        </Link>
+        <span className="text-body-sm uppercase font-display font-semibold tracking-button text-brand">Admin</span>
+      </div>
 
       {/* Mobile Bottom Tab Bar */}
       <nav aria-label="Admin mobile tabs" className="lg:hidden fixed bottom-0 left-0 right-0 bg-bg border-t border-line z-40">
