@@ -1,5 +1,4 @@
-import { Settings as SettingsIcon } from 'lucide-react';
-import { ComingSoon } from '@/components/demo/ComingSoon';
+import { SettingsPanel } from '@/components/demo/SettingsPanel';
 
 export const metadata = {
   title: 'Settings | Admin Dashboard Demo | Repz Gym',
@@ -7,19 +6,16 @@ export const metadata = {
 
 export default function SettingsPage() {
   return (
-    <ComingSoon
-      title="Settings"
-      subtitle="Configure pricing, hours, and access"
-      icon={SettingsIcon}
-      description="Configure pricing, gym hours, payment methods, and staff access from one place."
-      features={[
-        'Edit monthly membership and day pass pricing',
-        'Update gym hours and holiday closures',
-        'Manage staff and admin accounts',
-        'Configure Stripe payment methods',
-        'Branding: logo, colors, social links',
-        'Tax and receipt configuration',
-      ]}
-    />
+    <div className="space-y-8">
+      {/* Header */}
+      <div>
+        <h1 className="text-4xl lg:text-5xl font-display uppercase text-ink tracking-[0.02em] font-bold">
+          Settings
+        </h1>
+        <p className="text-base text-ink-muted mt-2">Configure your gym</p>
+      </div>
+
+      <SettingsPanel />
+    </div>
   );
 }
