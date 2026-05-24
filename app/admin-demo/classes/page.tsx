@@ -1,19 +1,25 @@
+import { Calendar } from 'lucide-react';
+import { ComingSoon } from '@/components/demo/ComingSoon';
+
 export const metadata = {
   title: 'Classes | Admin Dashboard Demo | Repz Gym',
 };
 
 export default function ClassesPage() {
   return (
-    <div>
-      <div className="mb-8">
-        <h1 className="text-h1 font-display uppercase text-ink tracking-display font-bold">Classes</h1>
-        <p className="text-body text-ink-muted mt-2">Manage class schedules and enrollment</p>
-      </div>
-
-      <div className="bg-surface border border-line rounded-md p-6">
-        <h2 className="text-h3 font-display uppercase text-ink tracking-display font-bold mb-4">Class Management (Coming Soon)</h2>
-        <p className="text-body text-ink-muted">Schedule, enrollment, and instructor management</p>
-      </div>
-    </div>
+    <ComingSoon
+      title="Classes"
+      subtitle="Manage class schedules, instructors, and attendance"
+      icon={Calendar}
+      description="Schedule classes, manage instructor assignments, and track attendance for MAD FITNEZ, Taekwondo, and future programs."
+      features={[
+        'Weekly schedule builder',
+        'Instructor assignments and pay tracking',
+        'Class capacity limits and waitlists',
+        'Member check-in and attendance history',
+        'Drop-in pass redemption',
+        'Cancellation and reschedule flow',
+      ]}
+    />
   );
 }
