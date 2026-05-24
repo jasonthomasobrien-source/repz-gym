@@ -48,13 +48,21 @@ export function Header() {
           </Link>
         </nav>
 
-        {/* CTA Button */}
-        <Link
-          href="/join"
-          className="bg-brand px-4 py-2 text-sm font-display uppercase text-white transition hover:bg-brand-hot rounded-sm"
-        >
-          JOIN
-        </Link>
+        {/* CTA Buttons */}
+        <div className="flex items-center gap-2">
+          <Link
+            href="/join"
+            className="bg-brand px-4 py-2 text-sm font-display uppercase text-white transition hover:bg-brand-hot rounded-sm"
+          >
+            JOIN
+          </Link>
+          <Link
+            href="/admin-demo"
+            className="border border-brand-alt text-brand-alt px-4 py-2 text-sm font-display uppercase transition hover:bg-brand-alt hover:text-bg rounded-sm"
+          >
+            DASHBOARD
+          </Link>
+        </div>
       </div>
     </header>
   );
