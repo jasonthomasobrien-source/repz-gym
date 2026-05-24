@@ -59,8 +59,8 @@ export default function RevenuePage() {
       {/* Stat cards */}
       <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         <StatCard label="Total Revenue (12mo)" value={fmt.format(totalYear)} accent="brand-alt" />
-        <StatCard label="MRR" value="$4,799" trend={{ value: '+12.3%', direction: 'up' }} accent="brand" />
-        <StatCard label="Avg Revenue / Member" value="$99.83" accent="success" />
+        <StatCard label="MRR" value="$15,690" trend={{ value: '+8.2%', direction: 'up' }} accent="brand" />
+        <StatCard label="Avg Revenue / Member" value="$30.85" accent="success" />
         <StatCard
           label="Failed Payments"
           value={fmt.format(failedAmt)}

@@ -176,7 +176,7 @@ const TEMPLATES: MessageTemplate[] = [
     id: 'tpl-payment-reminder',
     title: 'Payment Reminder',
     description: 'Polite reminder when a card has failed',
-    body: "Hi {{name}},\n\nWe weren't able to process your monthly payment of $99.99. No big deal — just update your card here:\n{{link}}\n\nLet us know if you have any trouble.\n\n— Repz Gym",
+    body: "Hi {{name}},\n\nWe weren't able to process your monthly payment of $30.00. No big deal — just update your card here:\n{{link}}\n\nLet us know if you have any trouble.\n\n— Repz Gym",
   },
   {
     id: 'tpl-class-cancel',

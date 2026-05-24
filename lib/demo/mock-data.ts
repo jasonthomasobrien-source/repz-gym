@@ -6,16 +6,16 @@ interface Member {
   email: string;
   phone: string;
   status: 'active' | 'past_due' | 'paused' | 'canceled';
-  joined: string; // "Mar 14, 2025"
-  plan: string; // "$99.99/mo"
+  joined: string;
+  plan: string;
 }
 
 interface Payment {
   id: string;
-  member: string; // name
-  amount: string; // "$99.99"
+  member: string;
+  amount: string;
   status: 'succeeded' | 'failed';
-  date: string; // "Dec 14, 2025"
+  date: string;
   kind: 'subscription' | 'day_pass';
 }
 
@@ -26,174 +26,189 @@ interface OverviewMetrics {
   failedPayments: { value: string; trend: null; percent: null };
 }
 
-// Generate 50 members with realistic distribution
+const MONTHLY_PRICE = 30;
+const DAY_PASS_PRICE = 15;
+const TOTAL_MEMBERS = 550;
+const ACTIVE_TARGET = 523;
+
+// Deterministic pseudo-random (seeded) so SSR + client match
+function seededRandom(seed: number): () => number {
+  let s = seed;
+  return () => {
+    s = (s * 9301 + 49297) % 233280;
+    return s / 233280;
+  };
+}
+
 function generateMembers(): Member[] {
-  const firstNames = ['Sarah', 'Mike', 'Chris', 'Alex', 'Jordan', 'Taylor', 'Casey', 'Morgan', 'Riley', 'Ashley'];
-  const lastNames = ['Johnson', 'Chen', 'Martinez', 'Rivera', 'Lee', 'Smith', 'Williams', 'Brown', 'Jones', 'Garcia'];
-  const domains = ['gmail.com', 'yahoo.com', 'outlook.com', 'example.com'];
+  const rand = seededRandom(42);
+  const firstNames = [
+    'Sarah', 'Mike', 'Chris', 'Alex', 'Jordan', 'Taylor', 'Casey', 'Morgan', 'Riley', 'Ashley',
+    'James', 'Emma', 'David', 'Olivia', 'Noah', 'Sophia', 'Liam', 'Ava', 'Lucas', 'Mia',
+    'Ethan', 'Isabella', 'Mason', 'Charlotte', 'Logan', 'Amelia', 'Daniel', 'Harper', 'Henry', 'Evelyn',
+    'Jackson', 'Abigail', 'Sebastian', 'Emily', 'Aiden', 'Elizabeth', 'Matthew', 'Sofia', 'Samuel', 'Madison',
+    'Joseph', 'Avery', 'Carter', 'Ella', 'Wyatt', 'Scarlett', 'Owen', 'Grace', 'Dylan', 'Chloe',
+    'Luke', 'Lily', 'Gabriel', 'Hannah', 'Anthony', 'Aria', 'Isaac', 'Zoe', 'Grayson', 'Layla',
+  ];
+  const lastNames = [
+    'Johnson', 'Chen', 'Martinez', 'Rivera', 'Lee', 'Smith', 'Williams', 'Brown', 'Jones', 'Garcia',
+    'Miller', 'Davis', 'Rodriguez', 'Wilson', 'Anderson', 'Thomas', 'Taylor', 'Moore', 'Jackson', 'White',
+    'Harris', 'Clark', 'Lewis', 'Walker', 'Hall', 'Allen', 'Young', 'King', 'Wright', 'Lopez',
+    'Hill', 'Scott', 'Green', 'Adams', 'Baker', 'Nelson', 'Carter', 'Mitchell', 'Perez', 'Roberts',
+  ];
+  const domains = ['gmail.com', 'yahoo.com', 'outlook.com', 'icloud.com', 'hotmail.com'];
 
-  const statuses: Array<'active' | 'past_due' | 'paused' | 'canceled'> = ['active', 'active', 'active', 'active', 'active', 'active', 'active', 'past_due', 'paused', 'canceled'];
-
+  // Status distribution out of 550: 523 active, 12 past_due, 8 paused, 7 canceled
   const members: Member[] = [];
 
-  for (let i = 0; i < 50; i++) {
-    const firstName = firstNames[i % firstNames.length];
-    const lastName = lastNames[Math.floor(i / firstNames.length) % lastNames.length];
-    const status = statuses[i % statuses.length];
+  for (let i = 0; i < TOTAL_MEMBERS; i++) {
+    let status: Member['status'];
+    if (i < ACTIVE_TARGET) status = 'active';
+    else if (i < ACTIVE_TARGET + 12) status = 'past_due';
+    else if (i < ACTIVE_TARGET + 12 + 8) status = 'paused';
+    else status = 'canceled';
 
-    // Joined dates spread over past 2 years
-    const monthsAgo = Math.floor(Math.random() * 24);
-    const joinDate = new Date();
+    const firstName = firstNames[Math.floor(rand() * firstNames.length)];
+    const lastName = lastNames[Math.floor(rand() * lastNames.length)];
+
+    const monthsAgo = Math.floor(rand() * 36);
+    const joinDate = new Date(2026, 4, 23);
     joinDate.setMonth(joinDate.getMonth() - monthsAgo);
     const joinedStr = joinDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+    const phoneSuffix = (1000 + Math.floor(rand() * 9000)).toString();
 
     members.push({
       id: `member-${i.toString().padStart(3, '0')}`,
       name: `${firstName} ${lastName}`,
-      email: `${firstName.toLowerCase()}.${lastName.toLowerCase()}@${domains[i % domains.length]}`,
-      phone: `(269) 555-${String(100 + i).slice(-4)}`,
+      email: `${firstName.toLowerCase()}.${lastName.toLowerCase()}${i}@${domains[i % domains.length]}`,
+      phone: `(269) 555-${phoneSuffix}`,
       status,
       joined: joinedStr,
-      plan: '$99.99/mo',
+      plan: `$${MONTHLY_PRICE.toFixed(2)}/mo`,
     });
   }
 
   return members;
 }
 
-// Generate 12 months of payments
 function generatePayments(members: Member[]): Payment[] {
+  const rand = seededRandom(99);
   const payments: Payment[] = [];
   const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const amountStr = `$${MONTHLY_PRICE.toFixed(2)}`;
 
-  // For each month (Jan-Dec 2025)
   for (let month = 0; month < 12; month++) {
     const monthStr = monthNames[month];
     const year = 2025;
 
-    // Each active/past_due member generates a payment
     for (const member of members) {
-      if (member.status === 'canceled' || member.status === 'paused') continue; // Skip inactive
+      if (member.status === 'canceled' || member.status === 'paused') continue;
 
-      const dayOfMonth = 5 + (Math.random() < 0.5 ? 0 : 10); // Day 5-15
+      const dayOfMonth = 1 + Math.floor(rand() * 27);
       const dateStr = `${monthStr} ${dayOfMonth}, ${year}`;
 
-      // Active: 90% success, 10% fail
-      // Past due: fail
-      const shouldFail = member.status === 'past_due' || Math.random() < 0.1;
+      const shouldFail = member.status === 'past_due' || rand() < 0.04;
 
       payments.push({
         id: `payment-${member.id}-${month}`,
         member: member.name,
-        amount: '$99.99',
+        amount: amountStr,
         status: shouldFail ? 'failed' : 'succeeded',
         date: dateStr,
         kind: 'subscription',
       });
     }
-  }
 
-  // Add some day passes (random, scattered)
-  for (const member of members) {
-    if (Math.random() < 0.3) {
-      for (let i = 0; i < Math.floor(Math.random() * 3); i++) {
-        const randomMonth = Math.floor(Math.random() * 12);
-        const monthStr = monthNames[randomMonth];
-        const day = Math.floor(Math.random() * 28) + 1;
-
-        payments.push({
-          id: `daypass-${member.id}-${i}`,
-          member: `Day Pass - ${member.name}`,
-          amount: '$19.99',
-          status: Math.random() < 0.95 ? 'succeeded' : 'failed',
-          date: `${monthStr} ${day}, 2025`,
-          kind: 'day_pass',
-        });
-      }
+    // Day passes per month: ~25-40 scattered
+    const dayPassCount = 25 + Math.floor(rand() * 15);
+    for (let dp = 0; dp < dayPassCount; dp++) {
+      const memberIdx = Math.floor(rand() * members.length);
+      const day = 1 + Math.floor(rand() * 27);
+      payments.push({
+        id: `daypass-${month}-${dp}`,
+        member: `Walk-in Guest`,
+        amount: `$${DAY_PASS_PRICE.toFixed(2)}`,
+        status: rand() < 0.97 ? 'succeeded' : 'failed',
+        date: `${monthStr} ${day}, ${year}`,
+        kind: 'day_pass',
+      });
     }
   }
 
   return payments;
 }
 
-// Export data getters
+// Cache to keep deterministic data stable across calls
+let _members: Member[] | null = null;
+let _payments: Payment[] | null = null;
+
 export function getMockMembers(): Member[] {
-  return generateMembers();
+  if (!_members) _members = generateMembers();
+  return _members;
 }
 
 export function getMockPayments(): Payment[] {
-  const members = generateMembers();
-  return generatePayments(members);
+  if (!_payments) _payments = generatePayments(getMockMembers());
+  return _payments;
 }
 
 export function getOverviewMetrics(): OverviewMetrics {
+  const mrr = ACTIVE_TARGET * MONTHLY_PRICE; // 15,690
+  const fmt = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+
   return {
-    mrr: { value: '$4,799', trend: 'up', percent: 12 },
-    activeMembers: { value: '48', trend: 'up', percent: 8 },
-    dayPasses: { value: '$287 (15 passes)', trend: 'down', percent: -5 },
-    failedPayments: { value: '$197 (2)', trend: null, percent: null },
+    mrr: { value: fmt.format(mrr), trend: 'up', percent: 8 },
+    activeMembers: { value: ACTIVE_TARGET.toString(), trend: 'up', percent: 4 },
+    dayPasses: { value: `$555 (37 passes)`, trend: 'up', percent: 12 },
+    failedPayments: { value: `$360 (12)`, trend: null, percent: null },
   };
 }
 
 export function getRevenueByMonth() {
-  return [
-    { month: 'Jan', membership: 4200, daypass: 280 },
-    { month: 'Feb', membership: 4400, daypass: 320 },
-    { month: 'Mar', membership: 3900, daypass: 210 },
-    { month: 'Apr', membership: 4100, daypass: 290 },
-    { month: 'May', membership: 4500, daypass: 340 },
-    { month: 'Jun', membership: 4700, daypass: 380 },
-    { month: 'Jul', membership: 4800, daypass: 320 },
-    { month: 'Aug', membership: 4600, daypass: 350 },
-    { month: 'Sep', membership: 4400, daypass: 300 },
-    { month: 'Oct', membership: 4550, daypass: 310 },
-    { month: 'Nov', membership: 4700, daypass: 370 },
-    { month: 'Dec', membership: 4799, daypass: 287 },
-  ];
+  // 12 months trending up: 480 active → 523, plus day pass revenue
+  const baseCounts = [482, 488, 491, 496, 502, 507, 511, 515, 517, 520, 521, 523];
+  const dayPasses = [380, 410, 360, 425, 470, 510, 540, 520, 480, 495, 525, 555];
+  const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+  return monthNames.map((month, i) => ({
+    month,
+    membership: baseCounts[i] * MONTHLY_PRICE,
+    daypass: dayPasses[i],
+  }));
 }
 
 export function getMemberGrowth() {
-  return [
-    { month: 'Jan', count: 35 },
-    { month: 'Feb', count: 37 },
-    { month: 'Mar', count: 40 },
-    { month: 'Apr', count: 42 },
-    { month: 'May', count: 44 },
-    { month: 'Jun', count: 45 },
-    { month: 'Jul', count: 46 },
-    { month: 'Aug', count: 47 },
-    { month: 'Sep', count: 47 },
-    { month: 'Oct', count: 48 },
-    { month: 'Nov', count: 48 },
-    { month: 'Dec', count: 48 },
-  ];
+  const counts = [482, 488, 491, 496, 502, 507, 511, 515, 517, 520, 521, 523];
+  const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  return monthNames.map((month, i) => ({ month, count: counts[i] }));
 }
 
 export function getChurnByMonth() {
   return [
-    { month: 'Jan', churn: 2 },
-    { month: 'Feb', churn: 1 },
-    { month: 'Mar', churn: 2 },
-    { month: 'Apr', churn: 1 },
-    { month: 'May', churn: 0 },
+    { month: 'Jan', churn: 4 },
+    { month: 'Feb', churn: 3 },
+    { month: 'Mar', churn: 5 },
+    { month: 'Apr', churn: 2 },
+    { month: 'May', churn: 3 },
     { month: 'Jun', churn: 1 },
-    { month: 'Jul', churn: 0 },
-    { month: 'Aug', churn: 1 },
-    { month: 'Sep', churn: 2 },
-    { month: 'Oct', churn: 1 },
-    { month: 'Nov', churn: 0 },
-    { month: 'Dec', churn: 1 },
+    { month: 'Jul', churn: 2 },
+    { month: 'Aug', churn: 4 },
+    { month: 'Sep', churn: 3 },
+    { month: 'Oct', churn: 2 },
+    { month: 'Nov', churn: 3 },
+    { month: 'Dec', churn: 2 },
   ];
 }
 
 export function getNewestMembers(): Member[] {
   const members = getMockMembers();
-  // Return last 5 members (most recently joined)
-  return members.slice(-5).reverse();
+  return members.slice(0, 5);
 }
 
 export function getAtRiskMembers(): Payment[] {
   const payments = getMockPayments();
-  // Return last 2 failed payments
-  return payments.filter(p => p.status === 'failed').slice(-2);
+  return payments.filter((p) => p.status === 'failed' && p.kind === 'subscription').slice(0, 5);
 }
+
+export { MONTHLY_PRICE, DAY_PASS_PRICE, ACTIVE_TARGET, TOTAL_MEMBERS };

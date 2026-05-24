@@ -195,7 +195,7 @@ function PricingTab() {
     {
       id: 'monthly',
       name: 'Monthly Membership',
-      price: '$99.99',
+      price: '$30.00',
       period: '/mo',
       tag: 'Most popular',
       accent: 'brand',
@@ -211,9 +211,9 @@ function PricingTab() {
     {
       id: 'annual',
       name: 'Annual Membership',
-      price: '$999',
+      price: '$300',
       period: '/yr',
-      tag: 'Save $200',
+      tag: 'Save $60',
       accent: 'success',
     },
     {

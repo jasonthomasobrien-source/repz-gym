@@ -6,6 +6,7 @@ import {
   getAtRiskMembers,
   getMemberGrowth,
   getNewestMembers,
+  getOverviewMetrics,
   getRevenueByMonth,
 } from '@/lib/demo/mock-data';
 
@@ -18,6 +19,7 @@ export default function OverviewPage() {
   const growthData = getMemberGrowth();
   const newest = getNewestMembers();
   const atRisk = getAtRiskMembers();
+  const metrics = getOverviewMetrics();
 
   return (
     <div className="space-y-8">
@@ -40,26 +42,26 @@ export default function OverviewPage() {
       <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         <StatCard
           label="MRR"
-          value="$4,799"
-          trend={{ value: '+12.3% vs last month', direction: 'up' }}
+          value={metrics.mrr.value}
+          trend={{ value: '+8.2% vs last month', direction: 'up' }}
           accent="brand-alt"
         />
         <StatCard
           label="Active Members"
-          value="48"
-          trend={{ value: '+5 this month', direction: 'up' }}
+          value={metrics.activeMembers.value}
+          trend={{ value: '+18 this month', direction: 'up' }}
           accent="brand"
         />
         <StatCard
           label="At-Risk Payments"
-          value="2"
-          trend={{ value: '-1 from last week', direction: 'down' }}
+          value="12"
+          trend={{ value: '-3 from last week', direction: 'down' }}
           accent="danger"
         />
         <StatCard
           label="Day Passes (30d)"
-          value="$287"
-          trend={{ value: '+3 vs last month', direction: 'up' }}
+          value="$555"
+          trend={{ value: '+30 vs last month', direction: 'up' }}
           accent="success"
         />
       </div>
@@ -155,7 +157,7 @@ export default function OverviewPage() {
             <p className="text-sm text-ink-muted mt-1">Net active members over the last year</p>
           </div>
           <span className="text-xs text-brand-alt uppercase font-display tracking-[0.12em] font-semibold">
-            35 → 48 (+37%)
+            482 → 523 (+8.5%)
           </span>
         </div>
         <GrowthChart data={growthData} />
