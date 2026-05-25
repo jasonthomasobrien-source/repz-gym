@@ -62,7 +62,7 @@ export default function OverviewPage() {
             <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-success" />
           </span>
           <span>
-            <span className="text-ink font-semibold">23 members in the building right now</span>
+            <span className="text-ink font-semibold">12 members in the building right now</span>
             <span className="mx-2 text-ink-subtle">·</span>
             last scan 2 min ago
           </span>
@@ -87,7 +87,7 @@ export default function OverviewPage() {
             <p className="text-5xl font-display font-bold text-brand-alt leading-none mb-2">5×</p>
             <p className="text-sm text-ink font-semibold mb-2">More valuable with records</p>
             <p className="text-sm text-ink-muted leading-relaxed">
-              Buyers pay for what they can verify. Documented gyms sell for ~$140K–$280K. Cash-only gyms sell for ~$30K–$60K.
+              Buyers pay for what they can verify. Documented gyms sell for ~$85K–$170K. Cash-only gyms sell for ~$30K–$60K.
             </p>
             <p className="text-xs text-ink-subtle mt-2 italic">
               Estimate — see full math on the Why page.
@@ -102,7 +102,7 @@ export default function OverviewPage() {
                 Member Retention
               </p>
             </div>
-            <p className="text-5xl font-display font-bold text-brand leading-none mb-2">12</p>
+            <p className="text-5xl font-display font-bold text-brand leading-none mb-2">9</p>
             <p className="text-sm text-ink font-semibold mb-2">At-risk members caught this month</p>
             <p className="text-sm text-ink-muted leading-relaxed">
               Spreadsheets can&apos;t text someone whose card failed. We can. Save 10 members/year = $3,600 back in your pocket.
@@ -147,19 +147,19 @@ export default function OverviewPage() {
         <StatCard
           label="Active Members"
           value={metrics.activeMembers.value}
-          trend={{ value: '+18 this month', direction: 'up' }}
+          trend={{ value: '+12 this month', direction: 'up' }}
           accent="brand"
         />
         <StatCard
           label="At-Risk Payments"
-          value="12"
-          trend={{ value: '-3 from last week', direction: 'down' }}
+          value="9"
+          trend={{ value: '-2 from last week', direction: 'down' }}
           accent="danger"
         />
         <StatCard
           label="Day Passes (30d)"
-          value="$555"
-          trend={{ value: '+30 vs last month', direction: 'up' }}
+          value="$420"
+          trend={{ value: '+20 vs last month', direction: 'up' }}
           accent="success"
         />
       </div>
@@ -255,7 +255,7 @@ export default function OverviewPage() {
             <p className="text-sm text-ink-muted mt-1">Net active members over the last year</p>
           </div>
           <span className="text-xs text-brand-alt uppercase font-display tracking-[0.12em] font-semibold">
-            482 → 523 (+8.5%)
+            348 → 380 (+9.2%)
           </span>
         </div>
         <GrowthChart data={growthData} />

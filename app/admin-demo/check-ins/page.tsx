@@ -57,14 +57,14 @@ export default function CheckInsPage() {
         <StatCard label="In The Gym Right Now" value={currentlyIn.length.toString()} accent="brand-alt" />
         <StatCard
           label="Check-Ins Today"
-          value="147"
-          trend={{ value: '+12 vs daily avg', direction: 'up' }}
+          value="108"
+          trend={{ value: '+9 vs daily avg', direction: 'up' }}
           accent="brand"
         />
         <StatCard
           label="Peak Hour Today"
           value="5:30 PM"
-          trend={{ value: '31 check-ins', direction: 'neutral' }}
+          trend={{ value: '15 check-ins', direction: 'neutral' }}
           accent="success"
         />
         <StatCard

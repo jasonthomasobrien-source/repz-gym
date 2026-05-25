@@ -77,7 +77,7 @@ function NumberField({ label, value, onChange, min, max, step, prefix, suffix }:
 }
 
 export function ValuationCalculator() {
-  const [members, setMembers] = useState<number>(523);
+  const [members, setMembers] = useState<number>(380);
   const [price, setPrice] = useState<number>(30);
   const [years, setYears] = useState<number>(2);
 

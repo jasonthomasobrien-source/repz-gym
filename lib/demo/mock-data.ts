@@ -28,8 +28,8 @@ interface OverviewMetrics {
 
 const MONTHLY_PRICE = 30;
 const DAY_PASS_PRICE = 15;
-const TOTAL_MEMBERS = 550;
-const ACTIVE_TARGET = 523;
+const TOTAL_MEMBERS = 410;
+const ACTIVE_TARGET = 380;
 
 // Deterministic pseudo-random (seeded) so SSR + client match
 function seededRandom(seed: number): () => number {
@@ -58,14 +58,14 @@ function generateMembers(): Member[] {
   ];
   const domains = ['gmail.com', 'yahoo.com', 'outlook.com', 'icloud.com', 'hotmail.com'];
 
-  // Status distribution out of 550: 523 active, 12 past_due, 8 paused, 7 canceled
+  // Status distribution out of 410: 380 active, 9 past_due, 6 paused, 15 canceled
   const members: Member[] = [];
 
   for (let i = 0; i < TOTAL_MEMBERS; i++) {
     let status: Member['status'];
     if (i < ACTIVE_TARGET) status = 'active';
-    else if (i < ACTIVE_TARGET + 12) status = 'past_due';
-    else if (i < ACTIVE_TARGET + 12 + 8) status = 'paused';
+    else if (i < ACTIVE_TARGET + 9) status = 'past_due';
+    else if (i < ACTIVE_TARGET + 9 + 6) status = 'paused';
     else status = 'canceled';
 
     const firstName = firstNames[Math.floor(rand() * firstNames.length)];
@@ -154,21 +154,21 @@ export function getMockPayments(): Payment[] {
 }
 
 export function getOverviewMetrics(): OverviewMetrics {
-  const mrr = ACTIVE_TARGET * MONTHLY_PRICE; // 15,690
+  const mrr = ACTIVE_TARGET * MONTHLY_PRICE; // 11,400
   const fmt = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
 
   return {
-    mrr: { value: fmt.format(mrr), trend: 'up', percent: 8 },
+    mrr: { value: fmt.format(mrr), trend: 'up', percent: 7 },
     activeMembers: { value: ACTIVE_TARGET.toString(), trend: 'up', percent: 4 },
-    dayPasses: { value: `$555 (37 passes)`, trend: 'up', percent: 12 },
-    failedPayments: { value: `$360 (12)`, trend: null, percent: null },
+    dayPasses: { value: `$420 (28 passes)`, trend: 'up', percent: 10 },
+    failedPayments: { value: `$270 (9)`, trend: null, percent: null },
   };
 }
 
 export function getRevenueByMonth() {
-  // 12 months trending up: 480 active → 523, plus day pass revenue
-  const baseCounts = [482, 488, 491, 496, 502, 507, 511, 515, 517, 520, 521, 523];
-  const dayPasses = [380, 410, 360, 425, 470, 510, 540, 520, 480, 495, 525, 555];
+  // 12 months trending up: 348 active → 380, plus day pass revenue
+  const baseCounts = [348, 352, 355, 360, 364, 367, 370, 373, 375, 377, 379, 380];
+  const dayPasses = [290, 320, 270, 335, 365, 395, 410, 390, 360, 375, 400, 420];
   const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
   return monthNames.map((month, i) => ({
@@ -179,7 +179,7 @@ export function getRevenueByMonth() {
 }
 
 export function getMemberGrowth() {
-  const counts = [482, 488, 491, 496, 502, 507, 511, 515, 517, 520, 521, 523];
+  const counts = [348, 352, 355, 360, 364, 367, 370, 373, 375, 377, 379, 380];
   const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   return monthNames.map((month, i) => ({ month, count: counts[i] }));
 }
@@ -255,12 +255,12 @@ function formatClockTime(date: Date): string {
 export function getCurrentlyCheckedIn(): CheckIn[] {
   const members = getMockMembers().filter((m) => m.status === 'active');
   const rand = seededRandom(7777);
-  // 23 currently checked in: ~20 members + 3 day passes
+  // 12 currently checked in: ~10 members + 2 day passes
   const result: CheckIn[] = [];
   // Anchor "now" to a deterministic 12:42 PM
   const now = new Date(2026, 4, 24, 12, 42);
 
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < 10; i++) {
     const idx = Math.floor(rand() * members.length);
     const member = members[idx];
     const minutesAgo = Math.floor(rand() * 110) + 2;
@@ -276,7 +276,7 @@ export function getCurrentlyCheckedIn(): CheckIn[] {
     });
   }
 
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 2; i++) {
     const minutesAgo = Math.floor(rand() * 90) + 5;
     const t = new Date(now.getTime() - minutesAgo * 60000);
     result.push({
@@ -365,22 +365,22 @@ export function getHourlyCheckIns(): HourlyCount[] {
   // Realistic: morning rush at 6:30am (~22), light midday, lunch dip ~5,
   // afternoon climb, peak at 5:30pm (~31), evening tail off
   const data: HourlyCount[] = [
-    { hour: '6am', count: 18 },
-    { hour: '7am', count: 22 },
-    { hour: '8am', count: 14 },
-    { hour: '9am', count: 9 },
-    { hour: '10am', count: 7 },
-    { hour: '11am', count: 8 },
-    { hour: '12pm', count: 11 },
-    { hour: '1pm', count: 5 },
-    { hour: '2pm', count: 6 },
-    { hour: '3pm', count: 9 },
-    { hour: '4pm', count: 17 },
-    { hour: '5pm', count: 28 },
-    { hour: '6pm', count: 31 },
-    { hour: '7pm', count: 24 },
-    { hour: '8pm', count: 15 },
-    { hour: '9pm', count: 7 },
+    { hour: '6am', count: 8 },
+    { hour: '7am', count: 11 },
+    { hour: '8am', count: 7 },
+    { hour: '9am', count: 4 },
+    { hour: '10am', count: 3 },
+    { hour: '11am', count: 4 },
+    { hour: '12pm', count: 5 },
+    { hour: '1pm', count: 2 },
+    { hour: '2pm', count: 3 },
+    { hour: '3pm', count: 4 },
+    { hour: '4pm', count: 8 },
+    { hour: '5pm', count: 14 },
+    { hour: '6pm', count: 15 },
+    { hour: '7pm', count: 11 },
+    { hour: '8pm', count: 7 },
+    { hour: '9pm', count: 3 },
   ];
   return data;
 }

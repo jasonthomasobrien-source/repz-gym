@@ -153,18 +153,18 @@ export default function WhyYouNeedThisPage() {
           <div className="bg-surface border-2 border-brand-alt rounded-md p-6 relative overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-1 bg-brand-alt" />
             <p className="text-xs text-brand-alt uppercase font-display tracking-[0.12em] font-semibold mb-2">Documented gym (this system)</p>
-            <p className="text-4xl lg:text-5xl font-display font-bold text-brand leading-none mb-2">$140K – $280K</p>
+            <p className="text-4xl lg:text-5xl font-display font-bold text-brand leading-none mb-2">$85K – $170K</p>
             <p className="text-sm text-ink-muted mb-5">2–3× SDE OR 0.5–1.5× annual revenue (documented)</p>
             <ul className="space-y-2 text-sm text-ink">
-              <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-success mt-0.5 shrink-0" /> Verifiable $188K annual revenue</li>
-              <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-success mt-0.5 shrink-0" /> Provable 523 active monthly subscribers</li>
+              <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-success mt-0.5 shrink-0" /> Verifiable $142K annual revenue</li>
+              <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-success mt-0.5 shrink-0" /> Provable 380 active monthly subscribers</li>
               <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-success mt-0.5 shrink-0" /> Recurring revenue commands a premium</li>
             </ul>
           </div>
         </div>
 
         <p className="text-base text-ink-muted mt-6 max-w-3xl leading-relaxed">
-          <span className="text-brand font-semibold">The difference is $80K – $220K</span> for the same gym — same members, same building. The only variable is what you can put on paper.
+          <span className="text-brand font-semibold">The difference is $25K – $140K</span> for the same gym — same members, same building. The only variable is what you can put on paper.
         </p>
         <p className="text-xs text-ink-subtle mt-3 max-w-3xl leading-relaxed italic">
           These ranges reflect typical small-gym sales (BizBuySell data, business broker rules of thumb). Final sale price depends on lease, equipment, location, growth, and buyer type. This isn&apos;t a formal appraisal.
@@ -203,7 +203,7 @@ export default function WhyYouNeedThisPage() {
               amount: '$2,000 – $5,000/yr',
               title: 'Missed Annual Upgrades',
               sub: 'Lost to lack of upgrade prompts',
-              body: "Monthly members renew month by month. Annual members commit a full year. Of your 523 members, conservatively 30% would prepay for a 10% discount — but you'd have to ask. This system asks automatically.",
+              body: "Monthly members renew month by month. Annual members commit a full year. Of your 380 members, conservatively 30% would prepay for a 10% discount — but you'd have to ask. This system asks automatically.",
             },
             {
               icon: UserCheck,
@@ -274,7 +274,7 @@ export default function WhyYouNeedThisPage() {
         <div className="bg-surface-2 border-l-4 border-danger rounded-sm p-5 mb-6">
           <p className="text-xs text-danger uppercase font-display tracking-[0.12em] font-semibold mb-2">Right now</p>
           <p className="text-2xl lg:text-3xl font-display font-bold text-ink leading-tight">
-            12 at-risk members → <span className="text-danger">$360/mo at stake</span>
+            9 at-risk members → <span className="text-danger">$270/mo at stake</span>
           </p>
         </div>
 
@@ -300,7 +300,7 @@ export default function WhyYouNeedThisPage() {
             Cash is unpredictable. Some weeks $400. Some weeks $1,200. You can&apos;t plan equipment purchases or hire decisions on lumpy cash.
           </p>
           <ul className="space-y-2 text-sm text-ink">
-            <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-success mt-0.5 shrink-0" /> Subscriptions = same amount, same day, every month. <span className="text-brand font-semibold ml-1">$15,690 hits your account on the 1st</span>, every month.</li>
+            <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-success mt-0.5 shrink-0" /> Subscriptions = same amount, same day, every month. <span className="text-brand font-semibold ml-1">$11,400 hits your account on the 1st</span>, every month.</li>
             <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-success mt-0.5 shrink-0" /> Banks understand subscriptions. They don&apos;t understand &ldquo;I have a gym, trust me.&rdquo;</li>
             <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-success mt-0.5 shrink-0" /> Investors and buyers look at MRR. Cash businesses don&apos;t have MRR.</li>
           </ul>
@@ -325,7 +325,7 @@ export default function WhyYouNeedThisPage() {
           <div className="bg-surface border-2 border-brand rounded-md p-5 relative overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-1 bg-brand" />
             <p className="text-xs text-brand uppercase font-display tracking-[0.12em] font-semibold mb-4">Subscription</p>
-            <p className="text-3xl lg:text-4xl font-display font-bold text-brand leading-none mb-2">$15,690.00</p>
+            <p className="text-3xl lg:text-4xl font-display font-bold text-brand leading-none mb-2">$11,400.00</p>
             <p className="text-sm text-ink-muted">every 1st of the month, on the dot</p>
           </div>
         </div>
@@ -497,11 +497,11 @@ export default function WhyYouNeedThisPage() {
           </li>
           <li className="flex items-start gap-3">
             <AlertTriangle className="w-5 h-5 text-danger mt-1 shrink-0" />
-            <span className="text-base text-ink">Cash &ldquo;fall through cracks&rdquo;: industry estimate 5–10% of revenue = <span className="text-danger font-display font-bold">$9,400 – $18,800/year</span></span>
+            <span className="text-base text-ink">Cash &ldquo;fall through cracks&rdquo;: industry estimate 5–10% of revenue = <span className="text-danger font-display font-bold">$7,100 – $14,200/year</span></span>
           </li>
           <li className="flex items-start gap-3">
             <AlertTriangle className="w-5 h-5 text-danger mt-1 shrink-0" />
-            <span className="text-base text-ink">Lower sale value when you&apos;re ready to retire: <span className="text-danger font-display font-bold">$80K – $220K</span></span>
+            <span className="text-base text-ink">Lower sale value when you&apos;re ready to retire: <span className="text-danger font-display font-bold">$25K – $140K</span></span>
           </li>
         </ul>
 
