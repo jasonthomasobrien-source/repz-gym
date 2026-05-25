@@ -15,10 +15,10 @@ export default function JoinPage() {
             MEMBERSHIP
           </p>
           <h1 className="text-4xl md:text-5xl font-display font-bold uppercase text-ink mb-4">
-            Join Repz Gym
+            Book Your First Visit
           </h1>
           <p className="text-lg text-ink-muted max-w-md mx-auto">
-            Complete your info online, then come in and get your key-fob access. No hassle, just results.
+            No card, no commitment. Pick a time, walk in, and we'll show you around.
           </p>
         </div>
 

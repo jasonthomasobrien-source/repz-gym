@@ -69,7 +69,7 @@ export default function PricingPage() {
                   </li>
                 </ul>
                 <Button size="lg" variant="primary" className="mt-8 w-full" href="/join">
-                  JOIN NOW
+                  BOOK YOUR FIRST VISIT
                 </Button>
               </div>
             </AnimationWrapper>
@@ -106,7 +106,7 @@ export default function PricingPage() {
                   </li>
                 </ul>
                 <Button size="lg" variant="secondary" className="mt-8 w-full" href="/join">
-                  BUY A DAY PASS
+                  TRY A DAY PASS
                 </Button>
               </div>
             </AnimationWrapper>
@@ -202,7 +202,7 @@ export default function PricingPage() {
           <AnimationWrapper animationType="slide-up">
             <div className="flex flex-col gap-4 md:flex-row justify-center">
               <Button size="lg" variant="primary" href="/join">
-                JOIN NOW
+                BOOK YOUR FIRST VISIT
               </Button>
               <Button size="lg" variant="secondary" href="/contact">
                 CONTACT US
