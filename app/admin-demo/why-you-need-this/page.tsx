@@ -1,0 +1,380 @@
+import Link from 'next/link';
+import {
+  TrendingUp,
+  UserCheck,
+  Clock,
+  FileText,
+  Shield,
+  Activity,
+  CheckCircle2,
+  Sparkles,
+  Building,
+  AlertTriangle,
+  ArrowRight,
+  ArrowLeft,
+  Mail,
+} from 'lucide-react';
+
+export const metadata = {
+  title: 'Why You Need This | Admin Dashboard Demo | Repz Gym',
+};
+
+interface ComparisonRow {
+  label: string;
+  cash: string;
+  spreadsheet: string;
+  dashboard: string;
+}
+
+const comparisonRows: ComparisonRow[] = [
+  {
+    label: 'Member roster',
+    cash: 'Memory + sign-in sheet',
+    spreadsheet: 'One row per member',
+    dashboard: 'Searchable, sortable, with payment history',
+  },
+  {
+    label: 'Monthly billing',
+    cash: 'Hope they show up',
+    spreadsheet: 'Manual check-ins, manual collection',
+    dashboard: 'Automatic, card on file, retries failed payments',
+  },
+  {
+    label: 'Failed payments',
+    cash: 'You find out when they ghost',
+    spreadsheet: 'You find out 30 days late',
+    dashboard: 'Same day, with auto-text to member',
+  },
+  {
+    label: 'Reports',
+    cash: 'Mental math',
+    spreadsheet: 'Build a pivot table',
+    dashboard: 'Live dashboard, any time period',
+  },
+  {
+    label: 'Selling the business',
+    cash: 'Worth ~$0 to a buyer',
+    spreadsheet: 'Worth maybe 1× annual',
+    dashboard: 'Worth 2–4× annual revenue',
+  },
+  {
+    label: 'New member signups',
+    cash: 'They have to find you',
+    spreadsheet: 'They have to find you',
+    dashboard: 'Sign up online, 24/7, card already charged',
+  },
+];
+
+export default function WhyYouNeedThisPage() {
+  return (
+    <div className="space-y-10">
+      {/* Top back link */}
+      <Link
+        href="/admin-demo/overview"
+        className="inline-flex items-center gap-2 text-sm text-ink-muted uppercase font-display tracking-[0.08em] font-semibold hover:text-brand-alt transition-colors"
+      >
+        <ArrowLeft className="w-4 h-4" />
+        Back to Overview
+      </Link>
+
+      {/* Header */}
+      <header className="space-y-3">
+        <div className="inline-flex items-center gap-2 text-xs text-brand uppercase font-display tracking-[0.12em] font-semibold">
+          <Sparkles className="w-4 h-4" />
+          The Case For Modernizing
+        </div>
+        <h1 className="text-4xl lg:text-6xl font-display uppercase text-ink tracking-[0.02em] font-bold leading-tight">
+          Why You Need This
+        </h1>
+        <p className="text-lg text-ink-muted max-w-3xl leading-relaxed">
+          You&apos;ve got a spreadsheet. That was a real step up from cash-only. Here&apos;s what you&apos;re still missing — and what each gap costs.
+        </p>
+      </header>
+
+      {/* Section 1: Comparison */}
+      <section className="bg-surface border border-line rounded-md p-6 lg:p-8">
+        <header className="mb-6">
+          <h2 className="text-2xl lg:text-3xl font-display uppercase text-ink tracking-[0.02em] font-bold">
+            From Cash → Spreadsheet → Real System
+          </h2>
+          <p className="text-sm text-ink-muted mt-2">Each row is a feature of running a gym. Where do you sit today?</p>
+        </header>
+
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse min-w-[720px]">
+            <thead>
+              <tr className="border-b border-line">
+                <th className="text-left py-3 pr-4 text-xs text-ink-muted uppercase font-display tracking-[0.12em] font-semibold">Feature</th>
+                <th className="text-left py-3 px-4 text-xs text-ink-muted uppercase font-display tracking-[0.12em] font-semibold">Cash-Only</th>
+                <th className="text-left py-3 px-4 text-xs text-ink-muted uppercase font-display tracking-[0.12em] font-semibold">Spreadsheet</th>
+                <th className="text-left py-3 pl-4 text-xs text-brand uppercase font-display tracking-[0.12em] font-semibold">This Dashboard</th>
+              </tr>
+            </thead>
+            <tbody>
+              {comparisonRows.map((row, i) => (
+                <tr key={row.label} className={i % 2 === 0 ? 'bg-surface-2' : ''}>
+                  <td className="py-4 pr-4 text-sm text-ink font-semibold align-top">{row.label}</td>
+                  <td className="py-4 px-4 text-sm text-ink-muted align-top">{row.cash}</td>
+                  <td className="py-4 px-4 text-sm text-ink-muted align-top">{row.spreadsheet}</td>
+                  <td className="py-4 pl-4 text-sm text-brand font-medium align-top border-l-2 border-brand">{row.dashboard}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      {/* Section 2: Sale value math */}
+      <section className="bg-surface-2 border border-line rounded-md p-6 lg:p-8">
+        <header className="mb-6">
+          <h2 className="text-2xl lg:text-3xl font-display uppercase text-ink tracking-[0.02em] font-bold">
+            Your Business Is Worth What You Can Prove
+          </h2>
+          <p className="text-sm text-ink-muted mt-2">Sale value math — same gym, two very different price tags.</p>
+        </header>
+
+        <div className="grid gap-4 lg:grid-cols-2">
+          {/* Cash-only */}
+          <div className="bg-surface border border-line rounded-md p-6">
+            <p className="text-xs text-ink-muted uppercase font-display tracking-[0.12em] font-semibold mb-4">Cash-only gym</p>
+            <ul className="space-y-2 text-sm text-ink-muted mb-6">
+              <li className="flex items-start gap-2"><AlertTriangle className="w-4 h-4 text-danger mt-0.5 shrink-0" /> No verifiable revenue</li>
+              <li className="flex items-start gap-2"><AlertTriangle className="w-4 h-4 text-danger mt-0.5 shrink-0" /> Buyer takes your word</li>
+              <li className="flex items-start gap-2"><AlertTriangle className="w-4 h-4 text-danger mt-0.5 shrink-0" /> Maybe 0.5× revenue × heavy discount</li>
+            </ul>
+            <p className="text-4xl lg:text-5xl font-display font-bold text-ink-muted leading-none">$30K – $60K</p>
+          </div>
+
+          {/* Documented */}
+          <div className="bg-surface border-2 border-brand-alt rounded-md p-6 relative overflow-hidden">
+            <div className="absolute top-0 left-0 right-0 h-1 bg-brand-alt" />
+            <p className="text-xs text-brand-alt uppercase font-display tracking-[0.12em] font-semibold mb-4">Documented gym (this system)</p>
+            <ul className="space-y-2 text-sm text-ink mb-6">
+              <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-success mt-0.5 shrink-0" /> 2 years of clean Stripe records</li>
+              <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-success mt-0.5 shrink-0" /> Provable $188K annual revenue</li>
+              <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-success mt-0.5 shrink-0" /> 2–3× annual revenue</li>
+            </ul>
+            <p className="text-4xl lg:text-5xl font-display font-bold text-brand leading-none">$375K – $565K</p>
+          </div>
+        </div>
+
+        <p className="text-base text-ink-muted mt-6 max-w-3xl leading-relaxed">
+          The difference is <span className="text-brand font-semibold">$315K – $505K</span> — for the same business, same members, same building. The only thing that changes is what you can hand a buyer on paper.
+        </p>
+      </section>
+
+      {/* Section 3: At-risk */}
+      <section className="bg-surface border border-line rounded-md p-6 lg:p-8">
+        <header className="mb-6 flex items-start gap-3">
+          <UserCheck className="w-7 h-7 text-brand shrink-0 mt-1" />
+          <div>
+            <h2 className="text-2xl lg:text-3xl font-display uppercase text-ink tracking-[0.02em] font-bold">
+              Catch Members Before They Quit
+            </h2>
+            <p className="text-sm text-ink-muted mt-2">Failed payments are a 10-day window. Use it.</p>
+          </div>
+        </header>
+
+        <div className="bg-surface-2 border-l-4 border-danger rounded-sm p-5 mb-6">
+          <p className="text-xs text-danger uppercase font-display tracking-[0.12em] font-semibold mb-2">Right now</p>
+          <p className="text-2xl lg:text-3xl font-display font-bold text-ink leading-tight">
+            12 at-risk members → <span className="text-danger">$360/mo at stake</span>
+          </p>
+        </div>
+
+        <p className="text-base text-ink-muted leading-relaxed mb-4 max-w-3xl">
+          When someone&apos;s card fails, you have ~10 days to recover them before they&apos;re gone. A spreadsheet can&apos;t text them at 9 AM the morning the payment fails. This system does it automatically — with a one-click &ldquo;update your card&rdquo; link. Industry data: automatic recovery saves 30–40% of failed payments.
+        </p>
+        <p className="text-base text-ink leading-relaxed max-w-3xl">
+          If we save 10 cancellations/year × $30/mo × 12 months = <span className="text-brand font-display font-bold text-xl">$3,600 retained</span>.
+        </p>
+      </section>
+
+      {/* Section 4: Predictable revenue */}
+      <section className="bg-surface-2 border border-line rounded-md p-6 lg:p-8">
+        <header className="mb-6">
+          <h2 className="text-2xl lg:text-3xl font-display uppercase text-ink tracking-[0.02em] font-bold">
+            Predictable Revenue Beats Lumpy Cash
+          </h2>
+          <p className="text-sm text-ink-muted mt-2">You can&apos;t plan a business on weeks that go from $400 to $1,200.</p>
+        </header>
+
+        <div className="space-y-3 mb-6 max-w-3xl">
+          <p className="text-base text-ink-muted leading-relaxed">
+            Cash is unpredictable. Some weeks $400. Some weeks $1,200. You can&apos;t plan equipment purchases or hire decisions on lumpy cash.
+          </p>
+          <ul className="space-y-2 text-sm text-ink">
+            <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-success mt-0.5 shrink-0" /> Subscriptions = same amount, same day, every month. <span className="text-brand font-semibold ml-1">$15,690 hits your account on the 1st</span>, every month.</li>
+            <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-success mt-0.5 shrink-0" /> Banks understand subscriptions. They don&apos;t understand &ldquo;I have a gym, trust me.&rdquo;</li>
+            <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-success mt-0.5 shrink-0" /> Investors and buyers look at MRR. Cash businesses don&apos;t have MRR.</li>
+          </ul>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-2">
+          {/* Cash collection */}
+          <div className="bg-surface border border-line rounded-md p-5">
+            <p className="text-xs text-ink-muted uppercase font-display tracking-[0.12em] font-semibold mb-4">Cash Collection</p>
+            <ul className="space-y-2 text-sm text-ink-muted mb-4">
+              <li className="flex justify-between"><span>Week 1</span><span className="font-display">$480</span></li>
+              <li className="flex justify-between"><span>Week 2</span><span className="font-display">$1,150</span></li>
+              <li className="flex justify-between"><span>Week 3</span><span className="font-display">$620</span></li>
+              <li className="flex justify-between"><span>Week 4</span><span className="font-display">$890</span></li>
+            </ul>
+            <div className="pt-3 border-t border-line">
+              <p className="text-sm text-ink-muted">Total: <span className="text-ink font-display font-bold">$3,140</span> — best guess</p>
+            </div>
+          </div>
+
+          {/* Subscription */}
+          <div className="bg-surface border-2 border-brand rounded-md p-5 relative overflow-hidden">
+            <div className="absolute top-0 left-0 right-0 h-1 bg-brand" />
+            <p className="text-xs text-brand uppercase font-display tracking-[0.12em] font-semibold mb-4">Subscription</p>
+            <p className="text-3xl lg:text-4xl font-display font-bold text-brand leading-none mb-2">$15,690.00</p>
+            <p className="text-sm text-ink-muted">every 1st of the month, on the dot</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 5: Get found online */}
+      <section className="bg-surface border border-line rounded-md p-6 lg:p-8">
+        <header className="mb-6">
+          <h2 className="text-2xl lg:text-3xl font-display uppercase text-ink tracking-[0.02em] font-bold">
+            Get Found Online
+          </h2>
+          <p className="text-sm text-ink-muted mt-2">If you&apos;re not online, you&apos;re losing members to Planet Fitness in Kalamazoo.</p>
+        </header>
+
+        <p className="text-base text-ink-muted leading-relaxed mb-6 max-w-3xl">
+          70% of Plainwell residents Google &ldquo;gym near me&rdquo; before they ever drive past your sign. If you&apos;re not online with hours, classes, photos, and one-click signup, they end up at a Planet Fitness in Kalamazoo.
+        </p>
+
+        <ul className="space-y-3 mb-6 max-w-3xl">
+          <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-success mt-0.5 shrink-0" /><span className="text-ink"><span className="font-semibold">Local SEO</span> — &ldquo;gym in Plainwell MI&rdquo; lands on you</span></li>
+          <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-success mt-0.5 shrink-0" /><span className="text-ink"><span className="font-semibold">Real Google review embeds</span> — your 4.8★/107 reviews working for you 24/7</span></li>
+          <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-success mt-0.5 shrink-0" /><span className="text-ink"><span className="font-semibold">Online signup at 11 PM Tuesday</span> — you get a new member while you&apos;re asleep</span></li>
+          <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-success mt-0.5 shrink-0" /><span className="text-ink"><span className="font-semibold">Class schedule visible</span> — Taekwondo parents schedule their kids without calling</span></li>
+        </ul>
+
+        <div className="bg-surface-2 border-l-4 border-brand-alt rounded-sm p-5">
+          <p className="text-xs text-brand-alt uppercase font-display tracking-[0.12em] font-semibold mb-2">Estimated impact</p>
+          <p className="text-base text-ink leading-relaxed">
+            Conservative: 3–5 new members/month from online = <span className="text-brand font-display font-bold text-xl">$90–$150 new MRR</span> every month. Compounds fast.
+          </p>
+        </div>
+      </section>
+
+      {/* Section 6: Loans, taxes, insurance, liability */}
+      <section className="bg-surface-2 border border-line rounded-md p-6 lg:p-8">
+        <header className="mb-6">
+          <h2 className="text-2xl lg:text-3xl font-display uppercase text-ink tracking-[0.02em] font-bold">
+            Loans, Taxes, Insurance, Liability
+          </h2>
+          <p className="text-sm text-ink-muted mt-2">All the boring grown-up business stuff gets easier.</p>
+        </header>
+
+        <div className="grid gap-4 md:grid-cols-2">
+          {[
+            { icon: Building, color: 'text-brand-alt', title: 'Bank loans', body: 'Need to expand or buy new equipment? Banks lend against documented revenue. They don’t lend against cash deposits.' },
+            { icon: FileText, color: 'text-brand', title: 'Tax season', body: 'Every transaction categorized, exportable in one click. CPA bill drops by hours.' },
+            { icon: Shield, color: 'text-success', title: 'Insurance audits', body: 'Insurance carriers want to see member rosters and traffic data. Now you can hand it to them.' },
+            { icon: Activity, color: 'text-danger', title: 'Liability tracking', body: 'If someone claims they were hurt at the gym on March 14th — were they actually checked in that day? Now you know.' },
+          ].map((item) => {
+            const Icon = item.icon;
+            return (
+              <div key={item.title} className="bg-surface border border-line rounded-md p-5">
+                <div className="flex items-center gap-3 mb-3">
+                  <Icon className={`w-6 h-6 ${item.color}`} />
+                  <h3 className="text-lg font-display uppercase text-ink tracking-[0.02em] font-bold">{item.title}</h3>
+                </div>
+                <p className="text-sm text-ink-muted leading-relaxed">{item.body}</p>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Section 7: Step back */}
+      <section className="bg-surface border border-line rounded-md p-6 lg:p-8 relative overflow-hidden">
+        <div className="absolute top-0 left-0 bottom-0 w-1 bg-brand-alt" />
+        <header className="mb-4">
+          <h2 className="text-2xl lg:text-3xl font-display uppercase text-ink tracking-[0.02em] font-bold">
+            What If You Want to Step Back?
+          </h2>
+        </header>
+        <div className="space-y-4 max-w-3xl">
+          <p className="text-base text-ink-muted leading-relaxed">
+            Right now, the gym runs because YOU run it. If you take 2 weeks off, who collects payments? Who knows who&apos;s paid? Who decides if Bob&apos;s complaint is real?
+          </p>
+          <p className="text-base text-ink leading-relaxed">
+            A documented business runs without you. Hire a manager → hand them the dashboard → they have everything they need. <span className="text-brand-alt font-semibold">Take a real vacation. Eventually, sell.</span>
+          </p>
+        </div>
+      </section>
+
+      {/* Section 8: Bottom CTA */}
+      <section className="bg-surface-2 border-2 border-brand rounded-md p-6 lg:p-8 relative overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-1 bg-brand" />
+        <header className="mb-6">
+          <p className="text-xs text-brand uppercase font-display tracking-[0.12em] font-semibold mb-2">The Bottom Line</p>
+          <h2 className="text-3xl lg:text-4xl font-display uppercase text-ink tracking-[0.02em] font-bold">
+            What&apos;s the Cost of NOT Doing This?
+          </h2>
+        </header>
+
+        <ul className="space-y-3 mb-8 max-w-3xl">
+          <li className="flex items-start gap-3">
+            <AlertTriangle className="w-5 h-5 text-danger mt-1 shrink-0" />
+            <span className="text-base text-ink">Lost members from payment failures: <span className="text-danger font-display font-bold">~$3,600/year</span></span>
+          </li>
+          <li className="flex items-start gap-3">
+            <AlertTriangle className="w-5 h-5 text-danger mt-1 shrink-0" />
+            <span className="text-base text-ink">Cash &ldquo;fall through cracks&rdquo;: industry estimate 5–10% of revenue = <span className="text-danger font-display font-bold">$9,400 – $18,800/year</span></span>
+          </li>
+          <li className="flex items-start gap-3">
+            <AlertTriangle className="w-5 h-5 text-danger mt-1 shrink-0" />
+            <span className="text-base text-ink">Lower sale value when you&apos;re ready to retire: <span className="text-danger font-display font-bold">$315K – $505K</span></span>
+          </li>
+        </ul>
+
+        <p className="text-lg lg:text-xl text-ink leading-relaxed mb-8 max-w-3xl">
+          This dashboard pays for itself in the first month of catching one failed payment. <span className="text-brand font-display font-bold uppercase">Everything after that is pure upside.</span>
+        </p>
+
+        <div className="flex flex-wrap gap-3">
+          <a
+            href="mailto:jason@example.com?subject=Repz%20Gym%20Dashboard%20-%20Let%27s%20talk"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-sm bg-brand text-bg text-sm uppercase font-display font-bold tracking-[0.08em] hover:bg-brand/90 transition-colors"
+          >
+            <Mail className="w-4 h-4" />
+            Talk to Me About Getting This Set Up
+          </a>
+          <Link
+            href="/admin-demo/overview"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-sm border border-line text-ink text-sm uppercase font-display font-semibold tracking-[0.08em] hover:bg-surface transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back to Overview
+          </Link>
+        </div>
+      </section>
+
+      {/* Bottom nav helper */}
+      <div className="flex justify-between items-center pt-6 border-t border-line">
+        <Link
+          href="/admin-demo/overview"
+          className="inline-flex items-center gap-2 text-sm text-ink-muted uppercase font-display tracking-[0.08em] font-semibold hover:text-brand-alt transition-colors"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          Overview
+        </Link>
+        <Link
+          href="/admin-demo/members"
+          className="inline-flex items-center gap-2 text-sm text-ink-muted uppercase font-display tracking-[0.08em] font-semibold hover:text-brand-alt transition-colors"
+        >
+          Members
+          <ArrowRight className="w-4 h-4" />
+        </Link>
+      </div>
+    </div>
+  );
+}

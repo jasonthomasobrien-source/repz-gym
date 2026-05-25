@@ -1,4 +1,5 @@
-import { AlertTriangle, Mail, Download, BarChart3 } from 'lucide-react';
+import Link from 'next/link';
+import { AlertTriangle, Mail, Download, BarChart3, TrendingUp, UserCheck, Clock, ArrowRight } from 'lucide-react';
 import { StatCard } from '@/components/demo/StatCard';
 import { RevenueChart, GrowthChart } from '@/components/demo/RevenueChart';
 import { Avatar } from '@/components/demo/Avatar';
@@ -37,6 +38,81 @@ export default function OverviewPage() {
           Last updated 2 min ago
         </p>
       </div>
+
+      {/* Pitch banner */}
+      <section className="relative bg-surface border border-line rounded-md p-6 lg:p-8 overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand via-brand-alt to-success" />
+        <div className="flex items-end justify-between flex-wrap gap-3 mb-6">
+          <div>
+            <h2 className="text-2xl lg:text-3xl font-display uppercase text-ink tracking-[0.02em] font-bold">
+              Why This Dashboard Matters
+            </h2>
+            <p className="text-sm text-ink-muted mt-1">
+              More than a spreadsheet — your business made visible.
+            </p>
+          </div>
+          <span className="text-xs text-brand-alt uppercase font-display tracking-[0.12em] font-semibold">
+            The pitch, in 3 numbers
+          </span>
+        </div>
+
+        <div className="grid gap-4 grid-cols-1 lg:grid-cols-3">
+          {/* Sellable Business */}
+          <div className="bg-surface-2 border border-line rounded-md p-5">
+            <div className="flex items-center gap-2 mb-4">
+              <TrendingUp className="w-5 h-5 text-brand-alt" />
+              <p className="text-xs text-ink-muted uppercase font-display tracking-[0.12em] font-semibold">
+                Sellable Business
+              </p>
+            </div>
+            <p className="text-5xl font-display font-bold text-brand-alt leading-none mb-2">3×</p>
+            <p className="text-sm text-ink font-semibold mb-2">Annual revenue = sale value</p>
+            <p className="text-sm text-ink-muted leading-relaxed">
+              Buyers pay for what they can verify. With documented MRR you&apos;re looking at $375K–$565K — vs $30K for a cash-only handshake.
+            </p>
+          </div>
+
+          {/* Member Retention */}
+          <div className="bg-surface-2 border border-line rounded-md p-5">
+            <div className="flex items-center gap-2 mb-4">
+              <UserCheck className="w-5 h-5 text-brand" />
+              <p className="text-xs text-ink-muted uppercase font-display tracking-[0.12em] font-semibold">
+                Member Retention
+              </p>
+            </div>
+            <p className="text-5xl font-display font-bold text-brand leading-none mb-2">12</p>
+            <p className="text-sm text-ink font-semibold mb-2">At-risk members caught this month</p>
+            <p className="text-sm text-ink-muted leading-relaxed">
+              Spreadsheets can&apos;t text someone whose card failed. We can. Save 10 members/year = $3,600 back in your pocket.
+            </p>
+          </div>
+
+          {/* Hours Back */}
+          <div className="bg-surface-2 border border-line rounded-md p-5">
+            <div className="flex items-center gap-2 mb-4">
+              <Clock className="w-5 h-5 text-success" />
+              <p className="text-xs text-ink-muted uppercase font-display tracking-[0.12em] font-semibold">
+                Hours Back
+              </p>
+            </div>
+            <p className="text-5xl font-display font-bold text-success leading-none mb-2">5 hrs/wk</p>
+            <p className="text-sm text-ink font-semibold mb-2">Stop manually tracking payments</p>
+            <p className="text-sm text-ink-muted leading-relaxed">
+              No more &ldquo;did Sarah pay this month?&rdquo; No spreadsheet rows. Automatic billing, automatic receipts, automatic reports.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-6 pt-5 border-t border-line">
+          <Link
+            href="/admin-demo/why-you-need-this"
+            className="inline-flex items-center gap-2 text-sm text-brand-alt uppercase font-display tracking-[0.08em] font-semibold hover:text-brand transition-colors"
+          >
+            See the full case
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </section>
 
       {/* Top metrics */}
       <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
