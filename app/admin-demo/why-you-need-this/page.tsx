@@ -13,6 +13,8 @@ import {
   ArrowRight,
   ArrowLeft,
   Mail,
+  Users,
+  ClipboardCheck,
 } from 'lucide-react';
 
 export const metadata = {
@@ -293,7 +295,80 @@ export default function WhyYouNeedThisPage() {
         </div>
       </section>
 
-      {/* Section 7: Step back */}
+      {/* Section 7: Know Who's In The Building */}
+      <section className="bg-surface-2 border border-line rounded-md p-6 lg:p-8">
+        <header className="mb-6">
+          <h2 className="text-2xl lg:text-3xl font-display uppercase text-ink tracking-[0.02em] font-bold">
+            Know Who&apos;s In The Building (The QR Piece)
+          </h2>
+          <p className="text-sm text-ink-muted mt-2">
+            A $30 barcode scanner at the front desk turns every check-in into data.
+          </p>
+        </header>
+
+        <p className="text-base text-ink-muted leading-relaxed mb-6 max-w-3xl">
+          Members scan a QR code on their phone (or a printed card) as they walk in. Day-pass buyers get a single-use code at purchase. Takes 1 second per person. What you get in return:
+        </p>
+
+        <div className="grid gap-4 md:grid-cols-2 mb-6">
+          {[
+            {
+              icon: Users,
+              color: 'text-brand-alt',
+              title: 'Real-time occupancy',
+              body: "See who's in the building right now. Helps with staff scheduling, busy-hour planning, and 'is it crowded?' answers for new members calling in.",
+            },
+            {
+              icon: AlertTriangle,
+              color: 'text-danger',
+              title: 'Churn prediction',
+              body: "Members who haven't checked in for 14+ days are 4× more likely to cancel. Auto-email them a 'we miss you' note before they're gone.",
+            },
+            {
+              icon: Shield,
+              color: 'text-success',
+              title: 'Liability shield',
+              body: 'Someone claims they slipped on March 14th? You have a timestamped scan log proving who was in and when. Insurance companies care a lot about this.',
+            },
+            {
+              icon: ClipboardCheck,
+              color: 'text-brand',
+              title: 'Class attendance',
+              body: 'Stop guessing how many people actually show up to Taekwondo. Verify your $30 MAD FITNEZ payment is producing $30 of class attendance.',
+            },
+          ].map((item) => {
+            const Icon = item.icon;
+            return (
+              <div key={item.title} className="bg-surface border border-line rounded-md p-5">
+                <div className="flex items-center gap-3 mb-3">
+                  <Icon className={`w-6 h-6 ${item.color}`} />
+                  <h3 className="text-lg font-display uppercase text-ink tracking-[0.02em] font-bold">{item.title}</h3>
+                </div>
+                <p className="text-sm text-ink-muted leading-relaxed">{item.body}</p>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="bg-surface border-l-4 border-brand rounded-sm p-5 mb-4">
+          <p className="text-base text-ink font-display font-bold mb-1">
+            Hardware cost: ~$30 one-time for a USB scanner, or use any tablet camera.
+          </p>
+          <p className="text-sm text-ink-muted leading-relaxed">
+            Setup is plug-and-play. The scanner sends the QR code to the dashboard automatically. Members install the Repz Pass on their phone once, then scan as they enter.
+          </p>
+        </div>
+
+        <Link
+          href="/admin-demo/check-ins"
+          className="inline-flex items-center gap-2 text-sm text-brand uppercase font-display tracking-[0.08em] font-semibold hover:text-brand-alt transition-colors"
+        >
+          See the live check-in dashboard
+          <ArrowRight className="w-4 h-4" />
+        </Link>
+      </section>
+
+      {/* Section 8: Step back */}
       <section className="bg-surface border border-line rounded-md p-6 lg:p-8 relative overflow-hidden">
         <div className="absolute top-0 left-0 bottom-0 w-1 bg-brand-alt" />
         <header className="mb-4">
@@ -311,7 +386,7 @@ export default function WhyYouNeedThisPage() {
         </div>
       </section>
 
-      {/* Section 8: Bottom CTA */}
+      {/* Section 9: Bottom CTA */}
       <section className="bg-surface-2 border-2 border-brand rounded-md p-6 lg:p-8 relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-1 bg-brand" />
         <header className="mb-6">

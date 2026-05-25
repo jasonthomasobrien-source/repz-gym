@@ -15,6 +15,7 @@ const navItems: NavItem[] = [
   { label: 'Members', href: '/admin-demo/members' },
   { label: 'Revenue', href: '/admin-demo/revenue' },
   { label: 'Classes', href: '/admin-demo/classes' },
+  { label: 'Check-Ins', href: '/admin-demo/check-ins' },
   { label: 'Messages', href: '/admin-demo/messages' },
   { label: 'Settings', href: '/admin-demo/settings' },
   { label: 'Why You Need This', href: '/admin-demo/why-you-need-this', icon: Sparkles },
@@ -77,7 +78,12 @@ export function DashboardNav() {
       <nav aria-label="Admin mobile tabs" className="lg:hidden fixed bottom-0 left-0 right-0 bg-bg border-t border-line z-40">
         <div className="flex justify-around">
           {navItems.map((item) => {
-            const mobileLabel = item.href === '/admin-demo/why-you-need-this' ? 'Why' : item.label;
+            const mobileLabel =
+              item.href === '/admin-demo/why-you-need-this'
+                ? 'Why'
+                : item.href === '/admin-demo/check-ins'
+                  ? 'Scan'
+                  : item.label;
             return (
               <Link
                 key={item.href}

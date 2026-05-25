@@ -211,4 +211,179 @@ export function getAtRiskMembers(): Payment[] {
   return payments.filter((p) => p.status === 'failed' && p.kind === 'subscription').slice(0, 5);
 }
 
+// ============================================================================
+// Check-In System
+// ============================================================================
+
+interface CheckIn {
+  id: string;
+  memberName: string;
+  memberId: string;
+  time: string; // "12:42 PM"
+  minutesAgo: number;
+  method: 'QR' | 'Fob' | 'Day Pass';
+  type: 'Member' | 'Day Pass';
+}
+
+interface InactiveMember {
+  id: string;
+  name: string;
+  email: string;
+  lastSeen: string; // "April 28, 2026"
+  daysAgo: number;
+}
+
+interface HourlyCount {
+  hour: string; // "6am", "5pm" etc
+  count: number;
+}
+
+const DAY_PASS_GUEST_NAMES = [
+  'Marcus Reed', 'Tina Vargas', 'Devon Park', 'Rachel Doyle',
+  'Brian Foster', 'Jenna Cole', 'Marcus Reed', 'Eli Brooks',
+];
+
+function formatClockTime(date: Date): string {
+  let h = date.getHours();
+  const m = date.getMinutes().toString().padStart(2, '0');
+  const ampm = h >= 12 ? 'PM' : 'AM';
+  h = h % 12;
+  if (h === 0) h = 12;
+  return `${h}:${m} ${ampm}`;
+}
+
+export function getCurrentlyCheckedIn(): CheckIn[] {
+  const members = getMockMembers().filter((m) => m.status === 'active');
+  const rand = seededRandom(7777);
+  // 23 currently checked in: ~20 members + 3 day passes
+  const result: CheckIn[] = [];
+  // Anchor "now" to a deterministic 12:42 PM
+  const now = new Date(2026, 4, 24, 12, 42);
+
+  for (let i = 0; i < 20; i++) {
+    const idx = Math.floor(rand() * members.length);
+    const member = members[idx];
+    const minutesAgo = Math.floor(rand() * 110) + 2;
+    const t = new Date(now.getTime() - minutesAgo * 60000);
+    result.push({
+      id: `current-${i}`,
+      memberName: member.name,
+      memberId: member.id,
+      time: formatClockTime(t),
+      minutesAgo,
+      method: rand() < 0.55 ? 'QR' : 'Fob',
+      type: 'Member',
+    });
+  }
+
+  for (let i = 0; i < 3; i++) {
+    const minutesAgo = Math.floor(rand() * 90) + 5;
+    const t = new Date(now.getTime() - minutesAgo * 60000);
+    result.push({
+      id: `current-dp-${i}`,
+      memberName: DAY_PASS_GUEST_NAMES[i],
+      memberId: `dp-${i}`,
+      time: formatClockTime(t),
+      minutesAgo,
+      method: 'Day Pass',
+      type: 'Day Pass',
+    });
+  }
+
+  return result.sort((a, b) => a.minutesAgo - b.minutesAgo);
+}
+
+export function getRecentCheckIns(): CheckIn[] {
+  const members = getMockMembers().filter((m) => m.status === 'active');
+  const rand = seededRandom(4242);
+  const result: CheckIn[] = [];
+  const now = new Date(2026, 4, 24, 12, 42);
+
+  // 30 most recent, stepping back by 1-6 minutes
+  let elapsed = 0;
+  for (let i = 0; i < 30; i++) {
+    elapsed += 1 + Math.floor(rand() * 6);
+    const t = new Date(now.getTime() - elapsed * 60000);
+    const isDayPass = rand() < 0.12;
+
+    if (isDayPass) {
+      result.push({
+        id: `recent-${i}`,
+        memberName: DAY_PASS_GUEST_NAMES[Math.floor(rand() * DAY_PASS_GUEST_NAMES.length)],
+        memberId: `dp-r-${i}`,
+        time: formatClockTime(t),
+        minutesAgo: elapsed,
+        method: 'Day Pass',
+        type: 'Day Pass',
+      });
+    } else {
+      const idx = Math.floor(rand() * members.length);
+      const member = members[idx];
+      result.push({
+        id: `recent-${i}`,
+        memberName: member.name,
+        memberId: member.id,
+        time: formatClockTime(t),
+        minutesAgo: elapsed,
+        method: rand() < 0.6 ? 'QR' : 'Fob',
+        type: 'Member',
+      });
+    }
+  }
+
+  return result;
+}
+
+export function getInactiveMembers(): InactiveMember[] {
+  const members = getMockMembers().filter((m) => m.status === 'active');
+  const rand = seededRandom(1234);
+  const result: InactiveMember[] = [];
+  const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  // "today" = May 24, 2026
+  const today = new Date(2026, 4, 24);
+
+  for (let i = 0; i < 10; i++) {
+    const idx = Math.floor(rand() * members.length);
+    const member = members[idx];
+    const daysAgo = 14 + Math.floor(rand() * 35);
+    const lastDate = new Date(today.getTime() - daysAgo * 24 * 60 * 60 * 1000);
+    const lastSeenStr = `${monthNames[lastDate.getMonth()]} ${lastDate.getDate()}, ${lastDate.getFullYear()}`;
+    result.push({
+      id: `inactive-${i}`,
+      name: member.name,
+      email: member.email,
+      lastSeen: lastSeenStr,
+      daysAgo,
+    });
+  }
+
+  return result.sort((a, b) => b.daysAgo - a.daysAgo);
+}
+
+export function getHourlyCheckIns(): HourlyCount[] {
+  // 6am to 9pm = 16 hours
+  // Realistic: morning rush at 6:30am (~22), light midday, lunch dip ~5,
+  // afternoon climb, peak at 5:30pm (~31), evening tail off
+  const data: HourlyCount[] = [
+    { hour: '6am', count: 18 },
+    { hour: '7am', count: 22 },
+    { hour: '8am', count: 14 },
+    { hour: '9am', count: 9 },
+    { hour: '10am', count: 7 },
+    { hour: '11am', count: 8 },
+    { hour: '12pm', count: 11 },
+    { hour: '1pm', count: 5 },
+    { hour: '2pm', count: 6 },
+    { hour: '3pm', count: 9 },
+    { hour: '4pm', count: 17 },
+    { hour: '5pm', count: 28 },
+    { hour: '6pm', count: 31 },
+    { hour: '7pm', count: 24 },
+    { hour: '8pm', count: 15 },
+    { hour: '9pm', count: 7 },
+  ];
+  return data;
+}
+
 export { MONTHLY_PRICE, DAY_PASS_PRICE, ACTIVE_TARGET, TOTAL_MEMBERS };
+export type { CheckIn, InactiveMember, HourlyCount };

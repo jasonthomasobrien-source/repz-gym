@@ -56,6 +56,25 @@ export default function OverviewPage() {
           </span>
         </div>
 
+        <div className="mb-5 flex flex-wrap items-center gap-2 text-sm text-ink-muted">
+          <span className="relative flex h-2.5 w-2.5" aria-hidden>
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75" />
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-success" />
+          </span>
+          <span>
+            <span className="text-ink font-semibold">23 members in the building right now</span>
+            <span className="mx-2 text-ink-subtle">·</span>
+            last scan 2 min ago
+          </span>
+          <Link
+            href="/admin-demo/check-ins"
+            className="ml-1 inline-flex items-center gap-1 text-brand-alt uppercase font-display text-xs tracking-[0.08em] font-semibold hover:text-brand transition-colors"
+          >
+            View check-ins
+            <ArrowRight className="w-3 h-3" />
+          </Link>
+        </div>
+
         <div className="grid gap-4 grid-cols-1 lg:grid-cols-3">
           {/* Sellable Business */}
           <div className="bg-surface-2 border border-line rounded-md p-5">
