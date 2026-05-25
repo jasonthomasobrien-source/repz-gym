@@ -57,23 +57,23 @@ export function MemberTable({ members }: MemberTableProps) {
   }, [members, query, filter, sort]);
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-5">
       {/* Controls */}
       <div className="flex flex-wrap gap-3 items-center justify-between">
         <div className="relative flex-1 min-w-[240px] max-w-md">
-          <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-ink-subtle" />
+          <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-ink-subtle" />
           <input
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search by name or email"
-            className="w-full bg-surface border border-line rounded-sm pl-10 pr-3 py-2 text-sm text-ink placeholder:text-ink-subtle focus:outline-none focus:border-brand transition-colors"
+            className="w-full bg-surface border border-line rounded-xl pl-10 pr-3 py-2.5 text-sm text-ink placeholder:text-ink-subtle focus:outline-none focus:border-brand-alt focus:ring-2 focus:ring-brand-alt/30 transition-all"
           />
         </div>
         <select
           value={sort}
           onChange={(e) => setSort(e.target.value as SortKey)}
-          className="bg-surface border border-line rounded-sm px-3 py-2 text-sm text-ink focus:outline-none focus:border-brand"
+          className="bg-surface border border-line rounded-xl px-4 py-2.5 text-sm text-ink focus:outline-none focus:border-brand-alt focus:ring-2 focus:ring-brand-alt/30 transition-all"
         >
           <option value="recent">Recently Joined</option>
           <option value="name">Name A–Z</option>
@@ -88,10 +88,10 @@ export function MemberTable({ members }: MemberTableProps) {
             <button
               key={f.key}
               onClick={() => setFilter(f.key)}
-              className={`px-3 py-1.5 rounded-sm text-xs uppercase font-display font-semibold tracking-[0.08em] border transition-colors ${
+              className={`px-4 py-1.5 rounded-full text-xs uppercase font-display font-semibold tracking-[0.08em] border transition-all ${
                 active
-                  ? 'bg-brand text-ink border-brand'
-                  : 'bg-transparent text-ink-muted border-line hover:text-ink hover:border-ink-subtle'
+                  ? 'bg-gradient-to-r from-brand to-brand-hot text-ink border-brand shadow-lg shadow-brand/30'
+                  : 'bg-transparent text-ink-muted border-line hover:text-brand hover:border-brand/50 hover:bg-brand/5'
               }`}
             >
               {f.label}
@@ -105,23 +105,23 @@ export function MemberTable({ members }: MemberTableProps) {
       </p>
 
       {/* Table */}
-      <div className="bg-surface border border-line rounded-md overflow-hidden">
+      <div className="bg-gradient-to-b from-surface to-surface-2/60 border border-line rounded-2xl overflow-hidden shadow-2xl shadow-black/40">
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
-            <thead className="bg-surface-2">
+            <thead className="bg-surface-2 border-b-2 border-brand/30">
               <tr className="text-left text-xs uppercase font-display tracking-[0.08em] text-ink-muted">
-                <th className="px-4 py-3">Member</th>
-                <th className="px-4 py-3">Status</th>
-                <th className="px-4 py-3 hidden md:table-cell">Plan</th>
-                <th className="px-4 py-3 hidden lg:table-cell">Joined</th>
-                <th className="px-4 py-3 hidden lg:table-cell">MRR</th>
-                <th className="px-4 py-3 text-right">Actions</th>
+                <th className="px-5 py-4">Member</th>
+                <th className="px-5 py-4">Status</th>
+                <th className="px-5 py-4 hidden md:table-cell">Plan</th>
+                <th className="px-5 py-4 hidden lg:table-cell">Joined</th>
+                <th className="px-5 py-4 hidden lg:table-cell">MRR</th>
+                <th className="px-5 py-4 text-right">Actions</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-line">
               {filtered.map((m) => (
-                <tr key={m.id} className="hover:bg-surface-2/60 transition-colors">
-                  <td className="px-4 py-3">
+                <tr key={m.id} className="even:bg-surface-2/30 hover:bg-brand/5 transition-colors">
+                  <td className="px-5 py-4">
                     <div className="flex items-center gap-3">
                       <Avatar name={m.name} />
                       <div className="min-w-0">
@@ -130,16 +130,16 @@ export function MemberTable({ members }: MemberTableProps) {
                       </div>
                     </div>
                   </td>
-                  <td className="px-4 py-3"><StatusBadge status={m.status} /></td>
-                  <td className="px-4 py-3 hidden md:table-cell text-ink-muted">Monthly</td>
-                  <td className="px-4 py-3 hidden lg:table-cell text-ink-muted">{m.joined}</td>
-                  <td className="px-4 py-3 hidden lg:table-cell text-ink">
+                  <td className="px-5 py-4"><StatusBadge status={m.status} /></td>
+                  <td className="px-5 py-4 hidden md:table-cell text-ink-muted">Monthly</td>
+                  <td className="px-5 py-4 hidden lg:table-cell text-ink-muted">{m.joined}</td>
+                  <td className="px-5 py-4 hidden lg:table-cell text-ink font-display font-semibold">
                     {m.status === 'active' || m.status === 'past_due' ? m.plan : '—'}
                   </td>
-                  <td className="px-4 py-3 text-right">
+                  <td className="px-5 py-4 text-right">
                     <Link
                       href={`/admin-demo/members/${m.id}`}
-                      className="text-brand hover:text-brand-hot font-display uppercase text-xs tracking-[0.08em] font-semibold"
+                      className="inline-flex items-center gap-1 text-brand hover:text-brand-hot font-display uppercase text-xs tracking-[0.08em] font-semibold transition-colors"
                     >
                       View →
                     </Link>
