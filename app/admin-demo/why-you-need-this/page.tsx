@@ -16,6 +16,7 @@ import {
   Users,
   ClipboardCheck,
 } from 'lucide-react';
+import { ValuationCalculator } from '@/components/demo/ValuationCalculator';
 
 export const metadata = {
   title: 'Why You Need This | Admin Dashboard Demo | Repz Gym',
@@ -138,31 +139,124 @@ export default function WhyYouNeedThisPage() {
         <div className="grid gap-4 lg:grid-cols-2">
           {/* Cash-only */}
           <div className="bg-surface border border-line rounded-md p-6">
-            <p className="text-xs text-ink-muted uppercase font-display tracking-[0.12em] font-semibold mb-4">Cash-only gym</p>
-            <ul className="space-y-2 text-sm text-ink-muted mb-6">
-              <li className="flex items-start gap-2"><AlertTriangle className="w-4 h-4 text-danger mt-0.5 shrink-0" /> No verifiable revenue</li>
-              <li className="flex items-start gap-2"><AlertTriangle className="w-4 h-4 text-danger mt-0.5 shrink-0" /> Buyer takes your word</li>
-              <li className="flex items-start gap-2"><AlertTriangle className="w-4 h-4 text-danger mt-0.5 shrink-0" /> Maybe 0.5× revenue × heavy discount</li>
+            <p className="text-xs text-ink-muted uppercase font-display tracking-[0.12em] font-semibold mb-2">Cash-only gym</p>
+            <p className="text-4xl lg:text-5xl font-display font-bold text-ink-muted leading-none mb-2">$30K – $60K</p>
+            <p className="text-sm text-ink-muted mb-5">Hard assets only — equipment + lease value</p>
+            <ul className="space-y-2 text-sm text-ink-muted">
+              <li className="flex items-start gap-2"><AlertTriangle className="w-4 h-4 text-danger mt-0.5 shrink-0" /> No verifiable revenue stream</li>
+              <li className="flex items-start gap-2"><AlertTriangle className="w-4 h-4 text-danger mt-0.5 shrink-0" /> Buyers can&apos;t confirm member count</li>
+              <li className="flex items-start gap-2"><AlertTriangle className="w-4 h-4 text-danger mt-0.5 shrink-0" /> Sale only on equipment + leasehold</li>
             </ul>
-            <p className="text-4xl lg:text-5xl font-display font-bold text-ink-muted leading-none">$30K – $60K</p>
           </div>
 
           {/* Documented */}
           <div className="bg-surface border-2 border-brand-alt rounded-md p-6 relative overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-1 bg-brand-alt" />
-            <p className="text-xs text-brand-alt uppercase font-display tracking-[0.12em] font-semibold mb-4">Documented gym (this system)</p>
-            <ul className="space-y-2 text-sm text-ink mb-6">
-              <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-success mt-0.5 shrink-0" /> 2 years of clean Stripe records</li>
-              <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-success mt-0.5 shrink-0" /> Provable $188K annual revenue</li>
-              <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-success mt-0.5 shrink-0" /> 2–3× annual revenue</li>
+            <p className="text-xs text-brand-alt uppercase font-display tracking-[0.12em] font-semibold mb-2">Documented gym (this system)</p>
+            <p className="text-4xl lg:text-5xl font-display font-bold text-brand leading-none mb-2">$140K – $280K</p>
+            <p className="text-sm text-ink-muted mb-5">2–3× SDE OR 0.5–1.5× annual revenue (documented)</p>
+            <ul className="space-y-2 text-sm text-ink">
+              <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-success mt-0.5 shrink-0" /> Verifiable $188K annual revenue</li>
+              <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-success mt-0.5 shrink-0" /> Provable 523 active monthly subscribers</li>
+              <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-success mt-0.5 shrink-0" /> Recurring revenue commands a premium</li>
             </ul>
-            <p className="text-4xl lg:text-5xl font-display font-bold text-brand leading-none">$375K – $565K</p>
           </div>
         </div>
 
         <p className="text-base text-ink-muted mt-6 max-w-3xl leading-relaxed">
-          The difference is <span className="text-brand font-semibold">$315K – $505K</span> — for the same business, same members, same building. The only thing that changes is what you can hand a buyer on paper.
+          <span className="text-brand font-semibold">The difference is $80K – $220K</span> for the same gym — same members, same building. The only variable is what you can put on paper.
         </p>
+        <p className="text-xs text-ink-subtle mt-3 max-w-3xl leading-relaxed italic">
+          These ranges reflect typical small-gym sales (BizBuySell data, business broker rules of thumb). Final sale price depends on lease, equipment, location, growth, and buyer type. This isn&apos;t a formal appraisal.
+        </p>
+      </section>
+
+      {/* Section 3: Valuation Calculator */}
+      <section className="bg-surface-2 border border-line rounded-md p-6 lg:p-8">
+        <header className="mb-6">
+          <h2 className="text-2xl lg:text-3xl font-display uppercase text-ink tracking-[0.02em] font-bold">
+            Estimate Your Gym&apos;s Value
+          </h2>
+          <p className="text-sm text-ink-muted mt-2">Plug in your real numbers. See what the gap looks like for you.</p>
+        </header>
+        <ValuationCalculator />
+      </section>
+
+      {/* Section 4: Revenue You're Leaving on the Table */}
+      <section className="bg-surface border border-line rounded-md p-6 lg:p-8">
+        <header className="mb-6">
+          <h2 className="text-2xl lg:text-3xl font-display uppercase text-ink tracking-[0.02em] font-bold">
+            Revenue You&apos;re Leaving on the Table
+          </h2>
+          <p className="text-sm text-ink-muted mt-2">Money you&apos;re losing right now that this system would capture.</p>
+        </header>
+
+        <p className="text-base text-ink-muted leading-relaxed mb-6 max-w-3xl">
+          Some of the biggest wins aren&apos;t from new members — they&apos;re from plugging leaks in what you already have. Here&apos;s what a system like this captures that an honor system or spreadsheet can&apos;t see.
+        </p>
+
+        <div className="grid gap-4 md:grid-cols-2 mb-6">
+          {[
+            {
+              icon: TrendingUp,
+              color: 'text-brand',
+              amount: '$2,000 – $5,000/yr',
+              title: 'Missed Annual Upgrades',
+              sub: 'Lost to lack of upgrade prompts',
+              body: "Monthly members renew month by month. Annual members commit a full year. Of your 523 members, conservatively 30% would prepay for a 10% discount — but you'd have to ask. This system asks automatically.",
+            },
+            {
+              icon: UserCheck,
+              color: 'text-brand-alt',
+              amount: '$2,500 – $4,500/yr',
+              title: 'Day-Pass No Follow-Up',
+              sub: 'Walk-ins who liked it but never heard from you again',
+              body: "When a day-pass buyer leaves, they're considering joining. An auto-text 48 hours later — ‘How was your workout? First month 50% off if you join this week’ — converts roughly 15%. Right now, zero get that text.",
+            },
+            {
+              icon: AlertTriangle,
+              color: 'text-danger',
+              amount: '$1,500 – $3,000/yr',
+              title: 'Ghost Members',
+              sub: 'Failed payments and lapsed members the spreadsheet missed',
+              body: "Failed credit cards, switched cards, expired cards, members who quietly stopped paying — they show up as ‘active’ on a manual roster but aren't paying. This system reconciles automatically every month.",
+            },
+            {
+              icon: Activity,
+              color: 'text-success',
+              amount: '$1,000 – $2,500/yr',
+              title: 'Class Capacity',
+              sub: 'Classes running below capacity',
+              body: "If you could see — at a glance — that Tuesday morning MAD FITNEZ runs 8/12 every week, you'd promote it or change the time. Capacity reports turn empty seats into revenue.",
+            },
+          ].map((leak) => {
+            const Icon = leak.icon;
+            return (
+              <div key={leak.title} className="bg-surface-2 border border-line rounded-md p-5">
+                <div className="flex items-center gap-3 mb-3">
+                  <Icon className={`w-6 h-6 ${leak.color}`} />
+                  <h3 className="text-lg font-display uppercase text-ink tracking-[0.02em] font-bold">{leak.title}</h3>
+                </div>
+                <p className={`text-3xl lg:text-4xl font-display font-bold leading-none mb-2 ${leak.color}`}>{leak.amount}</p>
+                <p className="text-xs text-ink-muted uppercase font-display tracking-[0.08em] font-semibold mb-3">{leak.sub}</p>
+                <p className="text-sm text-ink-muted leading-relaxed">{leak.body}</p>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="bg-danger/10 border border-danger/30 rounded-md p-6">
+          <p className="text-xs text-danger uppercase font-display tracking-[0.12em] font-semibold mb-2">Total estimated leakage</p>
+          <p className="text-3xl lg:text-4xl font-display font-bold text-ink leading-tight mb-3">
+            <span className="text-danger">$7,000 – $15,000</span> per year
+          </p>
+          <p className="text-sm text-ink-muted leading-relaxed mb-3 max-w-3xl">
+            Conservative. Some independent gyms recover more than this in the first 90 days of switching from cash/spreadsheet to a real system.
+          </p>
+          <p className="text-xs text-ink-subtle italic leading-relaxed max-w-3xl">
+            Estimates based on typical small-gym industry benchmarks. Your actual leakage depends on current process — could be lower if you&apos;re already diligent, higher if you&apos;re not.
+          </p>
+        </div>
       </section>
 
       {/* Section 3: At-risk */}
@@ -407,7 +501,7 @@ export default function WhyYouNeedThisPage() {
           </li>
           <li className="flex items-start gap-3">
             <AlertTriangle className="w-5 h-5 text-danger mt-1 shrink-0" />
-            <span className="text-base text-ink">Lower sale value when you&apos;re ready to retire: <span className="text-danger font-display font-bold">$315K – $505K</span></span>
+            <span className="text-base text-ink">Lower sale value when you&apos;re ready to retire: <span className="text-danger font-display font-bold">$80K – $220K</span></span>
           </li>
         </ul>
 

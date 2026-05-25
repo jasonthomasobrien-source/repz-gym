@@ -84,10 +84,13 @@ export default function OverviewPage() {
                 Sellable Business
               </p>
             </div>
-            <p className="text-5xl font-display font-bold text-brand-alt leading-none mb-2">3×</p>
-            <p className="text-sm text-ink font-semibold mb-2">Annual revenue = sale value</p>
+            <p className="text-5xl font-display font-bold text-brand-alt leading-none mb-2">5×</p>
+            <p className="text-sm text-ink font-semibold mb-2">More valuable with records</p>
             <p className="text-sm text-ink-muted leading-relaxed">
-              Buyers pay for what they can verify. With documented MRR you&apos;re looking at $375K–$565K — vs $30K for a cash-only handshake.
+              Buyers pay for what they can verify. Documented gyms sell for ~$140K–$280K. Cash-only gyms sell for ~$30K–$60K.
+            </p>
+            <p className="text-xs text-ink-subtle mt-2 italic">
+              Estimate — see full math on the Why page.
             </p>
           </div>
 
