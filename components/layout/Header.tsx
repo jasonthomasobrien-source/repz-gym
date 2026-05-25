@@ -54,13 +54,7 @@ export function Header() {
             href="/join"
             className="bg-brand px-4 py-2 text-sm font-display uppercase text-white transition hover:bg-brand-hot rounded-sm"
           >
-            JOIN
-          </Link>
-          <Link
-            href="/admin-demo"
-            className="border border-brand-alt text-brand-alt px-4 py-2 text-sm font-display uppercase transition hover:bg-brand-alt hover:text-bg rounded-sm"
-          >
-            DASHBOARD
+            BOOK A TOUR
           </Link>
         </div>
       </div>
