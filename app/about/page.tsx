@@ -167,13 +167,13 @@ export default async function AboutPage() {
                     <p className="text-xs font-display uppercase tracking-eyebrow text-brand mb-2">
                       Phone
                     </p>
-                    <p className="text-lg font-semibold text-ink">(269) 685-1493</p>
+                    <p className="text-lg font-semibold text-ink"><a href="tel:+12696851493" className="hover:text-brand transition">(269) 685-1493</a></p>
                   </div>
                   <div>
                     <p className="text-xs font-display uppercase tracking-eyebrow text-brand mb-2">
                       Hours
                     </p>
-                    <p className="text-lg font-semibold text-ink">Open daily, closes 8:30 PM</p>
+                    <p className="text-lg font-semibold text-ink">Open daily, 6 AM – 8:30 PM</p>
                     <p className="text-sm text-ink-muted mt-2">Members: 24/7 key-fob access</p>
                   </div>
                   <div>
@@ -188,8 +188,16 @@ export default async function AboutPage() {
                 GET DIRECTIONS
               </Button>
             </div>
-            <div className="h-96 rounded-lg bg-gradient-to-br from-brand/20 to-surface border border-line flex items-center justify-center">
-              <p className="text-ink-muted text-center">Map embed</p>
+            <div className="h-[400px] rounded-lg overflow-hidden border border-line">
+              <iframe
+                src="https://maps.google.com/maps?q=585+10th+St+A,+Plainwell,+MI+49080&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Repz Gym location map"
+              />
             </div>
           </div>
         </div>
@@ -206,10 +214,10 @@ export default async function AboutPage() {
           </p>
           <AnimationWrapper animationType="slide-up">
             <div className="flex flex-col gap-4 md:flex-row justify-center">
-              <Button size="lg" variant="primary">
-                START YOUR MEMBERSHIP
+              <Button size="lg" variant="primary" href="/join">
+                BOOK YOUR FIRST VISIT
               </Button>
-              <Button size="lg" variant="secondary">
+              <Button size="lg" variant="secondary" href="/contact">
                 CONTACT US
               </Button>
             </div>

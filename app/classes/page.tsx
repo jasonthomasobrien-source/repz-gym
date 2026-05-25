@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/Card";
 import { getClasses, getClassSessions, getTrainers } from "@/lib/data";
 import { ClassCard } from "@/components/public/ClassCard";
 import { AnimationWrapper } from "@/components/AnimationWrapper";
+import { Button } from "@/components/ui/Button";
 
 export default async function ClassesPage() {
   const classes = await getClasses();
@@ -18,6 +19,15 @@ export default async function ClassesPage() {
     5: 5, // Friday
     6: 6, // Saturday
     0: 7, // Sunday
+  };
+  const dayNames: Record<number, string> = {
+    0: "Sunday",
+    1: "Monday",
+    2: "Tuesday",
+    3: "Wednesday",
+    4: "Thursday",
+    5: "Friday",
+    6: "Saturday",
   };
 
   const sortedSessions = sessions
@@ -97,7 +107,7 @@ export default async function ClassesPage() {
                         return (
                           <tr key={session.id} className="border-b border-line hover:bg-surface-2">
                             <td className="px-4 py-3 font-semibold text-ink">
-                              {session.day_of_week}
+                              {dayNames[session.day_of_week] ?? "—"}
                             </td>
                             <td className="px-4 py-3 text-ink-muted">
                               {session.start_time} ({session.duration_min} min)
@@ -120,7 +130,7 @@ export default async function ClassesPage() {
                         .map((session) => (
                           <p key={session.id} className="mb-2">
                             <span className="text-brand font-semibold">
-                              {session.day_of_week} {session.start_time}:
+                              {dayNames[session.day_of_week] ?? "—"} {session.start_time}:
                             </span>{" "}
                             {session.notes}
                           </p>
@@ -164,6 +174,9 @@ export default async function ClassesPage() {
             <p className="text-lg text-ink-muted mb-8">
               No sign-up, no credit card. Just show up and lift with us.
             </p>
+            <Button size="lg" variant="primary" href="/join">
+              BOOK YOUR FIRST CLASS
+            </Button>
           </AnimationWrapper>
         </div>
       </section>

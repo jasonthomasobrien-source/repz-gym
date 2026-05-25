@@ -108,7 +108,7 @@ export default function ContactPage() {
                     <div className="space-y-4">
                       <div>
                         <p className="text-xs text-ink-muted uppercase mb-1">Phone</p>
-                        <p className="text-lg font-semibold text-ink">(269) 685-1493</p>
+                        <p className="text-lg font-semibold text-ink"><a href="tel:+12696851493" className="hover:text-brand transition">(269) 685-1493</a></p>
                       </div>
                       <div>
                         <p className="text-xs text-ink-muted uppercase mb-1">Address</p>
@@ -128,16 +128,8 @@ export default function ContactPage() {
                   <Card variant="dark">
                     <div className="space-y-2 text-sm">
                       <p>
-                        <span className="font-semibold text-ink">Monday–Friday:</span>
-                        <span className="text-ink-muted ml-2">Open – 8:30 PM</span>
-                      </p>
-                      <p>
-                        <span className="font-semibold text-ink">Saturday:</span>
-                        <span className="text-ink-muted ml-2">Open – 8:30 PM</span>
-                      </p>
-                      <p>
-                        <span className="font-semibold text-ink">Sunday:</span>
-                        <span className="text-ink-muted ml-2">Open – 8:30 PM</span>
+                        <span className="font-semibold text-ink">Open daily:</span>
+                        <span className="text-ink-muted ml-2">6 AM – 8:30 PM</span>
                       </p>
                       <p className="pt-3 border-t border-line text-xs text-brand">
                         Members: 24/7 key-fob access anytime
