@@ -83,10 +83,10 @@ interface SectionHeaderProps {
 
 function SectionHeader({ eyebrow, title, description, icon: Icon, accent = 'brand-alt' }: SectionHeaderProps) {
   const accentMap = {
-    brand: 'text-brand bg-brand/15',
-    'brand-alt': 'text-brand-alt bg-brand-alt/15',
-    success: 'text-success bg-success/15',
-    danger: 'text-danger bg-danger/15',
+    brand: 'text-white bg-brand shadow-lg shadow-brand/30',
+    'brand-alt': 'text-white bg-brand-alt shadow-lg shadow-brand-alt/30',
+    success: 'text-white bg-success shadow-lg shadow-success/30',
+    danger: 'text-white bg-danger shadow-lg shadow-danger/30',
   };
   const eyebrowColor = {
     brand: 'text-brand',
@@ -127,7 +127,7 @@ export default function WhyYouNeedThisPage() {
       </Link>
 
       {/* Hero header */}
-      <header className="relative bg-gradient-to-br from-brand/15 via-bg to-brand-alt/15 rounded-3xl border border-brand/20 p-8 lg:p-12 overflow-hidden shadow-2xl shadow-black/40">
+      <header className="relative bg-gradient-to-br from-brand/25 via-bg to-brand-alt/25 rounded-3xl border-2 border-brand/40 p-8 lg:p-12 overflow-hidden shadow-2xl shadow-brand/20">
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand via-brand-alt to-success" />
         <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-brand/10 blur-3xl" aria-hidden />
         <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-brand-alt/10 blur-3xl" aria-hidden />
@@ -136,8 +136,10 @@ export default function WhyYouNeedThisPage() {
             <Sparkles className="w-3.5 h-3.5" />
             The Case For Modernizing
           </div>
-          <h1 className="text-4xl lg:text-6xl font-display uppercase text-ink tracking-[0.02em] font-bold leading-tight">
-            Why You <span className="bg-clip-text bg-gradient-to-br from-brand to-brand-alt text-transparent">Need This</span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold uppercase tracking-tight leading-[1.05] break-words">
+            <span className="bg-gradient-to-r from-brand via-brand-alt to-brand bg-clip-text text-transparent">
+              Why You Need This
+            </span>
           </h1>
           <p className="text-lg text-ink-muted max-w-3xl leading-relaxed">
             You&apos;ve got a spreadsheet. That was a real step up from cash-only. Here&apos;s what you&apos;re still missing — and what each gap costs.
@@ -161,10 +163,10 @@ export default function WhyYouNeedThisPage() {
             <table className="w-full border-collapse min-w-[720px]">
               <thead>
                 <tr className="bg-surface-2 border-b-2 border-brand/30">
-                  <th className="text-left py-4 px-5 text-xs text-ink-muted uppercase font-display tracking-[0.12em] font-semibold">Feature</th>
-                  <th className="text-left py-4 px-5 text-xs text-ink-muted uppercase font-display tracking-[0.12em] font-semibold">Cash-Only</th>
-                  <th className="text-left py-4 px-5 text-xs text-ink-muted uppercase font-display tracking-[0.12em] font-semibold">Spreadsheet</th>
-                  <th className="text-left py-4 px-5 text-xs text-brand uppercase font-display tracking-[0.12em] font-semibold bg-brand/10 border-l-2 border-brand">This Dashboard</th>
+                  <th className="text-left py-4 px-5 text-xs text-ink-muted uppercase font-display tracking-[0.12em] font-bold">Feature</th>
+                  <th className="text-left py-4 px-5 text-xs text-danger uppercase font-display tracking-[0.12em] font-bold">Cash-Only</th>
+                  <th className="text-left py-4 px-5 text-xs text-warning uppercase font-display tracking-[0.12em] font-bold">Spreadsheet</th>
+                  <th className="text-left py-4 px-5 text-xs text-white uppercase font-display tracking-[0.12em] font-bold bg-brand">This Dashboard</th>
                 </tr>
               </thead>
               <tbody>
@@ -188,10 +190,10 @@ export default function WhyYouNeedThisPage() {
                         {row.spreadsheet}
                       </div>
                     </td>
-                    <td className="py-4 px-5 text-sm text-brand font-medium align-top bg-brand/5 border-l-2 border-brand">
+                    <td className="py-4 px-5 text-sm font-semibold align-top bg-brand/15 border-l-2 border-brand">
                       <div className="flex items-start gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-brand mt-0.5 shrink-0" />
-                        {row.dashboard}
+                        <CheckCircle2 className="w-4 h-4 text-success mt-0.5 shrink-0" />
+                        <span className="text-brand-alt-light">{row.dashboard}</span>
                       </div>
                     </td>
                   </tr>
@@ -215,10 +217,10 @@ export default function WhyYouNeedThisPage() {
 
         <div className="grid gap-6 lg:grid-cols-2">
           {/* Cash-only */}
-          <div className="relative bg-gradient-to-br from-danger/10 via-surface to-surface rounded-3xl border border-danger/30 p-7 overflow-hidden shadow-2xl shadow-black/40">
+          <div className="relative bg-gradient-to-br from-danger/25 via-bg to-bg rounded-3xl border-2 border-danger/50 p-7 overflow-hidden shadow-2xl shadow-danger/20">
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-danger to-danger/40" />
             <p className="text-xs text-danger uppercase font-display tracking-[0.12em] font-semibold mb-3">Cash-only gym</p>
-            <p className="text-5xl lg:text-6xl font-display font-bold text-ink-muted leading-none tracking-tight mb-3">$30K – $60K</p>
+            <p className="text-5xl lg:text-6xl font-display font-bold text-danger leading-none tracking-tight mb-3">$30K – $60K</p>
             <p className="text-sm text-ink-muted mb-6">Hard assets only — equipment + lease value</p>
             <ul className="space-y-2.5 text-sm text-ink-muted">
               <li className="flex items-start gap-2"><AlertTriangle className="w-4 h-4 text-danger mt-0.5 shrink-0" /> No verifiable revenue stream</li>
@@ -228,9 +230,9 @@ export default function WhyYouNeedThisPage() {
           </div>
 
           {/* Documented */}
-          <div className="relative bg-gradient-to-br from-success/15 via-brand-alt/10 to-surface rounded-3xl border border-brand-alt/40 p-7 overflow-hidden shadow-2xl shadow-brand-alt/20">
+          <div className="relative bg-gradient-to-br from-brand-alt/30 via-brand-alt/10 to-bg rounded-3xl border-2 border-brand-alt p-7 overflow-hidden shadow-2xl shadow-brand-alt/30">
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-alt via-success to-brand" />
-            <div className="absolute top-4 right-4 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-success/20 text-success text-[10px] uppercase font-display tracking-[0.12em] font-bold">
+            <div className="absolute top-4 right-4 inline-flex items-center gap-1 px-3 py-1 rounded-full bg-brand-alt text-bg text-[10px] uppercase font-display tracking-[0.12em] font-bold shadow-lg shadow-brand-alt/40">
               <Sparkles className="w-3 h-3" />
               Recommended
             </div>
@@ -497,10 +499,10 @@ export default function WhyYouNeedThisPage() {
           ].map((item) => {
             const Icon = item.icon;
             const tintMap: Record<string, string> = {
-              brand: 'from-brand/10 via-surface to-surface border-brand/30',
-              'brand-alt': 'from-brand-alt/10 via-surface to-surface border-brand-alt/30',
-              success: 'from-success/10 via-surface to-surface border-success/30',
-              danger: 'from-danger/10 via-surface to-surface border-danger/30',
+              brand: 'from-brand/25 via-surface to-surface border-brand/50',
+              'brand-alt': 'from-brand-alt/25 via-surface to-surface border-brand-alt/50',
+              success: 'from-success/25 via-surface to-surface border-success/50',
+              danger: 'from-danger/25 via-surface to-surface border-danger/50',
             };
             const colorMap: Record<string, string> = {
               brand: 'text-brand bg-brand/20',
@@ -570,10 +572,10 @@ export default function WhyYouNeedThisPage() {
           ].map((item) => {
             const Icon = item.icon;
             const tintMap: Record<string, string> = {
-              brand: 'from-brand/10 via-surface to-surface border-brand/30',
-              'brand-alt': 'from-brand-alt/10 via-surface to-surface border-brand-alt/30',
-              success: 'from-success/10 via-surface to-surface border-success/30',
-              danger: 'from-danger/10 via-surface to-surface border-danger/30',
+              brand: 'from-brand/25 via-surface to-surface border-brand/50',
+              'brand-alt': 'from-brand-alt/25 via-surface to-surface border-brand-alt/50',
+              success: 'from-success/25 via-surface to-surface border-success/50',
+              danger: 'from-danger/25 via-surface to-surface border-danger/50',
             };
             const colorMap: Record<string, string> = {
               brand: 'text-brand bg-brand/20',
@@ -638,7 +640,7 @@ export default function WhyYouNeedThisPage() {
       </section>
 
       {/* Section 11: Bottom CTA */}
-      <section className="relative bg-gradient-to-br from-brand/15 via-surface to-brand-alt/10 border border-brand/40 rounded-3xl p-8 lg:p-12 overflow-hidden shadow-2xl shadow-brand/20">
+      <section className="relative bg-gradient-to-br from-brand/25 via-bg to-brand-alt/25 border-2 border-brand rounded-3xl p-8 lg:p-12 overflow-hidden shadow-2xl shadow-brand/30">
         <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-brand via-brand-alt to-success" />
         <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-brand/10 blur-3xl" aria-hidden />
         <div className="absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-brand-alt/10 blur-3xl" aria-hidden />
@@ -648,8 +650,10 @@ export default function WhyYouNeedThisPage() {
               <Sparkles className="w-3.5 h-3.5" />
               The Bottom Line
             </div>
-            <h2 className="text-3xl lg:text-5xl font-display uppercase text-ink tracking-[0.02em] font-bold leading-tight">
-              What&apos;s the Cost of <span className="bg-clip-text bg-gradient-to-r from-danger to-warning text-transparent">NOT</span> Doing This?
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display uppercase tracking-[0.02em] font-bold leading-tight">
+              <span className="bg-gradient-to-r from-brand via-brand-alt to-brand bg-clip-text text-transparent">
+                What&apos;s the Cost of NOT Doing This?
+              </span>
             </h2>
           </header>
 
