@@ -1,5 +1,32 @@
 @import "tailwindcss";
 
+@theme {
+  --color-bg: rgb(10 10 10);
+  --color-surface: rgb(20 20 20);
+  --color-surface-2: rgb(31 31 31);
+  --color-ink: rgb(255 255 255);
+  --color-ink-muted: rgb(168 168 168);
+  --color-ink-subtle: rgb(111 111 111);
+  --color-brand: rgb(242 101 34);
+  --color-brand-hot: rgb(211 78 15);
+  --color-brand-dark: rgb(217 72 22);
+  --color-brand-alt: rgb(32 178 170);
+  --color-brand-alt-light: rgb(40 204 192);
+  --color-ember: rgb(140 31 14);
+  --color-success: rgb(61 186 107);
+  --color-danger: rgb(232 74 74);
+  --color-warning: rgb(232 181 58);
+  --color-line: rgb(38 38 38);
+  --color-paper: rgb(245 241 234);
+
+  --letter-spacing-display: 0.02em;
+  --letter-spacing-eyebrow: 0.12em;
+  --letter-spacing-button: 0.06em;
+
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+}
+
 :root {
   --bg: 10 10 10;
   --surface: 20 20 20;
